@@ -1,8 +1,3 @@
-let Interval = [];
-let Key = [];
-let Chords = [];
-
-
 function getScale(selectedScale) {
     switch (selectedScale) {
         case "CMajor":
