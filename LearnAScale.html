@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuitarScales – Learn a scale</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="Index.html"><img class="logo-image" src="logo.png" alt="logo"></a>
+        </div>
+
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="Index.html">Home</a>
+                </li>
+                <li>
+                    <a href="LearnAScale.html">Learn a scale</a>
+                </li>
+                <li>
+                    <a href="ChordProgression.html">Chord
+                        progression</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Learn a scale</h1>
+    <div class="select-container">
+        <select name="scale-select" class="scale-select" id="scale-select"
+            onchange="DisplayScale(document.getElementById('scale-select').value)">
+            <option value="">--Please select a scale--</option>
+            <option value="CMajor">C major</option>
+            <option value="CSharpMajor">C# major</option>
+            <option value="DFlatMajor">D♭ major</option>
+            <option value="DMajor">D major</option>
+            <option value="DSharpMajor">D# major</option>
+            <option value="EFlatMajor">E♭ major</option>
+            <option value="EMajor">E major</option>
+            <option value="FMajor">F major</option>
+            <option value="FSharpMajor">F# major</option>
+            <option value="GFlatMajor">G♭ major</option>
+            <option value="GMajor">G major</option>
+            <option value="GSharpMajor">G# major</option>
+            <option value="AFlatMajor">A♭ major</option>
+            <option value="AMajor">A major</option>
+            <option value="ASharpMajor">A# major</option>
+            <option value="BFlatMajor">B♭ major</option>
+            <option value="BMajor">B major</option>
+        </select>
+    </div>
+    <div id="scales"></div>
+
+    <script src="LearnAScale.js"></script>
+</body>
+
+</html>
