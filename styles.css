@@ -85,7 +85,6 @@ footer {
 }
 
 .scale-list{
-
     list-style: none;
     display: flex;
     justify-content: center;
@@ -98,7 +97,7 @@ footer {
 @media (max-width: 700px) {
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     header {
@@ -110,7 +109,7 @@ footer {
     }
 
     .nav__links li a {
-        font-size: 0.65rem;
+        font-size: 0.60rem;
     }
 
     p,
