@@ -9,7 +9,7 @@
 }
 
 body {
-    padding: 30px 10%;
+    padding: 30px 5%;
 }
 
 
@@ -29,10 +29,11 @@ footer {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 7rem;
     text-align: center;
     font-weight: 500;
-    margin: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 p {
@@ -63,6 +64,20 @@ header {
 .nav__links li {
     margin: 1rem;
     text-align: center;
+    border-radius: 0.2rem;
+}
+
+.nav__links li a {
+    background-color: #9a5ae3;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+}
+
+select:hover,
+button:hover,
+.nav__links li a:hover {
+    background-color: #7b48b6;
 }
 
 body {
@@ -70,47 +85,63 @@ body {
     flex-direction: column;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
 }
 
 footer {
     text-align: center;
-    margin-top: 40%;
+    margin-top: 35%;
 }
 
-.select-container{
+.select-container {
     align-self: center;
 }
 
-select{
+select {
     text-align: center;
     background-color: #9a5ae3;
-    border: #9a5ae3 solid;
+    border: none;
     border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 3rem;
 }
 
-.scale-list{
+.scale-list {
     list-style: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 2rem;
+    margin-top: 8rem;
 }
 
-.scale-list li{
+.scale-list li {
     margin: 1rem;
     background-color: #9a5ae3;
-    border: #9a5ae3 solid;
+    border: none;
     border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 5rem;
+}
+
+
+
+button {
+    margin: 1rem;
+    background-color: #9a5ae3;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
     font-size: 1.5rem;
+    width: 10rem;
+    height: 5rem;
 }
 
 @media (max-width: 700px) {
 
     h1 {
-        font-size: 1.2rem;
+        font-size: 2.5rem;
     }
 
     header {
@@ -121,6 +152,12 @@ select{
         width: 15rem;
     }
 
+    .nav__links li {
+        margin: 1rem;
+        text-align: center;
+        border-radius: 0.2rem;
+    }
+
     .nav__links li a {
         font-size: 0.60rem;
     }
@@ -129,6 +166,20 @@ select{
     footer {
         font-size: 1rem;
     }
+
+    select {
+        font-size: 1.4rem;
+    }
+
+    .scale-list {
+        margin-top: 5rem;
+    }
+
+    .scale-list li {
+        margin: 0.3rem;
+        font-size: 2rem;
+    }
+
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
