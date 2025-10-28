@@ -31,7 +31,7 @@
 
     <h1>Chord progression</h1>
     <div class="select-container">
-        <select name="scale-select" id="scale-select" onchange="DisplayChords(false)">
+        <select name="scale-select" class="key-select" id="scale-select" onchange="DisplayChords(false)">
             <option value="CMajor">C major</option>
             <option value="CSharpMajor">C# major</option>
             <option value="DFlatMajor">D♭ major</option>
@@ -58,8 +58,8 @@
         <button onclick="DisplayChords(4)">V</button>
         <button onclick="DisplayChords(5)">vi</button>
         <button onclick="DisplayChords(6)">vii°</button>
-        <button onclick="RemoveChord()">REMOVE</button>
-        <button onclick="RemoveAllChords()">REMOVE ALL</button>
+        <button class="remove-btn" onclick="RemoveChord()">REMOVE</button>
+        <button class="remove-btn" onclick="RemoveAllChords()">REMOVE ALL</button>
     </div>
     <div id="chords"></div>
 
