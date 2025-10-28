@@ -65,7 +65,6 @@ header {
     text-align: center;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
@@ -76,10 +75,25 @@ footer {
     margin-top: 40%;
 }
 
+.select-container{
+    align-self: center;
+}
+
+.scale-list{
+
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.scale-list li{
+    margin: 1rem;
+}
+
 @media (max-width: 700px) {
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     header {
@@ -91,10 +105,11 @@ footer {
     }
 
     .nav__links li a {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
+
     p,
-    footer{
+    footer {
         font-size: 1rem;
     }
 }
