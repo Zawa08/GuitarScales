@@ -84,14 +84,22 @@ footer {
     align-self: center;
 }
 
+select{
+    text-align: center;
+}
+
 .scale-list{
     list-style: none;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .scale-list li{
     margin: 1rem;
+    background-color: #9a5ae3;
+    border: #9a5ae3 solid;
+    border-radius: 0.2rem;
 }
 
 @media (max-width: 700px) {
