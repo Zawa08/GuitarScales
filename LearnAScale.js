@@ -1,5 +1,6 @@
-function getScale(selectedScale) {
-    switch (selectedScale) {
+function getScale() {
+    let scale = document.getElementById('scale-select').value
+    switch (scale) {
         case "CMajor":
             return ["C", "D", "E", "F", "G", "A", "B"];
 
@@ -56,14 +57,14 @@ function getScale(selectedScale) {
     }
 }
 
-function DisplayScale(scale) {
-    let scaleWithNotes = getScale(scale);
-    let text = "<ul class='scale-list'>";
-    scaleWithNotes.forEach(note => {
-        text += "<li>" + note + "</li>";
+function DisplayScale() {
+    let scale = getScale();
+    let noteList = "<ul class='scale-list'>";
+    scale.forEach(note => {
+        noteList += "<li>" + note + "</li>";
     });
-    text += "</ul>";
+    noteList += "</ul>";
 
-    document.getElementById("scales").innerHTML = text;
+    document.getElementById("scales").innerHTML = noteList;
 
 }

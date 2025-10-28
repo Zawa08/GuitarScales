@@ -3,8 +3,9 @@ let Key = [];
 let Chords = [];
 
 
-function getScale(selectedScale) {
-    switch (selectedScale) {
+function getScale() {
+    let scale = document.getElementById('scale-select').value
+    switch (scale) {
         case "CMajor":
             return ["C", "D", "E", "F", "G", "A", "B"];
 
@@ -61,8 +62,8 @@ function getScale(selectedScale) {
     }
 }
 
-function GetKey(scale) {
-    Key = getScale(scale)
+function GetKey() {
+    Key = getScale()
     nameChords()
 }
 
@@ -86,27 +87,25 @@ function getChords() {
     }
 }
 
-function RemoveChord()
-{
+function RemoveChord() {
     Interval.pop()
     DisplayChords(false)
 }
 
-function RemoveAllChords()
-{
+function RemoveAllChords() {
     Interval = [];
     DisplayChords(false);
 }
 
 function DisplayChords(interval) {
-    GetKey(document.getElementById('scale-select').value);
+    GetKey();
     getInterval(interval);
     Chords = [];
     getChords();
-    let text = "<ul class='chord-list'>";
+    let chordList = "<ul class='chord-list'>";
     Chords.forEach(chord => {
-        text += "<li>" + chord + "</li>";
+        chordList += "<li>" + chord + "</li>";
     });
-    text += "</ul>";
-    document.getElementById("chords").innerHTML = text;
+    chordList += "</ul>";
+    document.getElementById("chords").innerHTML = chordList;
 }
