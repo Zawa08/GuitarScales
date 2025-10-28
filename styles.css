@@ -57,6 +57,7 @@ header {
 .nav__links {
     display: flex;
     flex-direction: row;
+
     justify-content: space-evenly;
     list-style: none;
 }
@@ -116,7 +117,7 @@ footer {
 
 .scale-list li {
     margin: 1rem;
-    background-color: #9a5ae3;
+    background-color: #5ab1e3;
     border: none;
     border-radius: 0.2rem;
     padding: 0.8rem;
@@ -166,7 +167,7 @@ button {
 
 .chord-list li {
     margin: 1rem;
-    background-color: #9a5ae3;
+    background-color: #5ab1e3;
     border: none;
     border-radius: 0.2rem;
     padding: 2rem;
@@ -189,13 +190,18 @@ button {
     }
 
     .nav__links li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 1rem;
         text-align: center;
         border-radius: 0.2rem;
     }
 
     .nav__links li a {
-        font-size: 0.60rem;
+        font-size: 0.70rem;
+        width: 5rem;
+        height: 2.2rem;
     }
 
     p,
