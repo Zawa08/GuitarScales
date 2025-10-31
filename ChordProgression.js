@@ -14,7 +14,7 @@ function nameChords() {
 }
 
 function GetKey() {
-    Key = getScale()
+    Key = Scales["Major"][ScaleSelect.value]["notes"]
     nameChords()
 }
 
@@ -41,20 +41,9 @@ function RemoveAllChords() {
     DisplayChords(false);
 }
 
-/*function DisplayChords(interval) {
-    GetKey();
-    getInterval(interval);
-    Chords = [];
-    getChords();
-
-    document.getElementById("chords").innerHTML = chordList;
-}
-*/
-
 function createList() {
-    const Scale = Scales["Major"][ScaleSelect.value]["notes"]
     let chordList = "<ol class='chord-list'>";
-    Scale.forEach(chord => {
+    Chords.forEach(chord => {
         chordList += "<li>" + chord + "</li>";
     });
     chordList += "</ol>";
@@ -63,6 +52,10 @@ function createList() {
 
 function DisplayChords() {
     ScaleSelect.addEventListener("change", (event) => {
+        GetKey();
+        getInterval(interval);
+        Chords = [];
+        getChords();
         document.getElementById("chords").innerHTML = createList();
     });
 }
