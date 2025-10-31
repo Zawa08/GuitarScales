@@ -1,69 +1,10 @@
 import { Scales } from "/Scales.js";
 
+const ScaleSelect = document.getElementById("key-select")
+
 let Interval = [];
 let Key = [];
 let Chords = [];
-
-
-function getScale() {
-    let scale = document.getElementById('scale-select').value
-    switch (scale) {
-        case "CMajor":
-            return ["C", "D", "E", "F", "G", "A", "B"];
-
-        case "CSharpMajor":
-            return ["C#", "D#", "E#", "F#", "G#", "A#", "B#"];
-
-        case "DFlatMajor":
-            return ["Db", "Eb", "F", "Gb", "Ab", "Bb", "C"];
-
-        case "DMajor":
-            return ["D", "E", "F#", "G", "A", "B", "C#"];
-
-        case "DSharpMajor":
-            return ["D#", "E#", "F##", "G#", "A#", "B#", "C##"];
-
-        case "EFlatMajor":
-            return ["Eb", "F", "G", "Ab", "Bb", "C", "D"];
-
-        case "EMajor":
-            return ["E", "F#", "G#", "A", "B", "C#", "D#"];
-
-        case "FMajor":
-            return ["F", "G", "A", "Bb", "C", "D", "E"];
-
-        case "FSharpMajor":
-            return ["F#", "G#", "A#", "B", "C#", "D#", "E#"];
-
-        case "GFlatMajor":
-            return ["Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F"];
-
-        case "GMajor":
-            return ["G", "A", "B", "C", "D", "E", "F#"];
-
-        case "GSharpMajor":
-            return ["G#", "A#", "B#", "C#", "D#", "E#", "F##"];
-
-        case "AFlatMajor":
-            return ["Ab", "Bb", "C", "Db", "Eb", "F", "G"];
-
-        case "AMajor":
-            return ["A", "B", "C#", "D", "E", "F#", "G#"];
-
-        case "ASharpMajor":
-            return ["A#", "B#", "C##", "D#", "E#", "F##", "G##"];
-
-        case "BFlatMajor":
-            return ["Bb", "C", "D", "Eb", "F", "G", "A"];
-
-        case "BMajor":
-            return ["B", "C#", "D#", "E", "F#", "G#", "A#"];
-
-        default:
-            return ["", "", "", "", "", "", ""];
-    }
-}
-
 
 function nameChords() {
     Key[1] += "m";
@@ -100,32 +41,30 @@ function RemoveAllChords() {
     DisplayChords(false);
 }
 
-function DisplayChords(interval) {
+/*function DisplayChords(interval) {
     GetKey();
     getInterval(interval);
     Chords = [];
     getChords();
+
+    document.getElementById("chords").innerHTML = chordList;
+}
+*/
+
+function createList() {
+    const Scale = Scales["Major"][ScaleSelect.value]["notes"]
     let chordList = "<ol class='chord-list'>";
-    Chords.forEach(chord => {
+    Scale.forEach(chord => {
         chordList += "<li>" + chord + "</li>";
     });
     chordList += "</ol>";
-    document.getElementById("chords").innerHTML = chordList;
+    return chordList
 }
 
-const ScaleSelect = document.getElementById("key-select")
+function DisplayChords() {
+    ScaleSelect.addEventListener("change", (event) => {
+        document.getElementById("chords").innerHTML = createList();
+    });
+}
 
-ScaleSelect.addEventListener("change", (event) => {
-    const Scale = Scales["Major"][event.target.value]["notes"]
-
-    function createList() {
-        let noteList = "<ol class='scale-list'>";
-        Scale.forEach(note => {
-            noteList += "<li>" + note + "</li>";
-        });
-        noteList += "</ol>";
-        return noteList
-    }
-
-    document.getElementById("chords").innerHTML = createList();
-});
+DisplayChords()
