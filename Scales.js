@@ -1,5 +1,9 @@
 export const Scales = {
+    test:["C", "D", "E", "F", "G", "A", "B"],
     Major: {
+        None: {
+            notes: []
+        },
         C: {
             notes: ["C", "D", "E", "F", "G", "A", "B"],
             img: "Images\Scales\Major\CMajor.svg"

@@ -1,18 +1,22 @@
-import {Scales} from "Scales.js";
+import { Scales } from "/Scales.js";
 
-function getScale() {
-    const scaleId = document.getElementById('scale-select').value
-    return Scales["Major"][scaleId]["notes"]
-}
+const ScaleSelect = document.getElementById('scale-select')
 
 function DisplayScale() {
-    const scale = getScale();
-    let noteList = "<ol class='scale-list'>";
-    scale.forEach(note => {
-        noteList += "<li>" + note + "</li>";
+    ScaleSelect.addEventListener("change", (event) => {
+        const Scale = Scales["Major"][event.target.value]["notes"]
+
+        function createList() {
+            let noteList = "<ol class='scale-list'>";
+            Scale.forEach(note => {
+                noteList += "<li>" + note + "</li>";
+            });
+            noteList += "</ol>";
+            return noteList
+        }
+
+        document.getElementById("scales").innerHTML = createList();
     });
-    noteList += "</ol>";
-
-    document.getElementById("scales").innerHTML = noteList;
-
 }
+
+DisplayScale();

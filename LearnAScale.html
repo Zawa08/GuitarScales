@@ -30,8 +30,8 @@
     </header>
 
     <h1 class="LearnAScale">Learn a scale</h1>
-    <select name="scale-select" class="scale-select" id="scale-select" onchange="DisplayScale()">
-        <option value="">--Please select a scale--</option>
+    <select name="scale-select" class="scale-select" id="scale-select">
+        <option value="None">--Please select a scale--</option>
         <option value="C">C major</option>
         <option value="CSharp">C# major</option>
         <option value="DFlat">D♭ major</option>
@@ -52,7 +52,7 @@
     </select>
     <div id="scales"></div>
 
-    <script src="LearnAScale.js"></script>
+    <script type="module" src="LearnAScale.js"></script>
 </body>
 
 </html>
