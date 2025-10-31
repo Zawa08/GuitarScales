@@ -1,12 +1,11 @@
 export const Scales = {
-    test:["C", "D", "E", "F", "G", "A", "B"],
     Major: {
         None: {
             notes: []
         },
         C: {
             notes: ["C", "D", "E", "F", "G", "A", "B"],
-            img: "Images\Scales\Major\CMajor.svg"
+            chordImage: "Images\Scales\Major\CMajor.svg"
         },
         CSharp: {
             notes: ["C#", "D#", "E#", "F#", "G#", "A#", "B#"]
