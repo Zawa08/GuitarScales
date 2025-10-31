@@ -1,16 +1,17 @@
 import {Scales} from "Scales.js";
 
 function getScale() {
-    const scale = document.getElementById('scale-select').value
+    const scaleId = document.getElementById('scale-select').value
+    return Scales["Major"][scaleId]["notes"]
 }
 
 function DisplayScale() {
     const scale = getScale();
-    let noteList = "<ul class='scale-list'>";
+    let noteList = "<ol class='scale-list'>";
     scale.forEach(note => {
         noteList += "<li>" + note + "</li>";
     });
-    noteList += "</ul>";
+    noteList += "</ol>";
 
     document.getElementById("scales").innerHTML = noteList;
 
