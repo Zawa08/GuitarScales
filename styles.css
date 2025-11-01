@@ -166,6 +166,9 @@ button {
 }
 
 .chord-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 1rem;
     background-color: #5ab1e3;
     border: none;
@@ -173,6 +176,11 @@ button {
     padding: 2rem;
     font-size: 8rem;
 }
+
+.chord-image {
+    width: 10rem;
+}
+
 
 @media (max-width: 700px) {
 
