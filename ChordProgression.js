@@ -1,17 +1,12 @@
 import { Scales } from "/Scales.js";
 
-const ScaleSelect = document.getElementById("key-select");
+const KeySelect = document.getElementById("key-select");
 
 let Interval = [];
-let Key = structuredClone(Scales["Major"][ScaleSelect.value]["notes"]);
+let Key = structuredClone(Scales["Major"][KeySelect.value]["notes"]);
 let Chords = [];
+let ChordImage = structuredClone(Scales["Major"]["C"]["chordImage"]);
 
-function nameChords() {
-    Key[1] += "m";
-    Key[2] += "m";
-    Key[5] += "m";
-    Key[6] += "dim";
-}
 
 function getInterval(interval) {
     if (interval !== false) {
@@ -22,6 +17,13 @@ function getInterval(interval) {
             UpdateList();
         })
     }
+}
+
+function nameChords() {
+    Key[1] += "m"
+    Key[2] += "m"
+    Key[5] += "m"
+    Key[6] += "dim"
 }
 
 function getChords() {
@@ -48,6 +50,7 @@ function RemoveAllChords() {
 }
 
 function UpdateList() {
+    ChordImage = [];
     getChords();
     document.getElementById("chords").innerHTML = createList();
 }
@@ -55,8 +58,9 @@ function UpdateList() {
 function createList() {
     let chordList = "<ol class='chord-list'>";
     Chords.forEach(chord => {
-        const img = "<img class='chord-image' src='Images/Chords/Major/CMajor.svg' alt='C major'>"
-        chordList += "<li>" + img + chord + "</li>";
+        ChordImage = structuredClone(Scales["Major"][chord]["chordImage"]);
+        const img = "<img class='chord-image' src=" + ChordImage + " alt=" + chord + ">";
+        chordList += "<li>" + img + "</li>";
     });
     chordList += "</ol>";
     return chordList;
@@ -73,8 +77,8 @@ function intervalButtons() {
 }
 
 function changeScale() {
-    ScaleSelect.addEventListener("change", () => {
-        Key = structuredClone(Scales["Major"][ScaleSelect.value]["notes"]);
+    KeySelect.addEventListener("change", () => {
+        Key = structuredClone(Scales["Major"][KeySelect.value]["notes"]);
         nameChords();
         UpdateList();
     });
