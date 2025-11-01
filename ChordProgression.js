@@ -1,6 +1,6 @@
 import { Scales } from "/Scales.js";
 
-const ScaleSelect = document.getElementById("key-select")
+const ScaleSelect = document.getElementById("key-select");
 
 let Interval = [];
 let Key = [];
@@ -13,32 +13,43 @@ function nameChords() {
     Key[6] += "dim";
 }
 
-function GetKey() {
-    Key = Scales["Major"][ScaleSelect.value]["notes"]
-    nameChords()
-}
-
-
 function getInterval(interval) {
     if (interval !== false) {
-        Interval.push(interval);
+        const button = document.getElementById(interval);
+        button.addEventListener("click", (event) => {
+            interval = event.target.id;
+            Interval.push(interval);
+            UpdateList();
+        })
     }
 }
 
 function getChords() {
+    Chords = [];
     for (let i = 0; i < Interval.length; i++) {
         Chords.push(Key[Interval[i]]);
     }
 }
 
 function RemoveChord() {
-    Interval.pop()
-    DisplayChords(false)
+    const button = document.getElementById("remove-btn");
+    button.addEventListener("click", () => {
+        Interval.pop();
+        UpdateList();
+    })
 }
 
 function RemoveAllChords() {
-    Interval = [];
-    DisplayChords(false);
+    const button = document.getElementById("remove-all-btn");
+    button.addEventListener("click", () => {
+        Interval = [];
+        UpdateList();
+    })
+}
+
+function UpdateList() {
+    getChords();
+    document.getElementById("chords").innerHTML = createList();
 }
 
 function createList() {
@@ -47,16 +58,29 @@ function createList() {
         chordList += "<li>" + chord + "</li>";
     });
     chordList += "</ol>";
-    return chordList
+    return chordList;
+}
+
+function initialiaze() {
+    Key = Scales["Major"][ScaleSelect.value]["notes"];
+    nameChords();
 }
 
 function DisplayChords() {
+    initialiaze();
+    getInterval("0");
+    getInterval("1");
+    getInterval("2");
+    getInterval("3");
+    getInterval("4");
+    getInterval("5");
+    getInterval("6");
+    RemoveChord();
+    RemoveAllChords();
     ScaleSelect.addEventListener("change", (event) => {
-        GetKey();
-        getInterval(interval);
-        Chords = [];
-        getChords();
-        document.getElementById("chords").innerHTML = createList();
+        Key = Scales["Major"][event.target.value]["notes"];
+        nameChords();
+        UpdateList();
     });
 }
 
