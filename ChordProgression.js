@@ -83,6 +83,7 @@ function DisplayChords() {
     intervalButtons();
     RemoveChord();
     RemoveAllChords();
+    nameChords();
     changeScale();
 }
 
