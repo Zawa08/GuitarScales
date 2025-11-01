@@ -3,14 +3,15 @@ import { Scales } from "/Scales.js";
 const ScaleSelect = document.getElementById("key-select");
 
 let Interval = [];
+let Scale = Scales["Major"][ScaleSelect.value]["notes"];
 let Key = [];
 let Chords = [];
 
 function nameChords() {
-    Key[1] += "m";
-    Key[2] += "m";
-    Key[5] += "m";
-    Key[6] += "dim";
+    Key[1] + "m";
+    Key[2] + "m";
+    Key[5] + "m";
+    Key[6] + "dim";
 }
 
 function getInterval(interval) {
@@ -61,11 +62,6 @@ function createList() {
     return chordList;
 }
 
-function initialize() {
-    Key = Scales["Major"][ScaleSelect.value]["notes"];
-    nameChords();
-}
-
 function intervalButtons() {
     getInterval("0");
     getInterval("1");
@@ -77,15 +73,16 @@ function intervalButtons() {
 }
 
 function changeScale() {
-    ScaleSelect.addEventListener("change", (event) => {
-        Key = Scales["Major"][event.target.value]["notes"];
+    ScaleSelect.addEventListener("change", () => {
+        Key = Scale;
+        Scale = Scales["Major"][ScaleSelect.value]["notes"];
+        console.log(Key)
         nameChords();
         UpdateList();
     });
 }
 
 function DisplayChords() {
-    initialize();
     intervalButtons();
     RemoveChord();
     RemoveAllChords();
