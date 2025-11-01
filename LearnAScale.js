@@ -1,4 +1,4 @@
-import { Scales } from "/Scales.js";
+import { Scales } from "./Scales.js";
 
 const ScaleSelect = document.getElementById('scale-select')
 
