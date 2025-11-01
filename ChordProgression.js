@@ -66,6 +66,16 @@ function initialize() {
     nameChords();
 }
 
+function intervalButtons() {
+    getInterval("0");
+    getInterval("1");
+    getInterval("2");
+    getInterval("3");
+    getInterval("4");
+    getInterval("5");
+    getInterval("6");
+}
+
 function changeScale() {
     ScaleSelect.addEventListener("change", (event) => {
         Key = Scales["Major"][event.target.value]["notes"];
@@ -76,17 +86,10 @@ function changeScale() {
 
 function DisplayChords() {
     initialize();
-
-    getInterval("0");
-    getInterval("1");
-    getInterval("2");
-    getInterval("3");
-    getInterval("4");
-    getInterval("5");
-    getInterval("6");
+    intervalButtons();
     RemoveChord();
     RemoveAllChords();
     changeScale();
 }
 
-DisplayChords()
+DisplayChords();
