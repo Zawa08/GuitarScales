@@ -3,15 +3,14 @@ import { Scales } from "/Scales.js";
 const ScaleSelect = document.getElementById("key-select");
 
 let Interval = [];
-let Scale = Scales["Major"][ScaleSelect.value]["notes"];
-let Key = [];
+let Key = structuredClone(Scales["Major"][ScaleSelect.value]["notes"]);
 let Chords = [];
 
 function nameChords() {
-    Key[1] + "m";
-    Key[2] + "m";
-    Key[5] + "m";
-    Key[6] + "dim";
+    Key[1] += "m";
+    Key[2] += "m";
+    Key[5] += "m";
+    Key[6] += "dim";
 }
 
 function getInterval(interval) {
@@ -74,9 +73,7 @@ function intervalButtons() {
 
 function changeScale() {
     ScaleSelect.addEventListener("change", () => {
-        Key = Scale;
-        Scale = Scales["Major"][ScaleSelect.value]["notes"];
-        console.log(Key)
+        Key = structuredClone(Scales["Major"][ScaleSelect.value]["notes"]);
         nameChords();
         UpdateList();
     });
