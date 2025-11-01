@@ -55,7 +55,8 @@ function UpdateList() {
 function createList() {
     let chordList = "<ol class='chord-list'>";
     Chords.forEach(chord => {
-        chordList += "<li>" + chord + "</li>";
+        const img = "<img src='Images/Scales/Major/CMajor.svg' alt='C major'>"
+        chordList += "<li>" + chord + img + "</li>";
     });
     chordList += "</ol>";
     return chordList;
