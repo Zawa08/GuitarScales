@@ -5,7 +5,7 @@ export const Scales = {
         },
         C: {
             notes: ["C", "D", "E", "F", "G", "A", "B"],
-            chordImage: "Images/Scales/Major/CMajor.svg"
+            chordImage: "Images/Chords/Major/CMajor.svg"
         },
         CSharp: {
             notes: ["C#", "D#", "E#", "F#", "G#", "A#", "B#"]
