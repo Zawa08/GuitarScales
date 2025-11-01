@@ -6,7 +6,7 @@ function DisplayScale() {
     ScaleSelect.addEventListener("change", () => {
         const Scale = Scales["Major"][ScaleSelect.value]["notes"];
 
-        function createList() {
+        function createNoteList() {
             let noteList = "<ol class='scale-list'>";
             Scale.forEach(note => {
                 noteList += "<li>" + note + "</li>";
@@ -14,7 +14,7 @@ function DisplayScale() {
             noteList += "</ol>";
             return noteList;
         }
-        document.getElementById("scales").innerHTML = createList();
+        document.getElementById("scales").innerHTML = createNoteList();
     });
 }
 
