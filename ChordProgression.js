@@ -61,13 +61,22 @@ function createList() {
     return chordList;
 }
 
-function initialiaze() {
+function initialize() {
     Key = Scales["Major"][ScaleSelect.value]["notes"];
     nameChords();
 }
 
+function changeScale() {
+    ScaleSelect.addEventListener("change", (event) => {
+        Key = Scales["Major"][event.target.value]["notes"];
+        nameChords();
+        UpdateList();
+    });
+}
+
 function DisplayChords() {
-    initialiaze();
+    initialize();
+
     getInterval("0");
     getInterval("1");
     getInterval("2");
@@ -77,11 +86,7 @@ function DisplayChords() {
     getInterval("6");
     RemoveChord();
     RemoveAllChords();
-    ScaleSelect.addEventListener("change", (event) => {
-        Key = Scales["Major"][event.target.value]["notes"];
-        nameChords();
-        UpdateList();
-    });
+    changeScale();
 }
 
 DisplayChords()
