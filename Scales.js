@@ -56,7 +56,7 @@ export const Scales = {
             notes: ["Ab", "Bb", "C", "Db", "Eb", "F", "G"],
         },
 
-        AMajor: {
+        A: {
             notes: ["A", "B", "C#", "D", "E", "F#", "G#"],
         },
 
