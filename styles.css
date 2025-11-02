@@ -177,7 +177,6 @@ button {
     border: none;
     border-radius: 0.2rem;
     padding: 2rem;
-    font-size: 8rem;
 }
 
 .chord-image {
@@ -200,7 +199,7 @@ button {
     width: 15rem;
 }
 
-.chord-presets button:hover{
+.chord-presets button:hover {
     background-color: #4586ac;
 }
 
