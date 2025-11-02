@@ -1,4 +1,4 @@
-import { Scales } from "/Scales.js";
+import { Scales, Preset } from "/Scales.js";
 
 const KeySelect = document.getElementById("key-select");
 
@@ -9,14 +9,20 @@ let ChordImage = "Images/Chords/CMajor.svg";
 
 
 function getInterval(interval) {
-    if (interval !== false) {
-        const button = document.getElementById(interval);
-        button.addEventListener("click", (event) => {
-            interval = event.target.id;
-            Interval.push(interval);
-            UpdateList();
-        })
-    }
+    const button = document.getElementById(interval);
+    button.addEventListener("click", () => {
+        Interval.push(interval);
+        UpdateList();
+    })
+}
+
+function getPreset(preset) {
+    const button = document.getElementById(preset);
+    button.addEventListener("click", () => {
+        const ChordPreset = structuredClone(Preset[preset]["intervals"]);
+        Interval = ChordPreset
+        UpdateList();
+    })
 }
 
 function nameChords() {
@@ -79,6 +85,12 @@ function intervalButtons() {
     getInterval("6");
 }
 
+function presetButtons() {
+    getPreset("Major");
+    getPreset("MajorMinor");
+    getPreset("BluesTwelve");
+}
+
 function changeScale() {
     KeySelect.addEventListener("change", () => {
         Key = structuredClone(Scales["Major"][KeySelect.value]["notes"]);
@@ -89,6 +101,7 @@ function changeScale() {
 
 function DisplayChords() {
     intervalButtons();
+    presetButtons();
     RemoveChord();
     RemoveAllChords();
     nameChords();

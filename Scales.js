@@ -74,3 +74,16 @@ export const Scales = {
     },
     Minor: {}
 }
+
+
+export const Preset = {
+    Major:{
+        intervals:[0, 3, 4]
+    },
+    MajorMinor:{
+        intervals:[0, 5, 3, 4]
+    },
+    BluesTwelve:{
+        intervals:[0, 0, 0, 0, 3, 3, 0, 0, 4, 3, 0, 4]
+    }
+}
