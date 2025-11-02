@@ -14,6 +14,7 @@ body {
 
 
 h1,
+h2,
 p,
 li,
 a,
@@ -31,9 +32,12 @@ footer {
 h1 {
     font-size: 7rem;
     text-align: center;
-    font-weight: 500;
     margin-top: 5rem;
     margin-bottom: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
 }
 
 p {
@@ -128,6 +132,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -139,9 +144,10 @@ footer {
     padding: 0.3rem;
     font-size: 2rem;
     margin: 0.3rem;
+    height: 10rem;
 }
 
-button {
+.select-container button {
     background-color: #9a5ae3;
     border: none;
     border-radius: 0.2rem;
@@ -176,6 +182,17 @@ button {
 
 .chord-image {
     width: 10rem;
+}
+
+.chord-presets {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.chord-presets h2,
+button {
+    margin: 1rem 2rem;
 }
 
 
