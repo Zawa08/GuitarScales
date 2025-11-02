@@ -147,7 +147,7 @@ footer {
     height: 10rem;
 }
 
-.select-container button {
+button {
     background-color: #9a5ae3;
     border: none;
     border-radius: 0.2rem;
@@ -195,6 +195,14 @@ button {
     margin: 1rem 2rem;
 }
 
+.chord-presets button {
+    background-color: #5ab1e3;
+    width: 15rem;
+}
+
+.chord-presets button:hover{
+    background-color: #4586ac;
+}
 
 @media (max-width: 700px) {
 
