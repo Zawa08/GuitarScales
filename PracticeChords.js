@@ -7,10 +7,18 @@ let currentSet = 1;
 
 
 let Chords = ChordSet[Difficulty]["chords" + currentSet];
+
+const ChordSetCounter = document.getElementById("current-set");
 const PreviousButton = document.getElementById("previous");
 const NextButton = document.getElementById("next");
 
+function updateCounter() {
+
+    ChordSetCounter.innerHTML = "Current set: Chords " + currentSet;
+}
+
 function createList() {
+    updateCounter();
     let chordList = "<ol class='chord-list'>";
     Chords.forEach(chord => {
         ChordImage = "Images/Chords/" + chord + ".svg";
@@ -18,22 +26,29 @@ function createList() {
         chordList += "<li>" + img + "</li>";
     });
     chordList += "</ol>";
-    return chordList;
+    document.getElementById("chords").innerHTML = chordList;
 }
 
 function getCurrentSet() {
     PreviousButton.addEventListener("click", () => {
-        currentSet -= 1;
-        document.getElementById("chords").innerHTML = createList();
+        if (currentSet > 1) {
+            currentSet -= 1;
+            Chords = ChordSet[Difficulty]["chords" + currentSet];
+            createList();
+        }
     })
     NextButton.addEventListener("click", () => {
-        currentSet++;
-        document.getElementById("chords").innerHTML = createList();
+        if (currentSet < 3) {
+            currentSet++;
+            Chords = ChordSet[Difficulty]["chords" + currentSet];
+            createList();
+        }
+
     })
 }
 
 function PracticeChords() {
-    document.getElementById("chords").innerHTML = createList();
+    createList();
     getCurrentSet();
 }
 
