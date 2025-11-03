@@ -33,6 +33,13 @@ function nameChords() {
     Key[4] += "Major";
     Key[5] += "Minor";
     Key[6] += "Dim";
+    Key[7] += "7Major";
+    Key[8] += "Minor7";
+    Key[9] += "Minor7";
+    Key[10] += "7Major";
+    Key[11] += "7Major";
+    Key[12] += "Minor7";
+    Key[13] += "Dim7";
 }
 
 function getChords() {
