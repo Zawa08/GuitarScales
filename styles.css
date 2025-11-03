@@ -316,7 +316,8 @@ input:checked+.slider:before {
 
 .chords-container {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 }
 
 .chord-buttons {
