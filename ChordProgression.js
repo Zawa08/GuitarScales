@@ -1,9 +1,9 @@
-import { Scales, Preset } from "./Scales.js";
+import { Keys, Preset } from "./Scales.js";
 
 const KeySelect = document.getElementById("key-select");
 
 let Interval = [];
-let Key = structuredClone(Scales["Major"][KeySelect.value]["notes"]);
+let Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
 let Chords = [];
 let ChordImage = "Images/Chords/CMajor.svg";
 
@@ -100,7 +100,7 @@ function presetButtons() {
 
 function changeScale() {
     KeySelect.addEventListener("change", () => {
-        Key = structuredClone(Scales["Major"][KeySelect.value]["notes"]);
+        Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
         nameChords();
         UpdateList();
     });
