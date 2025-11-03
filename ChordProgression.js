@@ -1,4 +1,4 @@
-import { Scales, Preset } from "/Scales.js";
+import { Scales, Preset } from "./Scales.js";
 
 const KeySelect = document.getElementById("key-select");
 
