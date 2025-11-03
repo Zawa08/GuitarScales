@@ -97,7 +97,7 @@ function UpdateList() {
 function createList() {
     let chordList = "<ol class='chord-list'>";
     Chords.forEach(chord => {
-        ChordImage = "Images/Chords/" + chord + ".svg"
+        ChordImage = "Images/Chords/" + chord + ".svg";
         const img = "<img class='chord-image' src=" + ChordImage + " alt=" + chord + ">";
         chordList += "<li>" + img + "</li>";
     });

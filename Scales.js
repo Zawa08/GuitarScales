@@ -163,7 +163,7 @@ export const Preset = {
 }
 
 
-export const Chords = {
+export const ChordSet = {
     Easy: {
         chords1: ["DMajor", "AMajor"],
         chords2: ["DMajor", "EMajor"],

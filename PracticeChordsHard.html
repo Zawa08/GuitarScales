@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuitarScales – Learn Chords</title>
+    <title>GuitarScales – Practice Chords – Advanced</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -32,13 +32,17 @@
         </nav>
     </header>
 
-    <h1>Learn chords</h1>
-    <div class="diff-select">
-        <h2>Select a difficulty:</h2>
-        <a id="Easy" href="PracticeChordsEasy.html"><button class="diff-btn">Beginner</button></a>
-        <a id="Medium" href="PracticeChordsMedium.html"><button class="diff-btn">Intermediate</button></a>
-        <a id="Hard" href="PracticeChordsHard.html"><button class="diff-btn">Advanced</button></a>
+    <div id="difficulty" class="Hard"></div>
+
+    <h1>Practice chords</h1>
+    <div class="practice-chords-container">
+        <div id="chords"></div>
+        <button id="previous" class="practice-btn">Previous</button>
+        <button id="next" class="practice-btn">Next</button>
     </div>
+
+
+    <script type="module" src="PracticeChords.js"></script>
 </body>
 
 </html>
