@@ -161,3 +161,24 @@ export const Preset = {
         intervals: [7, 7, 7, 7, 10, 10, 7, 7, 11, 10, 7, 11]
     }
 }
+
+
+export const Chords = {
+    Easy: {
+        chords1: ["DMajor", "AMajor"],
+        chords2: ["DMajor", "EMajor"],
+        chords3: ["DMajor", "GMajor"]
+    },
+
+    Medium: {
+        chords1: ["AMinor", "EMajor"],
+        chords2: ["GMajor", "EMinor"],
+        chords3: ["CMajor", "AMinor"]
+    },
+
+    Hard: {
+        chords1: [],
+        chords2: [],
+        chords3: []
+    }
+}
