@@ -13,11 +13,17 @@ function getInterval(interval) {
     const button = document.getElementById(interval);
     button.addEventListener("click", () => {
         if (SevenChecked) {
-            interval += 7;
+            let newInterval = interval + 7
+            console.log(newInterval)
+            Interval.push(newInterval);
+            UpdateList();
         }
-        console.log()
-        Interval.push(interval);
-        UpdateList();
+        else {
+            console.log(interval)
+            Interval.push(interval);
+            UpdateList();
+        }
+
     })
 }
 
