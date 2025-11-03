@@ -177,8 +177,8 @@ export const ChordSet = {
     },
 
     Hard: {
-        chords1: [],
-        chords2: [],
-        chords3: []
+        chords1: ["FMajor", "DMajor"],
+        chords2: ["GMajor", "DMinor"],
+        chords3: ["BDim", "FMajor"]
     }
 }
