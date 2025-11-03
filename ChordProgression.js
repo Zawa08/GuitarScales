@@ -12,16 +12,12 @@ let ChordImage = "Images/Chords/CMajor.svg";
 function getInterval(interval) {
     const button = document.getElementById(interval);
     button.addEventListener("click", () => {
-        if (!SevenChecked) {
-            Interval.push(interval);
-            UpdateList();
+        if (SevenChecked) {
+            interval += 7;
         }
-
-        else {
-            interval += 7
-            Interval.push(interval);
-            UpdateList();
-        }
+        console.log()
+        Interval.push(interval);
+        UpdateList();
     })
 }
 
@@ -29,15 +25,20 @@ function getPreset(preset) {
     const button = document.getElementById(preset);
     button.addEventListener("click", () => {
         const ChordPreset = structuredClone(Preset[preset]["intervals"]);
-        Interval = ChordPreset
+        Interval = ChordPreset;
         UpdateList();
     })
 }
 
-function isChecked() {
-    const CheckBoxSeven = document.getElementById("checkbox-seven")
-    CheckBoxSeven.addEventListener("change", () => {
-        
+function isChecked(element) {
+    const checkBox = document.getElementById(element);
+    checkBox.addEventListener("change", () => {
+        if (SevenChecked) {
+            SevenChecked = false;
+        }
+        else {
+            SevenChecked = true;
+        }
     })
 }
 
@@ -114,6 +115,10 @@ function presetButtons() {
     getPreset("BluesTwelve");
 }
 
+function switches() {
+    isChecked("checkbox-seven");
+}
+
 function changeScale() {
     KeySelect.addEventListener("change", () => {
         Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
@@ -125,6 +130,7 @@ function changeScale() {
 function DisplayChords() {
     intervalButtons();
     presetButtons();
+    switches();
     RemoveChord();
     RemoveAllChords();
     nameChords();
