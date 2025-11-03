@@ -18,6 +18,8 @@ h2,
 p,
 li,
 a,
+input,
+label,
 button,
 select,
 option,
@@ -201,6 +203,33 @@ button {
 
 .chord-presets button:hover {
     background-color: #4586ac;
+}
+
+.chord-customizations {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chord-alters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5ab1e3;
+    height: 10rem;
+    margin: 1rem 2.5rem;
+}
+
+.chord-alters input {
+    margin: 1rem 1rem;
+    transform: scale(3);
+    accent-color: #9a5ae3;
+}
+
+.chord-alters label {
+    margin: 1rem 1rem;
+    font-size: 2.5rem;
+    background-color: #5ab1e3;
 }
 
 @media (max-width: 700px) {
