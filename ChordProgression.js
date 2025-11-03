@@ -14,12 +14,10 @@ function getInterval(interval) {
     button.addEventListener("click", () => {
         if (SevenChecked) {
             let newInterval = interval + 7
-            console.log(newInterval)
             Interval.push(newInterval);
             UpdateList();
         }
         else {
-            console.log(interval)
             Interval.push(interval);
             UpdateList();
         }
