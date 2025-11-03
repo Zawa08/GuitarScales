@@ -2,6 +2,7 @@ import { Keys, Preset } from "./Scales.js";
 
 const KeySelect = document.getElementById("key-select");
 
+let SevenChecked = false;
 let Interval = [];
 let Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
 let Chords = [];
@@ -11,8 +12,16 @@ let ChordImage = "Images/Chords/CMajor.svg";
 function getInterval(interval) {
     const button = document.getElementById(interval);
     button.addEventListener("click", () => {
-        Interval.push(interval);
-        UpdateList();
+        if (!SevenChecked) {
+            Interval.push(interval);
+            UpdateList();
+        }
+
+        else {
+            interval += 7
+            Interval.push(interval);
+            UpdateList();
+        }
     })
 }
 
@@ -22,6 +31,13 @@ function getPreset(preset) {
         const ChordPreset = structuredClone(Preset[preset]["intervals"]);
         Interval = ChordPreset
         UpdateList();
+    })
+}
+
+function isChecked() {
+    const CheckBoxSeven = document.getElementById("checkbox-seven")
+    CheckBoxSeven.addEventListener("change", () => {
+        
     })
 }
 
@@ -83,13 +99,13 @@ function createList() {
 }
 
 function intervalButtons() {
-    getInterval("0");
-    getInterval("1");
-    getInterval("2");
-    getInterval("3");
-    getInterval("4");
-    getInterval("5");
-    getInterval("6");
+    getInterval(0);
+    getInterval(1);
+    getInterval(2);
+    getInterval(3);
+    getInterval(4);
+    getInterval(5);
+    getInterval(6);
 }
 
 function presetButtons() {

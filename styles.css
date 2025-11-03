@@ -226,11 +226,74 @@ button {
     accent-color: #9a5ae3;
 }
 
-.chord-alters label {
-    margin: 1rem 1rem;
+label {
+    margin-left: 3rem;
+    margin-right: 1rem;
     font-size: 2.5rem;
     background-color: #5ab1e3;
 }
+
+.switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.2rem;
+    width: 1.2rem;
+    top: 0.45rem;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #9a5ae3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 0.1rem #9a5ae3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(1.6rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 2rem;
+    width: 3.5rem;
+    height: 2rem;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 
 @media (max-width: 700px) {
 
