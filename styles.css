@@ -152,7 +152,7 @@ footer {
 button {
     background-color: #9a5ae3;
     border: none;
-    border-radius: 0.2rem;
+    border-radius: 10rem;
     padding: 0.3rem;
     font-size: 2.5rem;
     height: 10rem;
@@ -174,11 +174,11 @@ button {
     font-size: 1.8rem;
 }
 
-.diff-btn{
+.diff-btn {
     width: 20rem;
 }
 
-.diff-select{
+.diff-select {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -235,7 +235,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #5ab1e3;
     height: 10rem;
     margin: 1rem 2.5rem;
 }
@@ -314,6 +313,17 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
+.chords-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chord-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 @media (max-width: 700px) {
 
