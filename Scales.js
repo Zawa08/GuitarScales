@@ -115,7 +115,7 @@ export const Keys = {
         },
 
         GFlat: {
-            chords: ["Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F", "Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F"],
+            chords: ["Gb", "Ab", "Bb", "B", "Db", "Eb", "F", "Gb", "Ab", "Bb", "B", "Db", "Eb", "F"],
         },
 
         G: {
