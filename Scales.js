@@ -135,7 +135,7 @@ export const Keys = {
         },
 
         ASharp: {
-            chords: ["ASharp", "C", "D", "DSharp", "F", "G", "GSharpSharp", "ASharp", "C", "D", "DSharp", "F", "G", "GSharpSharp"],
+            chords: ["ASharp", "C", "D", "DSharp", "F", "G", "A", "ASharp", "C", "D", "DSharp", "F", "G", "A"],
         },
 
         BFlat: {
