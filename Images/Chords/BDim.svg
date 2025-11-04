@@ -12,39 +12,39 @@
                 <text x="1170.138px" y="889.957px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:166.667px;">2</text>
             </g>
         </g>
-        <g>
+        <g transform="matrix(1,0,0,1,5,0)">
             <g transform="matrix(0.681948,0,0,0.953327,630.722039,333.269334)">
-                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:1.21px;"/>
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
             </g>
             <g transform="matrix(0.681948,0,0,0.953327,794.740882,333.269334)">
-                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:1.21px;"/>
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
             </g>
             <g transform="matrix(0.681948,0,0,0.953327,958.759725,333.269334)">
-                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:1.21px;"/>
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
             </g>
             <g transform="matrix(0.681948,0,0,0.953327,1122.778568,333.269334)">
-                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:1.21px;"/>
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
             </g>
             <g transform="matrix(0.991923,0,0,0.954545,333.289925,360.590423)">
-                <path d="M1786.306,872.051L959.535,872.051" style="fill:none;stroke:black;stroke-width:1.03px;"/>
+                <path d="M1786.306,872.051L959.535,872.051" style="fill:none;stroke:black;stroke-width:4.28px;"/>
             </g>
             <g transform="matrix(0.991923,0,0,0.954545,333.289925,241.79362)">
-                <path d="M959.535,1429.21L1786.306,1429.21" style="fill:none;stroke:black;stroke-width:1.03px;"/>
+                <path d="M959.535,1429.21L1786.306,1429.21" style="fill:none;stroke:black;stroke-width:4.28px;"/>
             </g>
             <g transform="matrix(0.681948,0,0,0.953327,1286.797411,333.269334)">
-                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:1.21px;"/>
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
             </g>
             <g transform="matrix(0.681948,0,0,0.953327,1450.816254,333.269334)">
-                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:1.21px;"/>
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
             </g>
             <g transform="matrix(0.852435,0,0,0.953327,467.133845,333.269334)">
-                <path d="M959.535,467.82L1921.595,467.82" style="fill:none;stroke:black;stroke-width:1.11px;"/>
+                <path d="M959.535,467.82L1921.595,467.82" style="fill:none;stroke:black;stroke-width:4.61px;"/>
             </g>
             <g transform="matrix(0.852435,0,0,0.953327,467.133845,333.269334)">
-                <path d="M959.535,1768.694L1921.595,1768.694" style="fill:none;stroke:black;stroke-width:1.11px;"/>
+                <path d="M959.535,1768.694L1921.595,1768.694" style="fill:none;stroke:black;stroke-width:4.61px;"/>
             </g>
         </g>
-        <g transform="matrix(1,0,0,1,307.037686,-414.595381)">
+        <g transform="matrix(1,0,0,1,311.995803,-414.595381)">
             <g transform="matrix(1,0,0,1,-311.775159,500.678134)">
                 <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(255,250,54);stroke:black;stroke-width:1px;"/>
             </g>
@@ -54,7 +54,7 @@
                 <text x="1570.19px" y="726.91px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:125.488px;">4</text>
             </g>
         </g>
-        <g transform="matrix(1,0,0,1,-349.037686,-0.331469)">
+        <g transform="matrix(1,0,0,1,-343.900134,-0.727051)">
             <g transform="matrix(1,0,0,1,180.28137,500.397712)">
                 <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(124,143,255);stroke:black;stroke-width:1px;"/>
             </g>
@@ -64,7 +64,7 @@
                 <text x="1570.19px" y="726.91px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:125.488px;">3</text>
             </g>
         </g>
-        <g transform="matrix(1,0,0,1,-21,-1)">
+        <g transform="matrix(1,0,0,1,-16.277984,-1)">
             <g transform="matrix(1,0,0,1,-311.775159,87.082754)">
                 <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(77,255,100);stroke:black;stroke-width:1px;"/>
             </g>
@@ -74,7 +74,7 @@
                 <text x="1570.19px" y="726.91px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:125.488px;">2</text>
             </g>
         </g>
-        <g transform="matrix(1,0,0,1,-185.018843,-0.745276)">
+        <g transform="matrix(1,0,0,1,-180.018843,-0.584555)">
             <g transform="matrix(1,0,0,1,-311.775159,-326.134233)">
                 <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(255,108,108);stroke:black;stroke-width:1px;"/>
             </g>
@@ -86,10 +86,10 @@
                 </g>
             </g>
         </g>
-        <g transform="matrix(0.943679,0,0,0.996115,594.080855,335.419091)">
-            <g transform="matrix(250.975082,0,0,250.975082,1456.422799,204.723434)">
+        <g transform="matrix(0.943679,0,0,0.996115,549.404661,365.067567)">
+            <g transform="matrix(292.804262,0,0,292.804262,1551.968163,204.723434)">
             </g>
-            <text x="883.151px" y="204.723px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:250.975px;">Bdim</text>
+            <text x="883.151px" y="204.723px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:292.804px;">Bdim</text>
         </g>
         <g transform="matrix(0.943679,0,0,0.996115,403.102465,304.208126)">
             <g transform="matrix(167.316721,0,0,167.316721,990.410119,429.803208)">
