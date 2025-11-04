@@ -83,7 +83,7 @@ export const Keys = {
         },
 
         CSharp: {
-            chords: ["C#", "D#", "E#", "F#", "G#", "A#", "B#", "C#", "D#", "E#", "F#", "G#", "A#", "B#"],
+            chords: ["CSharp", "DSharp", "ESharp", "FSharp", "GSharp", "ASharp", "BSharp", "CSharp", "DSharp", "ESharp", "FSharp", "GSharp", "ASharp", "BSharp"],
         },
 
         DFlat: {
@@ -91,11 +91,11 @@ export const Keys = {
         },
 
         D: {
-            chords: ["D", "E", "F#", "G", "A", "B", "C#", "D", "E", "F#", "G", "A", "B", "C#"],
+            chords: ["D", "E", "FSharp", "G", "A", "B", "CSharp", "D", "E", "FSharp", "G", "A", "B", "CSharp"],
         },
 
         DSharp: {
-            chords: ["D#", "E#", "F##", "G#", "A#", "B#", "C##", "D#", "E#", "F##", "G#", "A#", "B#", "C##"],
+            chords: ["DSharp", "ESharp", "FSharpSharp", "GSharp", "ASharp", "BSharp", "CSharpSharp", "DSharp", "ESharp", "FSharpSharp", "GSharp", "ASharp", "BSharp", "CSharpSharp"],
         },
 
         EFlat: {
@@ -103,7 +103,7 @@ export const Keys = {
         },
 
         E: {
-            chords: ["E", "F#", "G#", "A", "B", "C#", "D#", "E", "F#", "G#", "A", "B", "C#", "D#"],
+            chords: ["E", "FSharp", "GSharp", "A", "B", "CSharp", "DSharp", "E", "FSharp", "GSharp", "A", "B", "CSharp", "DSharp"],
         },
 
         F: {
@@ -111,7 +111,7 @@ export const Keys = {
         },
 
         FSharp: {
-            chords: ["F#", "G#", "A#", "B", "C#", "D#", "E#", "F#", "G#", "A#", "B", "C#", "D#", "E#"],
+            chords: ["FSharp", "GSharp", "ASharp", "B", "CSharp", "DSharp", "ESharp", "FSharp", "GSharp", "ASharp", "B", "CSharp", "DSharp", "ESharp"],
         },
 
         GFlat: {
@@ -119,11 +119,11 @@ export const Keys = {
         },
 
         G: {
-            chords: ["G", "A", "B", "C", "D", "E", "F#", "G", "A", "B", "C", "D", "E", "F#"],
+            chords: ["G", "A", "B", "C", "D", "E", "FSharp", "G", "A", "B", "C", "D", "E", "FSharp"],
         },
 
         GSharp: {
-            chords: ["G#", "A#", "B#", "C#", "D#", "E#", "F##", "G#", "A#", "B#", "C#", "D#", "E#", "F##"],
+            chords: ["GSharp", "ASharp", "BSharp", "CSharp", "DSharp", "ESharp", "FSharpSharp", "GSharp", "ASharp", "BSharp", "CSharp", "DSharp", "ESharp", "FSharpSharp"],
         },
 
         AFlat: {
@@ -131,11 +131,11 @@ export const Keys = {
         },
 
         A: {
-            chords: ["A", "B", "C#", "D", "E", "F#", "G#", "A", "B", "C#", "D", "E", "F#", "G#"],
+            chords: ["A", "B", "CSharp", "D", "E", "FSharp", "GSharp", "A", "B", "CSharp", "D", "E", "FSharp", "GSharp"],
         },
 
         ASharp: {
-            chords: ["A#", "B#", "C##", "D#", "E#", "F##", "G##", "A#", "B#", "C##", "D#", "E#", "F##", "G##"],
+            chords: ["ASharp", "BSharp", "CSharpSharp", "DSharp", "ESharp", "FSharpSharp", "GSharpSharp", "ASharp", "BSharp", "CSharpSharp", "DSharp", "ESharp", "FSharpSharp", "GSharpSharp"],
         },
 
         BFlat: {
@@ -143,7 +143,7 @@ export const Keys = {
         },
 
         B: {
-            chords: ["B", "C#", "D#", "E", "F#", "G#", "A#", "B", "C#", "D#", "E", "F#", "G#", "A#"],
+            chords: ["B", "CSharp", "DSharp", "E", "FSharp", "GSharp", "ASharp", "B", "CSharp", "DSharp", "E", "FSharp", "GSharp", "ASharp"],
         }
     },
     Minor: {}
