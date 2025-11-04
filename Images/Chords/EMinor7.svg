@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1183 1832" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-1125.070738,-324.30315)">
+        <g transform="matrix(1.179599,0,0,0.996115,115.031083,294.473412)">
+            <rect x="856.681" y="30.448" width="1001.275" height="1837.849" style="fill:white;stroke:black;stroke-width:0.92px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,3,0)">
+            <g transform="matrix(0.681948,0,0,0.953327,648.722039,334.269334)">
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
+            </g>
+            <g transform="matrix(0.681948,0,0,0.953327,812.740882,334.269334)">
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
+            </g>
+            <g transform="matrix(0.681948,0,0,0.953327,976.759725,334.269334)">
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
+            </g>
+            <g transform="matrix(0.681948,0,0,0.953327,1140.778568,334.269334)">
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
+            </g>
+            <g transform="matrix(0.991923,0,0,0.954545,351.289925,361.590423)">
+                <path d="M1786.306,872.051L959.535,872.051" style="fill:none;stroke:black;stroke-width:4.28px;"/>
+            </g>
+            <g transform="matrix(0.991923,0,0,0.954545,351.289925,242.79362)">
+                <path d="M959.535,1429.21L1786.306,1429.21" style="fill:none;stroke:black;stroke-width:4.28px;"/>
+            </g>
+            <g transform="matrix(0.681948,0,0,0.953327,1304.797411,334.269334)">
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
+            </g>
+            <g transform="matrix(0.681948,0,0,0.953327,1468.816254,334.269334)">
+                <path d="M959.535,467.82L959.535,1768.694" style="fill:none;stroke:black;stroke-width:5.03px;"/>
+            </g>
+            <g transform="matrix(0.852435,0,0,0.953327,485.133845,334.269334)">
+                <path d="M959.535,467.82L1921.595,467.82" style="fill:none;stroke:black;stroke-width:4.61px;"/>
+            </g>
+            <g transform="matrix(0.852435,0,0,0.953327,485.133845,334.269334)">
+                <path d="M959.535,1768.694L1921.595,1768.694" style="fill:none;stroke:black;stroke-width:4.61px;"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,328.166663,413.453988)">
+            <g transform="matrix(1,0,0,1,-311.775159,87.082754)">
+                <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(77,255,100);stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.943679,0,0,0.996115,120.64225,720.987202)">
+                <g transform="matrix(125.487541,0,0,125.487541,1639.979744,726.90967)">
+                </g>
+                <text x="1570.19px" y="726.91px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:125.488px;">2</text>
+            </g>
+        </g>
+        <g transform="matrix(0.943679,0,0,0.996115,593.78323,365.428865)">
+            <g transform="matrix(292.804262,0,0,292.804262,1485.200785,204.723434)">
+            </g>
+            <text x="883.151px" y="204.723px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:292.804px;">Em7</text>
+        </g>
+        <g transform="matrix(1,0,0,1,-504.432349,441.556178)">
+            <g transform="matrix(1,0,0,1,28.638347,-354.473425)">
+                <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(255,108,108);stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.996115,0,0,0.996115,380.071918,280.193963)">
+                <g transform="matrix(125.487541,0,0,125.487541,1639.979744,726.90967)">
+                </g>
+                <text x="1570.19px" y="726.91px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:125.488px;">1</text>
+            </g>
+        </g>
+    </g>
+</svg>
