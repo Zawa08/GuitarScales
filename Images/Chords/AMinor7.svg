@@ -37,17 +37,7 @@
                 <path d="M959.535,1768.694L1921.595,1768.694" style="fill:none;stroke:black;stroke-width:4.61px;"/>
             </g>
         </g>
-        <g transform="matrix(1,0,0,1,-163.884774,-413.107194)">
-            <g transform="matrix(1,0,0,1,180.28137,500.397712)">
-                <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(124,143,255);stroke:black;stroke-width:1px;"/>
-            </g>
-            <g transform="matrix(0.943679,0,0,0.996115,611.42669,1134.302161)">
-                <g transform="matrix(125.487541,0,0,125.487541,1639.979744,726.90967)">
-                </g>
-                <text x="1570.19px" y="726.91px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:125.488px;">3</text>
-            </g>
-        </g>
-        <g transform="matrix(1,0,0,1,164.018843,0.207765)">
+        <g transform="matrix(1,0,0,1,-0.2641,0.217693)">
             <g transform="matrix(1,0,0,1,-311.775159,87.082754)">
                 <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(77,255,100);stroke:black;stroke-width:1px;"/>
             </g>
@@ -57,12 +47,12 @@
                 <text x="1570.19px" y="726.91px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:125.488px;">2</text>
             </g>
         </g>
-        <g transform="matrix(0.943679,0,0,0.996115,790.561944,364.62203)">
-            <g transform="matrix(292.804262,0,0,292.804262,1078.448771,204.723434)">
+        <g transform="matrix(0.943679,0,0,0.996115,604.98147,365.324325)">
+            <g transform="matrix(292.804262,0,0,292.804262,1485.200785,204.723434)">
             </g>
-            <text x="883.151px" y="204.723px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:292.804px;">A</text>
+            <text x="883.151px" y="204.723px" style="font-family:'MicrosoftSansSerif', 'Microsoft Sans Serif', sans-serif;font-size:292.804px;">Am7</text>
         </g>
-        <g transform="matrix(1,0,0,1,-340.413506,441.763943)">
+        <g transform="matrix(1,0,0,1,-12.37582,27.555353)">
             <g transform="matrix(1,0,0,1,28.638347,-354.473425)">
                 <circle cx="1945.888" cy="1313.251" r="76.664" style="fill:rgb(255,108,108);stroke:black;stroke-width:1px;"/>
             </g>
