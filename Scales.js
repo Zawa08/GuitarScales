@@ -83,7 +83,7 @@ export const Keys = {
         },
 
         CSharp: {
-            chords: ["CSharp", "DSharp", "ESharp", "FSharp", "GSharp", "ASharp", "BSharp", "CSharp", "DSharp", "ESharp", "FSharp", "GSharp", "ASharp", "BSharp"],
+            chords: ["CSharp", "DSharp", "F", "FSharp", "GSharp", "ASharp", "C", "CSharp", "DSharp", "F", "FSharp", "GSharp", "ASharp", "C"],
         },
 
         DFlat: {
@@ -95,7 +95,7 @@ export const Keys = {
         },
 
         DSharp: {
-            chords: ["DSharp", "ESharp", "FSharpSharp", "GSharp", "ASharp", "BSharp", "CSharpSharp", "DSharp", "ESharp", "FSharpSharp", "GSharp", "ASharp", "BSharp", "CSharpSharp"],
+            chords: ["DSharp", "F", "G", "GSharp", "ASharp", "C", "D", "DSharp", "F", "G", "GSharp", "ASharp", "C", "D"],
         },
 
         EFlat: {
@@ -111,7 +111,7 @@ export const Keys = {
         },
 
         FSharp: {
-            chords: ["FSharp", "GSharp", "ASharp", "B", "CSharp", "DSharp", "ESharp", "FSharp", "GSharp", "ASharp", "B", "CSharp", "DSharp", "ESharp"],
+            chords: ["FSharp", "GSharp", "ASharp", "B", "CSharp", "DSharp", "F", "FSharp", "GSharp", "ASharp", "B", "CSharp", "DSharp", "F"],
         },
 
         GFlat: {
@@ -123,7 +123,7 @@ export const Keys = {
         },
 
         GSharp: {
-            chords: ["GSharp", "ASharp", "BSharp", "CSharp", "DSharp", "ESharp", "FSharpSharp", "GSharp", "ASharp", "BSharp", "CSharp", "DSharp", "ESharp", "FSharpSharp"],
+            chords: ["GSharp", "ASharp", "C", "CSharp", "DSharp", "F", "G", "GSharp", "ASharp", "C", "CSharp", "DSharp", "F", "G"],
         },
 
         AFlat: {
@@ -135,7 +135,7 @@ export const Keys = {
         },
 
         ASharp: {
-            chords: ["ASharp", "BSharp", "CSharpSharp", "DSharp", "ESharp", "FSharpSharp", "GSharpSharp", "ASharp", "BSharp", "CSharpSharp", "DSharp", "ESharp", "FSharpSharp", "GSharpSharp"],
+            chords: ["ASharp", "C", "D", "DSharp", "F", "G", "GSharpSharp", "ASharp", "C", "D", "DSharp", "F", "G", "GSharpSharp"],
         },
 
         BFlat: {
