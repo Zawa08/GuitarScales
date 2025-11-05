@@ -364,12 +364,14 @@ input:checked+.slider:before {
 }
 
 .practice-btn {
-    width: 15rem;
-    height: 10rem;
+    width: 8vw;
+    height: 7vw;
 }
 
 .changediff-btn {
+    padding: 1rem;
     text-align: center;
+    font-size: 2vw;
 }
 
 .practice-chords {
@@ -386,7 +388,7 @@ input:checked+.slider:before {
         font-size: 40%;
     }
 
-    h1{
+    h1 {
         font-size: 6vw;
     }
 
@@ -394,7 +396,8 @@ input:checked+.slider:before {
         font-size: 4vw;
     }
 
-    p, footer {
+    p,
+    footer {
         font-size: 2.5vw;
     }
 
@@ -449,7 +452,16 @@ input:checked+.slider:before {
         flex-direction: column;
     }
 
+    .practice-btn {
+        font-size: 3vw;
+        width: 15vw;
+        height: 10vw;
+    }
 
+    .changediff-btn {
+        margin-top: 5vh;
+        font-size: 3vw;
+    }
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
