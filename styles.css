@@ -394,7 +394,7 @@ input:checked+.slider:before {
         font-size: 4vw;
     }
 
-    p {
+    p, footer {
         font-size: 2.5vw;
     }
 
