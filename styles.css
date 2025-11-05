@@ -388,6 +388,7 @@ input:checked+.slider:before {
     .chord-presets button{
         width: 10rem;
     }
+    
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
