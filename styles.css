@@ -45,6 +45,7 @@ h2 {
 
 p {
     text-align: center;
+    font-size: 1.4vw;
 }
 
 /*Navigation bar*/
@@ -102,6 +103,7 @@ main {
 footer {
     text-align: center;
     margin-top: 40vh;
+    font-size: 1.4vw;
 }
 
 /*Learn scales*/
@@ -176,7 +178,7 @@ button {
 .remove-btn {
     font-size: 1.8rem;
     width: 14vw;
-    height: 6vh;
+    height: 10vh;
 }
 
 .diff-btn {
@@ -419,17 +421,51 @@ input:checked+.slider:before {
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
+    html {
+        font-size: 60%;
+    }
+
+    .logo-image {
+        width: 40vw;
+    }
+
     header {
         flex-direction: column;
     }
 
-
     .nav__links li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
     }
 
     .select-container {
         flex-wrap: wrap;
+    }
+
+    .scale-select {
+        font-size: 4vw;
+    }
+
+    .chord-presets button {
+        width: 10rem;
+    }
+
+    .key-select {
+        font-size: 2.5rem;
+        width: fit-content;
+        height: 6rem;
+    }
+
+    .interval {
+        font-size: 2.5rem;
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .chord-image {
+        width: 15vw;
     }
 
 }
