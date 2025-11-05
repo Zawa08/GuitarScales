@@ -363,7 +363,7 @@ input:checked+.slider:before {
     height: 10rem;
 }
 
-.changediff-btn{
+.changediff-btn {
     text-align: center;
 }
 
@@ -372,7 +372,7 @@ input:checked+.slider:before {
         font-size: 40%;
     }
 
-    h1{
+    h1 {
         font-size: 5rem;
     }
 
@@ -391,10 +391,21 @@ input:checked+.slider:before {
         flex-wrap: wrap;
     }
 
-    .chord-presets button{
+    .chord-presets button {
         width: 10rem;
     }
 
+    .key-select {
+        font-size: 2.5rem;
+        width: fit-content;
+        height: 6rem;
+    }
+
+    .interval {
+        font-size: 2.5rem;
+        width: 6rem;
+        height: 6rem;
+    }
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
