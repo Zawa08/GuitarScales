@@ -363,6 +363,9 @@ input:checked+.slider:before {
     height: 10rem;
 }
 
+.changediff-btn{
+    text-align: center;
+}
 
 @media (max-width: 700px) {
     html {
@@ -388,7 +391,7 @@ input:checked+.slider:before {
     .chord-presets button{
         width: 10rem;
     }
-    
+
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
