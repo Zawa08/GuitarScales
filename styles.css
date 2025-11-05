@@ -183,10 +183,15 @@ button {
 }
 
 .diff-btn {
+    background-color: #5ab1e3;
     font-size: 2vw;
     padding: 0.8rem;
     width: 20vw;
     height: 8vh;
+}
+
+.diff-btn:hover {
+    background-color: #4586ac;
 }
 
 .diff-select {
@@ -372,9 +377,14 @@ input:checked+.slider:before {
 }
 
 .changediff-btn {
+    background-color: #5ab1e3;
     padding: 1rem;
     text-align: center;
     font-size: 2vw;
+}
+
+.changediff-btn:hover{
+    background-color: #4586ac;
 }
 
 .practice-chords {
@@ -458,6 +468,11 @@ input:checked+.slider:before {
         font-size: 3vw;
         width: 15vw;
         height: 10vw;
+    }
+
+    .diff-btn {
+        width: 25vw;
+        font-size: 3vw;
     }
 
     .changediff-btn {
