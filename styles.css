@@ -178,7 +178,7 @@ button {
 .remove-btn {
     font-size: 2vw;
     width: 12vw;
-    height: 8vh;
+    height: 10vh;
 }
 
 .diff-btn {
@@ -418,6 +418,10 @@ input:checked+.slider:before {
     .chord-image {
         width: 15vw;
     }
+
+    .remove-btn {
+        height: 6vh;
+    }
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
@@ -468,4 +472,7 @@ input:checked+.slider:before {
         width: 15vw;
     }
 
+    .remove-btn {
+        height: 6vh;
+    }
 }
