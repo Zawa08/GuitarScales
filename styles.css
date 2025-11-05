@@ -126,12 +126,12 @@ footer {
 }
 
 .scale-list li {
-    margin: 1rem;
+    margin: 0.8vw;
     background-color: #5ab1e3;
     border: none;
     border-radius: 0.2rem;
     padding: 0.8rem;
-    font-size: 5rem;
+    font-size: 5vw;
 }
 
 .select-container {
