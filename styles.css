@@ -33,10 +33,10 @@ footer {
 }
 
 h1 {
-    font-size: 6vw;
+    font-size: 5vw;
     text-align: center;
-    margin-top: 10vh;
-    margin-bottom: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
 }
 
 h2 {
@@ -175,7 +175,8 @@ button {
 
 .remove-btn {
     font-size: 1.8rem;
-    width: 15rem;
+    width: 14vw;
+    height: 6vh;
 }
 
 .diff-btn {
