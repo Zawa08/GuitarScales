@@ -33,7 +33,7 @@ footer {
 }
 
 h1 {
-    font-size: 5vw;
+    font-size: 6vw;
     text-align: center;
     margin-top: 5vh;
     margin-bottom: 3vh;
@@ -374,7 +374,7 @@ input:checked+.slider:before {
         font-size: 40%;
     }
 
-    .logo-image{
+    .logo-image {
         width: 40vw;
     }
 
@@ -393,6 +393,10 @@ input:checked+.slider:before {
         flex-wrap: wrap;
     }
 
+    .scale-select {
+        font-size: 4vw;
+    }
+
     .chord-presets button {
         width: 10rem;
     }
@@ -409,7 +413,7 @@ input:checked+.slider:before {
         height: 6rem;
     }
 
-    .chord-alters{
+    .chord-alters {
         width: fit-content;
     }
 }
