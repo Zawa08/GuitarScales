@@ -10,7 +10,7 @@
 }
 
 body {
-    padding: 30px 5%;
+    padding: 5vh 5%;
 }
 
 
@@ -33,14 +33,14 @@ footer {
 }
 
 h1 {
-    font-size: 7rem;
+    font-size: 6vw;
     text-align: center;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 3vw;
 }
 
 p {
@@ -58,7 +58,7 @@ header {
 }
 
 .logo-image {
-    width: 25rem;
+    width: 20vw;
     height: auto;
     align-self: start;
 }
@@ -66,7 +66,6 @@ header {
 .nav__links {
     display: flex;
     flex-direction: row;
-
     justify-content: space-evenly;
     list-style: none;
 }
@@ -102,7 +101,7 @@ main {
 
 footer {
     text-align: center;
-    margin-top: 30%;
+    margin-top: 40vh;
 }
 
 /*Learn scales*/
@@ -242,10 +241,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 10rem;
+    height: 8rem;
     margin: 1rem 2.5rem;
     background-color: #5ab1e3;
 }
+
+/*Switch*/
 
 .chord-alters input {
     margin: 1rem 1rem;
@@ -260,7 +261,7 @@ label {
     background-color: #5ab1e3;
 }
 
-/*Switch*/
+
 
 .switch {
     position: relative;
@@ -372,10 +373,6 @@ input:checked+.slider:before {
         font-size: 40%;
     }
 
-    h1 {
-        font-size: 5rem;
-    }
-
     header {
         flex-direction: column;
     }
@@ -405,6 +402,10 @@ input:checked+.slider:before {
         font-size: 2.5rem;
         width: 6rem;
         height: 6rem;
+    }
+
+    .chord-alters{
+        width: fit-content;
     }
 }
 
