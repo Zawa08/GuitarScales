@@ -33,14 +33,14 @@ footer {
 }
 
 h1 {
-    font-size: 6vw;
+    font-size: 4vw;
     text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
 }
 
 h2 {
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 p {
@@ -203,11 +203,11 @@ button {
     background-color: #5ab1e3;
     border: none;
     border-radius: 0.2rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .chord-image {
-    width: 10rem;
+    width: 8vw;
 }
 
 .chord-presets {
@@ -413,8 +413,8 @@ input:checked+.slider:before {
         height: 6rem;
     }
 
-    .chord-alters {
-        width: fit-content;
+    .chord-image {
+        width: 15vw;
     }
 }
 
