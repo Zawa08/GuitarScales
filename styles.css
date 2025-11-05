@@ -374,6 +374,10 @@ input:checked+.slider:before {
         font-size: 40%;
     }
 
+    .logo-image{
+        width: 40vw;
+    }
+
     header {
         flex-direction: column;
     }
