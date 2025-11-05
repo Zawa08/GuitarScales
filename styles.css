@@ -416,11 +416,15 @@ input:checked+.slider:before {
     }
 
     .chord-image {
-        width: 15vw;
+        width: 20vw;
     }
 
     .remove-btn {
         height: 6vh;
+    }
+
+    .chord-customizations {
+        flex-direction: column;
     }
 }
 
