@@ -1,97 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GuitarScales – Chord progression</title>
-    <link rel="icon" type="image/x-icon" href="./Images/logo.svg">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="icon" type="image/x-icon" href="./Images/logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="logo">
-            <a href="index.html"><img class="logo-image" src="Images\logo.svg" alt="logo"></a>
-        </div>
-        <nav>
-            <ul class="nav__links">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="LearnScales.html">Learn scales</a>
-                </li>
-                <li>
-                    <a href="LearnChords.html">Learn chords</a>
-                </li>
-                <li>
-                    <a href="ChordProgression.html">Chord
-                        progression</a>
-                </li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <a href="index.html"
+          ><img class="logo-image" src="Images\logo.svg" alt="logo"
+        /></a>
+      </div>
+      <nav>
+        <ul class="nav__links">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="LearnScales.html">Learn scales</a>
+          </li>
+          <li>
+            <a href="LearnChords.html">Learn chords</a>
+          </li>
+          <li>
+            <a href="ChordProgression.html">Chord progression</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <h1>Chord progression</h1>
 
     <div class="chord-customizations">
-        <div class="chord-presets">
-            <button id="Major">Major</button>
-            <button id="MajorMinor">Major with Minor</button>
-            <button id="BluesTwelve">12 bar blues</button>
-        </div>
+      <div class="chord-presets">
+        <button id="Major">Major</button>
+        <button id="MajorMinor">Major with Minor</button>
+        <button id="BluesTwelve">12 bar blues</button>
+      </div>
 
-        <div class="chord-alters">
-            <label class="switch">
-                <input type="checkbox" id="checkbox-seven" name="checkbox-seven">
-                <span class="slider round"></span>
-                <label for="checkbox-seven">Add 7</label>
-            </label>
-        </div>
+      <div class="chord-alters">
+        <label class="switch">
+          <input type="checkbox" id="checkbox-seven" name="checkbox-seven" />
+          <span class="slider round"></span>
+          <label for="checkbox-seven">Add 7</label>
+        </label>
+      </div>
     </div>
 
     <div class="select-container">
-        <select class="key-select" id="key-select">
-            <option value="C">C major</option>
-            <option value="CSharp">C# major</option>
-            <option value="DFlat">D♭ major</option>
-            <option value="D">D major</option>
-            <option value="DSharp">D# major</option>
-            <option value="EFlat">E♭ major</option>
-            <option value="E">E major</option>
-            <option value="F">F major</option>
-            <option value="FSharp">F# major</option>
-            <option value="GFlat">G♭ major</option>
-            <option value="G">G major</option>
-            <option value="GSharp">G# major</option>
-            <option value="AFlat">A♭ major</option>
-            <option value="A">A major</option>
-            <option value="ASharp">A# major</option>
-            <option value="BFlat">B♭ major</option>
-            <option value="B">B major</option>
-        </select>
+      <select class="key-select" id="key-select">
+        <option value="C">C major</option>
+        <option value="CSharp">C# major</option>
+        <option value="DFlat">D♭ major</option>
+        <option value="D">D major</option>
+        <option value="DSharp">D# major</option>
+        <option value="EFlat">E♭ major</option>
+        <option value="E">E major</option>
+        <option value="F">F major</option>
+        <option value="FSharp">F# major</option>
+        <option value="GFlat">G♭ major</option>
+        <option value="G">G major</option>
+        <option value="GSharp">G# major</option>
+        <option value="AFlat">A♭ major</option>
+        <option value="A">A major</option>
+        <option value="ASharp">A# major</option>
+        <option value="BFlat">B♭ major</option>
+        <option value="B">B major</option>
+      </select>
 
-        <button id="0" class="interval">I</button>
-        <button id="1" class="interval">ii</button>
-        <button id="2" class="interval">iii</button>
-        <button id="3" class="interval">IV</button>
-        <button id="4" class="interval">V</button>
-        <button id="5" class="interval">vi</button>
-        <button id="6" class="interval">vii°</button>
-
+      <button id="0" class="interval">I</button>
+      <button id="1" class="interval">ii</button>
+      <button id="2" class="interval">iii</button>
+      <button id="3" class="interval">IV</button>
+      <button id="4" class="interval">V</button>
+      <button id="5" class="interval">vi</button>
+      <button id="6" class="interval">vii°</button>
     </div>
 
     <div class="chords-container">
-            <div id="chords"></div>
-        <div class="chord-buttons">
-            <button id="remove-btn" class="remove-btn">REMOVE</button>
-            <button id="remove-all-btn" class="remove-btn">REMOVE ALL</button>
-        </div>
-
+      <div id="chords"></div>
+      <div class="chord-buttons">
+        <button id="remove-btn" class="remove-btn">REMOVE</button>
+        <button id="remove-all-btn" class="remove-btn">REMOVE ALL</button>
+      </div>
     </div>
 
     <script type="module" src="ChordProgression.js"></script>
-</body>
-
+  </body>
 </html>
