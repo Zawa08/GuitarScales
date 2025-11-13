@@ -5,71 +5,71 @@ export const Scales = {
     },
 
     C: {
-      notes: ["C", "D", "E", "F", "G", "A", "B"],
+      notes: ["C", "D", "E", "F", "G", "A", "B", "C"],
     },
 
     CSharp: {
-      notes: ["C#", "D#", "E#", "F#", "G#", "A#", "B#"],
+      notes: ["C#", "D#", "E#", "F#", "G#", "A#", "B#", "C#"],
     },
 
     DFlat: {
-      notes: ["Db", "Eb", "F", "Gb", "Ab", "Bb", "C"],
+      notes: ["Db", "Eb", "F", "Gb", "Ab", "Bb", "C", "Db"],
     },
 
     D: {
-      notes: ["D", "E", "F#", "G", "A", "B", "C#"],
+      notes: ["D", "E", "F#", "G", "A", "B", "C#", "D"],
     },
 
     DSharp: {
-      notes: ["D#", "E#", "F##", "G#", "A#", "B#", "C##"],
+      notes: ["D#", "E#", "F##", "G#", "A#", "B#", "C##", "D#"],
     },
 
     EFlat: {
-      notes: ["Eb", "F", "G", "Ab", "Bb", "C", "D"],
+      notes: ["Eb", "F", "G", "Ab", "Bb", "C", "D", "Eb"],
     },
 
     E: {
-      notes: ["E", "F#", "G#", "A", "B", "C#", "D#"],
+      notes: ["E", "F#", "G#", "A", "B", "C#", "D#", "E"],
     },
 
     F: {
-      notes: ["F", "G", "A", "Bb", "C", "D", "E"],
+      notes: ["F", "G", "A", "Bb", "C", "D", "E", "F"],
     },
 
     FSharp: {
-      notes: ["F#", "G#", "A#", "B", "C#", "D#", "E#"],
+      notes: ["F#", "G#", "A#", "B", "C#", "D#", "E#", "F#"],
     },
 
     GFlat: {
-      notes: ["Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F"],
+      notes: ["Gb", "Ab", "Bb", "Cb", "Db", "Eb", "F", "Gb"],
     },
 
     G: {
-      notes: ["G", "A", "B", "C", "D", "E", "F#"],
+      notes: ["G", "A", "B", "C", "D", "E", "F#", "G"],
     },
 
     GSharp: {
-      notes: ["G#", "A#", "B#", "C#", "D#", "E#", "F##"],
+      notes: ["G#", "A#", "B#", "C#", "D#", "E#", "F##", "G#"],
     },
 
     AFlat: {
-      notes: ["Ab", "Bb", "C", "Db", "Eb", "F", "G"],
+      notes: ["Ab", "Bb", "C", "Db", "Eb", "F", "G", "Ab"],
     },
 
     A: {
-      notes: ["A", "B", "C#", "D", "E", "F#", "G#"],
+      notes: ["A", "B", "C#", "D", "E", "F#", "G#", "A"],
     },
 
     ASharp: {
-      notes: ["A#", "B#", "C##", "D#", "E#", "F##", "G##"],
+      notes: ["A#", "B#", "C##", "D#", "E#", "F##", "G##", "A#"],
     },
 
     BFlat: {
-      notes: ["Bb", "C", "D", "Eb", "F", "G", "A"],
+      notes: ["Bb", "C", "D", "Eb", "F", "G", "A", "Bb"],
     },
 
     B: {
-      notes: ["B", "C#", "D#", "E", "F#", "G#", "A#"],
+      notes: ["B", "C#", "D#", "E", "F#", "G#", "A#", "B"],
     },
   },
   Minor: {},
