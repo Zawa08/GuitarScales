@@ -411,7 +411,7 @@ export const Preset = {
     intervals: [0, 5, 3, 4],
   },
   BluesTwelve: {
-    intervals: [7, 7, 7, 7, 10, 10, 7, 7, 11, 10, 7, 11],
+    intervals: [0, 0, 0, 0, 3, 3, 0, 0, 11, 3, 1, 11],
   },
 };
 
