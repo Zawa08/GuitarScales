@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <svg id="canvas" width="350" height="450"></svg>
+    <svg id="canvas" width="350" height="650"></svg>
     <script>
       const svgNS = "http://www.w3.org/2000/svg";
 
@@ -46,16 +46,18 @@
 
       function createDiagram() {
         const svg = document.getElementById("canvas");
+        const width = 350;
+        const height = 500;
         const initXPos = 50;
         const circleYPos = 100;
         const strokeWidth = 1;
         for (let i = 0; i < 4; i++) {
-          let fretXPos = initXPos + i * 100;
+          let fretXPos = initXPos + i * (height / 4);
           svg.appendChild(
             createLine(
               initXPos - strokeWidth / 2,
               fretXPos,
-              300 + strokeWidth / 2,
+              width - 50 + strokeWidth / 2,
               fretXPos,
               strokeWidth,
             ),
@@ -63,9 +65,15 @@
         }
 
         for (let i = 0; i < 6; i++) {
-          let stringXPos = initXPos + i * 50;
+          let stringXPos = initXPos + i * initXPos;
           svg.appendChild(
-            createLine(stringXPos, initXPos, stringXPos, 350, strokeWidth),
+            createLine(
+              stringXPos,
+              initXPos,
+              stringXPos,
+              height - initXPos,
+              strokeWidth,
+            ),
           );
           svg.appendChild(createCircle(stringXPos, circleYPos, 20, i));
           svg.appendChild(writeNumber(stringXPos, circleYPos, i.toString()));
