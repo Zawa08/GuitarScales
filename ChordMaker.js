@@ -1,6 +1,4 @@
 const svgNS = "http://www.w3.org/2000/svg";
-const width = 400;
-const height = 600;
 
 const initXPos = 50;
 const initYPos = 50;
@@ -9,7 +7,6 @@ const stringGap = 60;
 const fretGap = 150;
 
 const fingerRadius = 25;
-const initFingerYPos = initYPos + height / 8;
 
 const strokeWidth = 1;
 
@@ -57,7 +54,7 @@ function createFinger(parentObject, x, y, number, color) {
   parentObject.appendChild(writeNumber(x, y, number));
 }
 
-function createBarre(barreStart) {
+function createBarre(barreStart, height) {
   const barre = document.createElementNS(svgNS, "rect");
   barre.setAttribute("fill", "red");
   barre.setAttribute("x", initXPos + stringGap * barreStart);
@@ -68,7 +65,7 @@ function createBarre(barreStart) {
   return barre;
 }
 
-function createBackground() {
+function createBackground(width, height) {
   const background = document.createElementNS(svgNS, "rect");
   background.setAttribute("fill", "white");
   background.setAttribute("x", 0);
@@ -78,8 +75,13 @@ function createBackground() {
   return background;
 }
 
-function createDiagram(parentObject, fingerPositions) {
-  parentObject.appendChild(createBackground());
+export function createDiagram(parentObject, fingerPositions) {
+  const rect = parentObject.getBoundingClientRect();
+  const width = rect.width;
+  const height = rect.height;
+  const initFingerYPos = initYPos + height / 8;
+
+  parentObject.appendChild(createBackground(width, height));
 
   for (let i = 0; i < 4; i++) {
     let fretYPos = initYPos + i * (height / 4);
@@ -110,7 +112,7 @@ function createDiagram(parentObject, fingerPositions) {
   for (let i = 0; i < fingerPositions.length; i++) {
     if (fingerPositions[i][0] == "barre") {
       const barreStart = fingerPositions[i][1];
-      parentObject.appendChild(createBarre(barreStart));
+      parentObject.appendChild(createBarre(barreStart, height));
       parentObject.appendChild(
         writeNumber(
           endXPos - (stringGap * (5 - barreStart)) / 2,

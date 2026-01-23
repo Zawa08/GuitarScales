@@ -1,4 +1,8 @@
 import { Keys, Preset } from "./Scales.js";
+import { createDiagram } from "./ChordMaker.js";
+
+const chord = document.getElementById("canvas");
+createDiagram(chord, [[1, 1]]);
 
 const KeySelect = document.getElementById("key-select");
 
