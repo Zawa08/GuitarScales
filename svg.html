@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <svg id="canvas" width="200" height="200"></svg>
+
+    <script>
+      const svgNS = "http://www.w3.org/2000/svg";
+      const svg = document.getElementById("canvas");
+
+      const circle = document.createElementNS(svgNS, "circle");
+      circle.setAttribute("cx", 100);
+      circle.setAttribute("cy", 100);
+      circle.setAttribute("r", 50);
+      circle.setAttribute("fill", "green");
+
+      const line = document.createElementNS(svgNS, "line");
+      line.setAttribute("x1", 20);
+      line.setAttribute("y1", 20);
+      line.setAttribute("x2", 250);
+      line.setAttribute("y2", 150);
+      line.setAttribute("stroke", "black");
+      line.setAttribute("stroke-width", 3);
+
+      svg.appendChild(circle);
+      svg.appendChild(line);
+    </script>
+  </body>
+</html>
