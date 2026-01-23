@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   background-color: #24252a;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -24,7 +25,6 @@ button,
 select,
 option,
 footer {
-  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
   color: #edf0f1;
