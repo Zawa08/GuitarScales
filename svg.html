@@ -7,10 +7,16 @@
   </head>
   <body>
     <svg id="canvas" width="200" height="200"></svg>
-
+    <svg width="200" height="200">
+      <rect width="200" height="200" fill="white" />
+      <circle cx="100" cy="100" r="50" fill="red" />
+    </svg>
     <script>
       const svgNS = "http://www.w3.org/2000/svg";
       const svg = document.getElementById("canvas");
+
+      const rectangle = document.createElementNS(svgNS, "rect");
+      rectangle.setAttribute("");
 
       const circle = document.createElementNS(svgNS, "circle");
       circle.setAttribute("cx", 100);
@@ -19,13 +25,14 @@
       circle.setAttribute("fill", "green");
 
       const line = document.createElementNS(svgNS, "line");
-      line.setAttribute("x1", 20);
-      line.setAttribute("y1", 20);
-      line.setAttribute("x2", 250);
-      line.setAttribute("y2", 150);
+      line.setAttribute("x1", 0);
+      line.setAttribute("y1", 100);
+      line.setAttribute("x2", 200);
+      line.setAttribute("y2", 100);
       line.setAttribute("stroke", "black");
       line.setAttribute("stroke-width", 3);
 
+      svg.appendChild(rectangle);
       svg.appendChild(circle);
       svg.appendChild(line);
     </script>
