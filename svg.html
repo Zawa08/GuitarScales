@@ -6,17 +6,16 @@
     <title>Document</title>
   </head>
   <body>
-    <svg id="canvas" width="600" height="300"></svg>
+    <svg id="canvas" width="350" height="300"></svg>
     <script>
       const svgNS = "http://www.w3.org/2000/svg";
-      const svg = document.getElementById("canvas");
 
-      function createCircle(x, y, radius) {
+      function createCircle(x, y, radius, color) {
         const circle = document.createElementNS(svgNS, "circle");
         circle.setAttribute("cx", x);
         circle.setAttribute("cy", y);
         circle.setAttribute("r", radius);
-        circle.setAttribute("fill", "green");
+        circle.setAttribute("fill", color);
         return circle;
       }
 
@@ -31,11 +30,29 @@
         return line;
       }
 
-      let initXPos = 202;
-      for (let i = 0; i < 6; i++) {
-        svg.appendChild(createLine(2 + i * 50, 0, 2 + i * 50, 300, 2));
-        svg.appendChild(createCircle(2 + i * 50, 150, 50));
+      function writeNumber(x, y, number) {
+        const text = document.createElementNS(svgNS, "text");
+        const fontSize = 25;
+        text.style.fontSize = fontSize;
+        text.setAttribute("x", x - fontSize);
+        text.setAttribute("y", y);
+        text.innerHTML = number;
+        return text;
       }
+
+      function createDiagram() {
+        const svg = document.getElementById("canvas");
+        const initXPos = 50;
+        const circleYPos = 150;
+        for (let i = 0; i < 6; i++) {
+          let stringXPos = initXPos + i * 50;
+          svg.appendChild(createLine(stringXPos, 0, stringXPos, 300, 2));
+          svg.appendChild(createCircle(stringXPos, circleYPos, 20, "green"));
+          svg.appendChild(writeNumber(stringXPos, circleYPos, i.toString()));
+        }
+      }
+
+      createDiagram();
     </script>
   </body>
 </html>
