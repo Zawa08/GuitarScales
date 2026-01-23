@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <svg id="canvas" width="200" height="200"></svg>
+    <svg id="canvas" width="600" height="300"></svg>
     <script>
       const svgNS = "http://www.w3.org/2000/svg";
       const svg = document.getElementById("canvas");
@@ -31,8 +31,11 @@
         return line;
       }
 
-      svg.appendChild(createCircle(100, 100, 50));
-      svg.appendChild(createLine(0, 0, 100, 0, 5));
+      let initXPos = 202;
+      for (let i = 0; i < 6; i++) {
+        svg.appendChild(createLine(2 + i * 50, 0, 2 + i * 50, 300, 2));
+        svg.appendChild(createCircle(2 + i * 50, 150, 50));
+      }
     </script>
   </body>
 </html>
