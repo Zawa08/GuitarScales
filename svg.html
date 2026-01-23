@@ -6,17 +6,18 @@
     <title>Document</title>
   </head>
   <body>
-    <svg id="canvas" width="350" height="300"></svg>
+    <svg id="canvas" width="350" height="450"></svg>
     <script>
       const svgNS = "http://www.w3.org/2000/svg";
 
       function createCircle(x, y, radius, color) {
         const circle = document.createElementNS(svgNS, "circle");
-        const colors = ["red", "green", "blue", "yellow", "purple", "white"];
+        const colors = ["red", "green", "blue", "orange", "purple", "black"];
         circle.setAttribute("cx", x);
         circle.setAttribute("cy", y);
         circle.setAttribute("r", radius);
         circle.setAttribute("stroke", "black");
+        circle.setAttribute("stroke-width", 1);
         circle.setAttribute("fill", colors[color]);
         return circle;
       }
@@ -28,7 +29,7 @@
         line.setAttribute("x2", x2);
         line.setAttribute("y2", y2);
         line.setAttribute("stroke", "black");
-        line.setAttribute("stroke-width", 5);
+        line.setAttribute("stroke-width", strokeWidth);
         return line;
       }
 
@@ -36,6 +37,7 @@
         const text = document.createElementNS(svgNS, "text");
         const fontSize = 30;
         text.style.fontSize = fontSize;
+        text.setAttribute("fill", "white");
         text.setAttribute("x", x - fontSize / 4);
         text.setAttribute("y", y + fontSize / 3);
         text.innerHTML = number;
@@ -45,14 +47,26 @@
       function createDiagram() {
         const svg = document.getElementById("canvas");
         const initXPos = 50;
-        const circleYPos = 150;
+        const circleYPos = 100;
+        const strokeWidth = 1;
         for (let i = 0; i < 4; i++) {
-          let fretXPos = initXPos + i * 50;
-          svg.appendChild(createLine(0, fretXPos, 0, fretXPos, 2));
+          let fretXPos = initXPos + i * 100;
+          svg.appendChild(
+            createLine(
+              initXPos - strokeWidth / 2,
+              fretXPos,
+              300 + strokeWidth / 2,
+              fretXPos,
+              strokeWidth,
+            ),
+          );
         }
+
         for (let i = 0; i < 6; i++) {
           let stringXPos = initXPos + i * 50;
-          svg.appendChild(createLine(stringXPos, 0, stringXPos, 300, 2));
+          svg.appendChild(
+            createLine(stringXPos, initXPos, stringXPos, 350, strokeWidth),
+          );
           svg.appendChild(createCircle(stringXPos, circleYPos, 20, i));
           svg.appendChild(writeNumber(stringXPos, circleYPos, i.toString()));
         }
