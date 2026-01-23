@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <svg id="canvas" width="350" height="650"></svg>
+    <svg id="canvas" width="400" height="600"></svg>
     <script>
       const svgNS = "http://www.w3.org/2000/svg";
 
@@ -44,43 +44,70 @@
         return text;
       }
 
-      function createDiagram() {
+      function createFinger(parentObject, x, y, number, color) {
+        const circleRadius = 25;
+        parentObject.appendChild(createCircle(x, y, circleRadius, color));
+        parentObject.appendChild(writeNumber(x, y, number));
+      }
+
+      function createDiagram(fingerPositions) {
         const svg = document.getElementById("canvas");
-        const width = 350;
-        const height = 500;
+        const width = 400;
+        const height = 600;
         const initXPos = 50;
-        const circleYPos = 100;
+        const initYPos = 50;
+        const stringGap = 60;
+        const fretGap = 150;
+        const initFingerYPos = initYPos + height / 8;
         const strokeWidth = 1;
+
         for (let i = 0; i < 4; i++) {
-          let fretXPos = initXPos + i * (height / 4);
+          let fretYPos = initYPos + i * (height / 4);
           svg.appendChild(
             createLine(
               initXPos - strokeWidth / 2,
-              fretXPos,
+              fretYPos,
               width - 50 + strokeWidth / 2,
-              fretXPos,
+              fretYPos,
               strokeWidth,
             ),
           );
         }
 
         for (let i = 0; i < 6; i++) {
-          let stringXPos = initXPos + i * initXPos;
+          let stringXPos = initXPos + i * stringGap;
           svg.appendChild(
             createLine(
               stringXPos,
-              initXPos,
+              initYPos,
               stringXPos,
-              height - initXPos,
+              height + initYPos - height / 4,
               strokeWidth,
             ),
           );
-          svg.appendChild(createCircle(stringXPos, circleYPos, 20, i));
-          svg.appendChild(writeNumber(stringXPos, circleYPos, i.toString()));
+        }
+
+        for (let i = 0; i < fingerPositions.length; i++) {
+          let fingerX = fingerPositions[i][0];
+          let fingerY = fingerPositions[i][1];
+          createFinger(
+            svg,
+            initXPos + stringGap * fingerX,
+            initFingerYPos + fretGap * fingerY,
+            i + 1,
+            i,
+          );
         }
       }
 
-      createDiagram();
+      createDiagram([
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+      ]);
     </script>
   </body>
 </html>
