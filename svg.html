@@ -9,16 +9,27 @@
     <svg id="canvas" width="400" height="600"></svg>
     <script>
       const svgNS = "http://www.w3.org/2000/svg";
+      const svg = document.getElementById("canvas");
+      const width = 400;
+      const height = 600;
+      const initXPos = 50;
+      const initYPos = 50;
+      const stringGap = 60;
+      const fretGap = 150;
+      const fingerRadius = 25;
+      const initFingerYPos = initYPos + height / 8;
+      const strokeWidth = 1;
 
-      function createCircle(x, y, radius, color) {
+      function createCircle(x, y, color) {
         const circle = document.createElementNS(svgNS, "circle");
         const colors = ["red", "green", "blue", "orange", "purple", "black"];
         circle.setAttribute("cx", x);
         circle.setAttribute("cy", y);
-        circle.setAttribute("r", radius);
+        circle.setAttribute("r", fingerRadius);
         circle.setAttribute("stroke", "black");
         circle.setAttribute("stroke-width", 1);
         circle.setAttribute("fill", colors[color]);
+
         return circle;
       }
 
@@ -30,6 +41,7 @@
         line.setAttribute("y2", y2);
         line.setAttribute("stroke", "black");
         line.setAttribute("stroke-width", strokeWidth);
+
         return line;
       }
 
@@ -41,26 +53,27 @@
         text.setAttribute("x", x - fontSize / 4);
         text.setAttribute("y", y + fontSize / 3);
         text.innerHTML = number;
+
         return text;
       }
 
-      function createFinger(parentObject, x, y, number, color) {
-        const circleRadius = 25;
-        parentObject.appendChild(createCircle(x, y, circleRadius, color));
-        parentObject.appendChild(writeNumber(x, y, number));
+      function createFinger(x, y, number, color) {
+        svg.appendChild(createCircle(x, y, color));
+        svg.appendChild(writeNumber(x, y, number));
+      }
+
+      function createBarre(barreStart) {
+        const barre = document.createElementNS(svgNS, "rect");
+        barre.setAttribute("fill", "red");
+        barre.setAttribute("x", initXPos + stringGap * barreStart);
+        barre.setAttribute("y", initYPos + height / 8 - fingerRadius);
+        barre.setAttribute("width", stringGap * (5 - barreStart));
+        barre.setAttribute("height", fingerRadius * 2);
+
+        return barre;
       }
 
       function createDiagram(fingerPositions) {
-        const svg = document.getElementById("canvas");
-        const width = 400;
-        const height = 600;
-        const initXPos = 50;
-        const initYPos = 50;
-        const stringGap = 60;
-        const fretGap = 150;
-        const initFingerYPos = initYPos + height / 8;
-        const strokeWidth = 1;
-
         for (let i = 0; i < 4; i++) {
           let fretYPos = initYPos + i * (height / 4);
           svg.appendChild(
@@ -88,25 +101,32 @@
         }
 
         for (let i = 0; i < fingerPositions.length; i++) {
-          let fingerX = fingerPositions[i][0];
-          let fingerY = fingerPositions[i][1];
-          createFinger(
-            svg,
-            initXPos + stringGap * fingerX,
-            initFingerYPos + fretGap * fingerY,
-            i + 1,
-            i,
-          );
+          if (fingerPositions[i][0] == "barre") {
+            const barreStart = fingerPositions[i][1];
+            svg.appendChild(createBarre(barreStart));
+            svg.appendChild(
+              writeNumber(
+                initXPos + stringGap * ((4 - barreStart) / 2 + 0.5),
+                initFingerYPos,
+                1,
+              ),
+            );
+          } else {
+            let fingerX = fingerPositions[i][0];
+            let fingerY = fingerPositions[i][1];
+            createFinger(
+              initXPos + stringGap * fingerX,
+              initFingerYPos + fretGap * fingerY,
+              i + 1,
+              i,
+            );
+          }
         }
       }
 
       createDiagram([
-        [0, 0],
-        [1, 0],
-        [2, 0],
-        [3, 0],
-        [4, 0],
-        [5, 0],
+        ["barre", 0],
+        [0, 1],
       ]);
     </script>
   </body>
