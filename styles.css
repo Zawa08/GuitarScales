@@ -200,7 +200,7 @@ button {
   align-items: center;
 }
 
-.chord-list {
+#chord-list {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -260,6 +260,8 @@ button {
 svg {
   width: 400px;
   height: 550px;
+  transform: scale(0.5);
+  transform-origin: center center;
 }
 
 /*Switch*/

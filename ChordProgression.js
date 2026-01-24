@@ -1,9 +1,6 @@
 import { Keys, Preset } from "./Scales.js";
 import { createDiagram } from "./ChordMaker.js";
 
-const chord = document.getElementById("canvas");
-createDiagram(chord, [[1, 1]]);
-
 const KeySelect = document.getElementById("key-select");
 
 let SevenChecked = false;
@@ -89,19 +86,20 @@ function RemoveAllChords() {
 function UpdateList() {
   ChordImage = [];
   getChords();
-  document.getElementById("chords").innerHTML = createList();
+  createList();
 }
 
 function createList() {
-  let chordList = "<ol class='chord-list'>";
+  const chordList = document.getElementById("chord-list");
   Chords.forEach((chord) => {
-    ChordImage = "Images/Chords/" + chord + ".svg";
-    const img =
-      "<img class='chord-image' src=" + ChordImage + " alt=" + chord + ">";
-    chordList += "<li>" + img + "</li>";
+    // ChordImage = "Images/Chords/" + chord + ".svg";
+    // "<img class='chord-image' src=" + ChordImage + " alt=" + chord + ">";
+    const li = document.createElement("li");
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    createDiagram(svg, chord);
+    li.appendChild(svg);
+    chordList.appendChild(li);
   });
-  chordList += "</ol>";
-  return chordList;
 }
 
 function intervalButtons() {

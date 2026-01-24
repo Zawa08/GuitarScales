@@ -1,3 +1,5 @@
+import { Keys } from "./Scales.js";
+
 const svgNS = "http://www.w3.org/2000/svg";
 
 const initXPos = 50;
@@ -75,10 +77,10 @@ function createBackground(width, height) {
   return background;
 }
 
-export function createDiagram(parentObject, fingerPositions) {
-  const rect = parentObject.getBoundingClientRect();
-  const width = rect.width;
-  const height = rect.height;
+export function createDiagram(parentObject, chord) {
+  const width = 400;
+  const height = 600;
+
   const initFingerYPos = initYPos + height / 8;
 
   parentObject.appendChild(createBackground(width, height));
