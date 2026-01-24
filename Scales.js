@@ -411,7 +411,12 @@ export const ChordDiagrams = {
       [3, 2],
       [2, 3],
     ],
-    minor: [],
+    minor: [
+      ["barre", 2],
+      [5, 2],
+      [3, 3],
+      [4, 3],
+    ],
     diminished: [],
     seventh: [],
     minorSeventh: [],
@@ -425,7 +430,7 @@ export const ChordDiagrams = {
     minorSeventh: [],
     diminishedSeventh: [],
   },
-  DFlat: {
+  Db: {
     major: [],
     minor: [],
     diminished: [],
@@ -449,7 +454,7 @@ export const ChordDiagrams = {
     minorSeventh: [],
     diminishedSeventh: [],
   },
-  EFlat: {
+  Eb: {
     major: [],
     minor: [],
     diminished: [],
@@ -481,7 +486,7 @@ export const ChordDiagrams = {
     minorSeventh: [],
     diminishedSeventh: [],
   },
-  GFlat: {
+  Gb: {
     major: [],
     minor: [],
     diminished: [],
@@ -505,7 +510,7 @@ export const ChordDiagrams = {
     minorSeventh: [],
     diminishedSeventh: [],
   },
-  AFlat: {
+  Ab: {
     major: [],
     minor: [],
     diminished: [],
@@ -529,7 +534,7 @@ export const ChordDiagrams = {
     minorSeventh: [],
     diminishedSeventh: [],
   },
-  BFlat: {
+  Bb: {
     major: [],
     minor: [],
     diminished: [],

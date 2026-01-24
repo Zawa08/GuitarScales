@@ -5,37 +5,32 @@ const KeySelect = document.getElementById("key-select");
 
 let SevenChecked = false;
 let Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
+let ChordIntervals = [];
 
-function getInterval(interval) {
+function getChord(interval) {
   const button = document.getElementById(interval);
+  let chordName = "";
+  let chordPosition = [];
   button.addEventListener("click", () => {
-    if (SevenChecked) {
-      let newInterval = interval + 7;
-      if (Key[newInterval].length === 2) {
-        createChord(
-          Key[newInterval],
-          ChordDiagrams[Key[newInterval]]["seventh"],
-        );
-      } else if (Key[newInterval].length === 3) {
-        createChord(
-          Key[newInterval],
-          ChordDiagrams[Key[newInterval]]["minorSeventh"],
-        );
-      } else {
-        createChord(
-          Key[newInterval],
-          ChordDiagrams[Key[newInterval]]["diminishedSeventh"],
-        );
-      }
+    if (interval === 0 || interval === 3 || interval === 4) {
+      chordName = Key[interval] + (SevenChecked ? "7" : "");
+      chordPosition =
+        ChordDiagrams[Key[interval]][SevenChecked ? "seventh" : "major"];
+    } else if (interval === 1 || interval === 2 || interval === 5) {
+      chordName = Key[interval] + (SevenChecked ? "m7" : "m");
+      chordPosition =
+        ChordDiagrams[Key[interval]][SevenChecked ? "minorSeventh" : "minor"];
     } else {
-      if (Key[interval].length === 1) {
-        createChord(Key[interval], ChordDiagrams[Key[interval]]["major"]);
-      } else if (Key[interval].length === 2) {
-        createChord(Key[interval], ChordDiagrams[Key[interval]]["minor"]);
-      } else {
-        createChord(Key[interval], ChordDiagrams[Key[interval]]["diminished"]);
-      }
+      chordName = Key[interval] + (SevenChecked ? "dim7" : "dim");
+      chordPosition =
+        ChordDiagrams[Key[interval]][
+          SevenChecked ? "diminishedSeventh" : "diminished"
+        ];
     }
+
+    ChordIntervals.push(SevenChecked ? interval + 7 : interval);
+    createChord(chordName, chordPosition);
+    console.log(ChordNames, ChordPositions);
   });
 }
 
@@ -56,20 +51,6 @@ function isChecked(element) {
       SevenChecked = true;
     }
   });
-}
-
-function nameChords() {
-  Key[1] += "m";
-  Key[2] += "m";
-  Key[5] += "m";
-  Key[6] += "dim";
-  Key[7] += "7";
-  Key[8] += "m7";
-  Key[9] += "m7";
-  Key[10] += "7";
-  Key[11] += "7";
-  Key[12] += "m7";
-  Key[13] += "dim7";
 }
 
 function RemoveChord() {
@@ -100,15 +81,19 @@ function createChord(chordName, fingerPositions) {
   chordList.appendChild(li);
 }
 
-function updateList() {}
+function updateList() {
+  ChordNames.forEach((chordName) => {
+    createChord(chordName);
+  });
+}
 function intervalButtons() {
-  getInterval(0);
-  getInterval(1);
-  getInterval(2);
-  getInterval(3);
-  getInterval(4);
-  getInterval(5);
-  getInterval(6);
+  getChord(0);
+  getChord(1);
+  getChord(2);
+  getChord(3);
+  getChord(4);
+  getChord(5);
+  getChord(6);
 }
 
 function presetButtons() {
@@ -124,7 +109,6 @@ function switches() {
 function changeScale() {
   KeySelect.addEventListener("change", () => {
     Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
-    nameChords();
     updateList();
   });
 }
@@ -135,7 +119,6 @@ function DisplayChords() {
   switches();
   RemoveChord();
   RemoveAllChords();
-  nameChords();
   changeScale();
 }
 
