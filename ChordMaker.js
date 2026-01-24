@@ -77,7 +77,7 @@ function createBackground(width, height) {
   return background;
 }
 
-export function createDiagram(parentObject, chord) {
+export function createDiagram(parentObject, fingerPositions) {
   const width = 400;
   const height = 600;
 

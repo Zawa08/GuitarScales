@@ -4,21 +4,16 @@ import { createDiagram } from "./ChordMaker.js";
 const KeySelect = document.getElementById("key-select");
 
 let SevenChecked = false;
-let Interval = [];
 let Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
-let Chords = [];
-let ChordImage = "Images/Chords/CMajor.svg";
 
 function getInterval(interval) {
   const button = document.getElementById(interval);
   button.addEventListener("click", () => {
     if (SevenChecked) {
       let newInterval = interval + 7;
-      Interval.push(newInterval);
-      UpdateList();
+      createChord(newInterval);
     } else {
-      Interval.push(interval);
-      UpdateList();
+      createChord(interval);
     }
   });
 }
@@ -28,7 +23,6 @@ function getPreset(preset) {
   button.addEventListener("click", () => {
     const ChordPreset = structuredClone(Preset[preset]["intervals"]);
     Interval = ChordPreset;
-    UpdateList();
   });
 }
 
@@ -60,47 +54,35 @@ function nameChords() {
   Key[13] += "Dim7";
 }
 
-function getChords() {
-  Chords = [];
-  for (let i = 0; i < Interval.length; i++) {
-    Chords.push(Key[Interval[i]]);
-  }
-}
-
 function RemoveChord() {
   const button = document.getElementById("remove-btn");
+  const chordItems = document.getElementsByClassName("chord-item");
   button.addEventListener("click", () => {
-    Interval.pop();
-    UpdateList();
+    [...chordItems].at(-1).remove();
   });
 }
 
 function RemoveAllChords() {
   const button = document.getElementById("remove-all-btn");
+  const chordItems = document.getElementsByClassName("chord-item");
   button.addEventListener("click", () => {
-    Interval = [];
-    UpdateList();
+    [...chordItems].forEach((chordItem) => {
+      chordItem.remove();
+    });
   });
 }
 
-function UpdateList() {
-  ChordImage = [];
-  getChords();
-  createList();
-}
-
-function createList() {
+function createChord(chord) {
   const chordList = document.getElementById("chord-list");
-  Chords.forEach((chord) => {
-    // ChordImage = "Images/Chords/" + chord + ".svg";
-    // "<img class='chord-image' src=" + ChordImage + " alt=" + chord + ">";
-    const li = document.createElement("li");
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    createDiagram(svg, chord);
-    li.appendChild(svg);
-    chordList.appendChild(li);
-  });
+  const li = document.createElement("li");
+  li.setAttribute("class", "chord-item");
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  createDiagram(svg, [[1, 1]]);
+  li.appendChild(svg);
+  chordList.appendChild(li);
 }
+
+function updateList() {}
 
 function intervalButtons() {
   getInterval(0);
@@ -126,7 +108,7 @@ function changeScale() {
   KeySelect.addEventListener("change", () => {
     Key = structuredClone(Keys["Major"][KeySelect.value]["chords"]);
     nameChords();
-    UpdateList();
+    updateList();
   });
 }
 
