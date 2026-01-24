@@ -77,7 +77,12 @@ function createChord(chord) {
   const li = document.createElement("li");
   li.setAttribute("class", "chord-item");
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  createDiagram(svg, [[1, 1]]);
+  createDiagram(svg, [
+    ["muted", 0],
+    [4, 0],
+    [2, 1],
+    [1, 2],
+  ]);
   li.appendChild(svg);
   chordList.appendChild(li);
 }
