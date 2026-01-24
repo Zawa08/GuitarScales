@@ -12,6 +12,10 @@ function getChord(interval) {
   let chordName = "";
   let chordPosition = [];
   button.addEventListener("click", () => {
+    if (interval > 6) {
+      interval -= 7;
+      SevenChecked = true;
+    }
     if (interval === 0 || interval === 3 || interval === 4) {
       chordName = Key[interval] + (SevenChecked ? "7" : "");
       chordPosition =
@@ -30,7 +34,6 @@ function getChord(interval) {
 
     ChordIntervals.push(SevenChecked ? interval + 7 : interval);
     createChord(chordName, chordPosition);
-    console.log(ChordNames, ChordPositions);
   });
 }
 
