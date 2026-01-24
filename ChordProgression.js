@@ -1,4 +1,4 @@
-import { Keys, Preset } from "./Scales.js";
+import { Keys, ChordDiagrams, Preset } from "./Scales.js";
 import { createDiagram } from "./ChordMaker.js";
 
 const KeySelect = document.getElementById("key-select");
@@ -11,9 +11,30 @@ function getInterval(interval) {
   button.addEventListener("click", () => {
     if (SevenChecked) {
       let newInterval = interval + 7;
-      createChord(newInterval);
+      if (Key[newInterval].length === 2) {
+        createChord(
+          Key[newInterval],
+          ChordDiagrams[Key[newInterval]]["seventh"],
+        );
+      } else if (Key[newInterval].length === 3) {
+        createChord(
+          Key[newInterval],
+          ChordDiagrams[Key[newInterval]]["minorSeventh"],
+        );
+      } else {
+        createChord(
+          Key[newInterval],
+          ChordDiagrams[Key[newInterval]]["diminishedSeventh"],
+        );
+      }
     } else {
-      createChord(interval);
+      if (Key[interval].length === 1) {
+        createChord(Key[interval], ChordDiagrams[Key[interval]]["major"]);
+      } else if (Key[interval].length === 2) {
+        createChord(Key[interval], ChordDiagrams[Key[interval]]["minor"]);
+      } else {
+        createChord(Key[interval], ChordDiagrams[Key[interval]]["diminished"]);
+      }
     }
   });
 }
@@ -38,20 +59,17 @@ function isChecked(element) {
 }
 
 function nameChords() {
-  Key[0] += "Major";
-  Key[1] += "Minor";
-  Key[2] += "Minor";
-  Key[3] += "Major";
-  Key[4] += "Major";
-  Key[5] += "Minor";
-  Key[6] += "Dim";
-  Key[7] += "7Major";
-  Key[8] += "Minor7";
-  Key[9] += "Minor7";
-  Key[10] += "7Major";
-  Key[11] += "7Major";
-  Key[12] += "Minor7";
-  Key[13] += "Dim7";
+  Key[1] += "m";
+  Key[2] += "m";
+  Key[5] += "m";
+  Key[6] += "dim";
+  Key[7] += "7";
+  Key[8] += "m7";
+  Key[9] += "m7";
+  Key[10] += "7";
+  Key[11] += "7";
+  Key[12] += "m7";
+  Key[13] += "dim7";
 }
 
 function RemoveChord() {
@@ -72,23 +90,17 @@ function RemoveAllChords() {
   });
 }
 
-function createChord(chord) {
+function createChord(chordName, fingerPositions) {
   const chordList = document.getElementById("chord-list");
   const li = document.createElement("li");
   li.setAttribute("class", "chord-item");
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  createDiagram(svg, [
-    ["muted", 0],
-    [4, 0],
-    [2, 1],
-    [1, 2],
-  ]);
+  createDiagram(svg, chordName, fingerPositions);
   li.appendChild(svg);
   chordList.appendChild(li);
 }
 
 function updateList() {}
-
 function intervalButtons() {
   getInterval(0);
   getInterval(1);

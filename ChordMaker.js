@@ -1,5 +1,3 @@
-import { Keys } from "./Scales.js";
-
 const svgNS = "http://www.w3.org/2000/svg";
 
 const initXPos = 50;
@@ -84,7 +82,7 @@ function writeChordName(x, name) {
   const fontSize = 60;
   text.style.fontSize = fontSize;
   text.setAttribute("fill", "black");
-  text.setAttribute("x", x - fontSize / 3);
+  text.setAttribute("x", x - (fontSize / 3) * name.length);
   text.setAttribute("y", fontSize);
   text.innerHTML = name;
   return text;
@@ -101,14 +99,14 @@ function markStringMuted(string) {
   return text;
 }
 
-export function createDiagram(parentObject, fingerPositions) {
+export function createDiagram(parentObject, chordName, fingerPositions) {
   const width = 400;
   const height = 600;
 
   const initFingerYPos = initYPos + height / 8;
 
   parentObject.appendChild(createBackground(width, height));
-  parentObject.appendChild(writeChordName(width / 2, "C"));
+  parentObject.appendChild(writeChordName(width / 2, chordName));
   for (let i = 0; i < 4; i++) {
     let fretYPos = initYPos + i * (height / 4);
     parentObject.appendChild(
@@ -138,7 +136,7 @@ export function createDiagram(parentObject, fingerPositions) {
   let fingerColor = 0;
   fingerPositions.forEach((position) => {
     if (position[0] == "barre") {
-      const barreStart = position[1];
+      const barreStart = position[1] - 1;
       parentObject.appendChild(createBarre(barreStart, height));
       parentObject.appendChild(
         writeNumber(
@@ -149,11 +147,11 @@ export function createDiagram(parentObject, fingerPositions) {
       );
       fingerColor++;
     } else if (position[0] == "muted") {
-      const mutedString = position[1];
+      const mutedString = position[1] - 1;
       parentObject.appendChild(markStringMuted(mutedString));
     } else {
-      let string = position[0];
-      let fret = position[1];
+      let string = position[0] - 1;
+      let fret = position[1] - 1;
       createFinger(
         parentObject,
         initXPos + stringGap * string,
