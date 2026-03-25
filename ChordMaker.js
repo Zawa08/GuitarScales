@@ -80,9 +80,13 @@ function createBackground(width, height) {
 function writeChordName(x, name) {
   const text = document.createElementNS(svgNS, "text");
   const fontSize = 80;
+  const nameLength = name.length;
   text.style.fontSize = fontSize;
   text.setAttribute("fill", "black");
-  text.setAttribute("x", x - (fontSize / 3) * name.length);
+  text.setAttribute(
+    "x",
+    x - (fontSize / (nameLength == 2 ? 2.2 : 2.8)) * nameLength,
+  );
   text.setAttribute("y", fontSize);
   text.innerHTML = name;
   return text;

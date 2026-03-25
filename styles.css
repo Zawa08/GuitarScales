@@ -205,7 +205,8 @@ button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 5vh;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 #chord-list li {
@@ -213,7 +214,7 @@ button {
   background-color: #5ab1e3;
   border: none;
   border-radius: 0.2rem;
-  padding: 1em;
+  padding: 1rem;
   transform: scale(0.5);
 }
 
