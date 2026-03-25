@@ -14,7 +14,7 @@ const endXPos = initXPos + 5 * stringGap;
 
 function createCircle(x, y, color) {
   const circle = document.createElementNS(svgNS, "circle");
-  const colors = ["red", "green", "blue", "orange", "purple", "black"];
+  const colors = ["red", "green", "blue", "orange", "purple"];
   circle.setAttribute("cx", x);
   circle.setAttribute("cy", y);
   circle.setAttribute("r", fingerRadius);
@@ -92,6 +92,17 @@ function writeChordName(x, name) {
   return text;
 }
 
+function writePosition(position) {
+  const text = document.createElementNS(svgNS, "text");
+  const fontSize = 60;
+  text.style.fontSize = fontSize;
+  text.setAttribute("fill", "black");
+  text.setAttribute("x", 40 - (fontSize / 2) * position.length);
+  text.setAttribute("y", 130 + fontSize);
+  text.innerHTML = position;
+  return text;
+}
+
 function markStringMuted(string) {
   const text = document.createElementNS(svgNS, "text");
   const fontSize = 60;
@@ -153,6 +164,8 @@ export function createDiagram(parentObject, chordName, fingerPositions) {
     } else if (position[0] == "muted") {
       const mutedString = position[1] - 1;
       parentObject.appendChild(markStringMuted(mutedString));
+    } else if (position[0] == "position") {
+      parentObject.appendChild(writePosition(position[1].toString()));
     } else if (position[0] == "empty") {
       fingerColor++;
     } else {
