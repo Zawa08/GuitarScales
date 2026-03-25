@@ -84,10 +84,7 @@ function writeChordName(x, name) {
   let chordName = name;
   text.style.fontSize = fontSize;
   text.setAttribute("fill", "black");
-  text.setAttribute(
-    "x",
-    x - (fontSize / (nameLength == 2 ? 2.2 : 2.8)) * nameLength,
-  );
+  text.setAttribute("x", x - (fontSize / 2.8) * nameLength);
   text.setAttribute("y", fontSize);
   if (name.length > 4) {
     chordName =
@@ -104,7 +101,7 @@ function writePosition(position) {
   const fontSize = 60;
   text.style.fontSize = fontSize;
   text.setAttribute("fill", "black");
-  text.setAttribute("x", 40 - (fontSize / 2) * position.length);
+  text.setAttribute("x", 35 - (fontSize / 2) * position.length);
   text.setAttribute("y", 130 + fontSize);
   text.innerHTML = position;
   return text;
