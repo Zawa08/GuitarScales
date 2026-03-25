@@ -153,6 +153,8 @@ export function createDiagram(parentObject, chordName, fingerPositions) {
     } else if (position[0] == "muted") {
       const mutedString = position[1] - 1;
       parentObject.appendChild(markStringMuted(mutedString));
+    } else if (position[0] == "empty") {
+      fingerColor++;
     } else {
       let string = position[0] - 1;
       let fret = position[1] - 1;

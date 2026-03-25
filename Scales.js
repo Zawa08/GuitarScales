@@ -439,8 +439,20 @@ export const ChordDiagrams = {
     diminishedSeventh: [],
   },
   D: {
-    major: [],
-    minor: [],
+    major: [
+      ["muted", 1],
+      ["muted", 2],
+      [4, 2],
+      [6, 2],
+      [5, 3],
+    ],
+    minor: [
+      ["muted", 1],
+      ["muted", 2],
+      [6, 1],
+      [4, 2],
+      [5, 3],
+    ],
     diminished: [],
     seventh: [],
     minorSeventh: [],
@@ -471,8 +483,18 @@ export const ChordDiagrams = {
     diminishedSeventh: [],
   },
   F: {
-    major: [],
-    minor: [],
+    major: [
+      ["barre", 1],
+      [4, 2],
+      [2, 3],
+      [3, 3],
+    ],
+    minor: [
+      ["barre", 1],
+      ["empty", 0],
+      [2, 3],
+      [3, 3],
+    ],
     diminished: [],
     seventh: [],
     minorSeventh: [],
