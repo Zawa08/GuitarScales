@@ -392,11 +392,16 @@ input:checked + .slider:before {
   background-color: #4586ac;
 }
 
-.practice-chords {
+.chord-list {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+}
+.chord-list li {
+  margin: 1rem;
 }
 
 @media (max-width: 700px) {

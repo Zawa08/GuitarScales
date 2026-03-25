@@ -475,8 +475,15 @@ export const ChordDiagrams = {
     diminishedSeventh: [],
   },
   E: {
-    major: [],
-    minor: [],
+    major: [
+      [4, 1],
+      [2, 2],
+      [3, 2],
+    ],
+    minor: [
+      [2, 2],
+      [3, 2],
+    ],
     diminished: [],
     seventh: [],
     minorSeventh: [],
