@@ -86,7 +86,6 @@ function writeChordName(x, name) {
   text.setAttribute("fill", "black");
   text.setAttribute("x", x - (fontSize / 2.8) * nameLength);
   text.setAttribute("y", fontSize);
-  console.log(chordName);
   if (name.includes("Sharp")) {
     chordName = chordName[0] + "#" + chordName.slice(6);
   }
