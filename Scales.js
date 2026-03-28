@@ -418,7 +418,15 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 3],
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["muted", 1],
       [5, 1],
@@ -432,7 +440,13 @@ export const ChordDiagrams = {
       [5, 2],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 8],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+      [5, 3],
+    ],
   },
   CSharp: {
     major: [
@@ -451,7 +465,15 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 4],
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["position", 4],
       ["muted", 1],
@@ -466,7 +488,14 @@ export const ChordDiagrams = {
       [5, 2],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 3],
+      ["muted", 1],
+      ["barre", 3],
+      [2, 2],
+      [3, 3],
+      [5, 3],
+    ],
   },
   Db: {
     major: [
@@ -485,7 +514,15 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 4],
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["position", 4],
       ["muted", 1],
@@ -500,7 +537,14 @@ export const ChordDiagrams = {
       [5, 2],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 3],
+      ["muted", 1],
+      ["barre", 3],
+      [2, 2],
+      [3, 3],
+      [5, 3],
+    ],
   },
   D: {
     major: [
@@ -517,7 +561,13 @@ export const ChordDiagrams = {
       [4, 2],
       [5, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["muted", 6],
+      ["muted", 5],
+      [4, 1],
+      [6, 1],
+      [5, 3],
+    ],
     seventh: [
       ["muted", 1],
       ["muted", 2],
@@ -531,7 +581,12 @@ export const ChordDiagrams = {
       ["barre", 5],
       [4, 2],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["muted", 6],
+      ["muted", 5],
+      [4, 1],
+      [6, 1],
+    ],
   },
   DSharp: {
     major: [
@@ -550,7 +605,15 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 6],
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["position", 6],
       ["muted", 1],
@@ -566,7 +629,13 @@ export const ChordDiagrams = {
       [5, 2],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["muted", 1],
+      ["muted", 2],
+      ["barre", 3],
+      [4, 2],
+      [6, 2],
+    ],
   },
   Eb: {
     major: [
@@ -585,7 +654,15 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 6],
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["position", 6],
       ["muted", 1],
@@ -600,7 +677,13 @@ export const ChordDiagrams = {
       [5, 2],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["muted", 1],
+      ["muted", 2],
+      ["barre", 3],
+      [4, 2],
+      [6, 2],
+    ],
   },
   E: {
     major: [
@@ -612,13 +695,22 @@ export const ChordDiagrams = {
       [2, 2],
       [3, 2],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 7],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+    ],
     seventh: [
       [4, 1],
       [2, 2],
     ],
     minorSeventh: [[2, 2]],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      [2, 1],
+      [3, 2],
+      [5, 2],
+    ],
   },
   F: {
     major: [
@@ -633,7 +725,13 @@ export const ChordDiagrams = {
       [2, 3],
       [3, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["muted", 5],
+      ["muted", 6],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+    ],
     seventh: [
       ["barre", 1],
       [4, 2],
@@ -644,7 +742,12 @@ export const ChordDiagrams = {
       ["empty", 0],
       [2, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+      [5, 3],
+    ],
   },
   FSharp: {
     major: [
@@ -661,7 +764,14 @@ export const ChordDiagrams = {
       [2, 3],
       [3, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 2],
+      ["muted", 5],
+      ["muted", 6],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+    ],
     seventh: [
       ["position", 2],
       ["barre", 1],
@@ -674,7 +784,14 @@ export const ChordDiagrams = {
       ["empty", 0],
       [2, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 4],
+      ["muted", 1],
+      ["muted", 2],
+      ["barre", 3],
+      [4, 2],
+      [6, 2],
+    ],
   },
   Gb: {
     major: [
@@ -691,7 +808,14 @@ export const ChordDiagrams = {
       [2, 3],
       [3, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 2],
+      ["muted", 5],
+      ["muted", 6],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+    ],
     seventh: [
       ["position", 2],
       ["barre", 1],
@@ -704,7 +828,14 @@ export const ChordDiagrams = {
       ["empty", 0],
       [2, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 4],
+      ["muted", 1],
+      ["muted", 2],
+      ["barre", 3],
+      [4, 2],
+      [6, 2],
+    ],
   },
   G: {
     major: [
@@ -719,7 +850,14 @@ export const ChordDiagrams = {
       [2, 3],
       [3, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 3],
+      ["muted", 5],
+      ["muted", 6],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+    ],
     seventh: [
       [6, 1],
       [2, 2],
@@ -731,7 +869,13 @@ export const ChordDiagrams = {
       ["empty", 0],
       [2, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 3],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+      [5, 3],
+    ],
   },
   GSharp: {
     major: [
@@ -748,7 +892,14 @@ export const ChordDiagrams = {
       [2, 3],
       [3, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 4],
+      ["muted", 5],
+      ["muted", 6],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+    ],
     seventh: [
       ["position", 4],
       ["barre", 1],
@@ -761,7 +912,13 @@ export const ChordDiagrams = {
       ["empty", 0],
       [2, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 4],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+      [5, 3],
+    ],
   },
   Ab: {
     major: [
@@ -778,7 +935,14 @@ export const ChordDiagrams = {
       [2, 3],
       [3, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 4],
+      ["muted", 5],
+      ["muted", 6],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+    ],
     seventh: [
       ["position", 4],
       ["barre", 1],
@@ -791,7 +955,13 @@ export const ChordDiagrams = {
       ["empty", 0],
       [2, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["position", 4],
+      ["barre", 1],
+      [2, 2],
+      [3, 3],
+      [5, 3],
+    ],
   },
   A: {
     major: [
@@ -806,7 +976,13 @@ export const ChordDiagrams = {
       [3, 2],
       [4, 2],
     ],
-    diminished: [],
+    diminished: [
+      ["muted", 1],
+      ["muted", 6],
+      [3, 1],
+      [5, 1],
+      [4, 2],
+    ],
     seventh: [
       ["muted", 1],
       [3, 2],
@@ -818,7 +994,12 @@ export const ChordDiagrams = {
       [5, 1],
       [3, 2],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["muted", 1],
+      ["barre", 3],
+      [4, 2],
+      [6, 2],
+    ],
   },
   ASharp: {
     major: [
@@ -835,7 +1016,14 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["muted", 1],
       ["barre", 2],
@@ -849,7 +1037,12 @@ export const ChordDiagrams = {
       [5, 2],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["muted", 1],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+    ],
   },
   Bb: {
     major: [
@@ -866,7 +1059,14 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["muted", 1],
       ["barre", 2],
@@ -880,7 +1080,12 @@ export const ChordDiagrams = {
       [5, 2],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["muted", 1],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+    ],
   },
   B: {
     major: [
@@ -899,7 +1104,15 @@ export const ChordDiagrams = {
       [3, 3],
       [4, 3],
     ],
-    diminished: [],
+    diminished: [
+      ["position", 2],
+      ["muted", 1],
+      ["muted", 6],
+      [2, 1],
+      [3, 2],
+      [5, 2],
+      [4, 3],
+    ],
     seventh: [
       ["position", 2],
       ["muted", 1],
@@ -916,7 +1129,12 @@ export const ChordDiagrams = {
       ["empty", 0],
       [3, 3],
     ],
-    diminishedSeventh: [],
+    diminishedSeventh: [
+      ["muted", 1],
+      [4, 1],
+      [6, 1],
+      [2, 2],
+    ],
   },
 };
 

@@ -56,7 +56,7 @@ function createFinger(parentObject, x, y, number, color) {
 
 function createBarre(barreStart, height) {
   const barre = document.createElementNS(svgNS, "rect");
-  barre.setAttribute("fill", "red");
+  barre.setAttribute("fill", "#a81b1b");
   barre.setAttribute("x", initXPos + stringGap * barreStart);
   barre.setAttribute("y", initYPos + height / 8 - fingerRadius);
   barre.setAttribute("rx", 10);
