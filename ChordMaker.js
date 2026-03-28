@@ -14,7 +14,7 @@ const endXPos = initXPos + 5 * stringGap;
 
 function createCircle(x, y, color) {
   const circle = document.createElementNS(svgNS, "circle");
-  const colors = ["red", "green", "blue", "orange", "purple"];
+  const colors = ["#a81b1b", "#3e8f36", "#203776", "#df9d2c", "#642a94"];
   circle.setAttribute("cx", x);
   circle.setAttribute("cy", y);
   circle.setAttribute("r", fingerRadius);
