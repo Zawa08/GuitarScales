@@ -13,6 +13,8 @@ function getChordNameAndPositions(interval) {
   if (interval > 6) {
     interval -= 7;
     SevenChecked = true;
+  } else {
+    SevenChecked = false;
   }
   if (interval === 0 || interval === 3 || interval === 4) {
     name = Key[interval] + (SevenChecked ? "7" : "");
@@ -34,8 +36,9 @@ function getChordNameAndPositions(interval) {
 function getChord(interval) {
   const button = document.getElementById(interval);
   button.addEventListener("click", () => {
-    const chordNameAndPosition = getChordNameAndPositions(interval);
-    ChordIntervals.push(SevenChecked ? interval + 7 : interval);
+    const chordInterval = SevenChecked ? interval + 7 : interval;
+    ChordIntervals.push(chordInterval);
+    const chordNameAndPosition = getChordNameAndPositions(chordInterval);
     createChord(chordNameAndPosition[0], chordNameAndPosition[1]);
   });
 }
@@ -44,7 +47,8 @@ function getPreset(preset) {
   const button = document.getElementById(preset);
   button.addEventListener("click", () => {
     const ChordPreset = structuredClone(Preset[preset]["intervals"]);
-    Interval = ChordPreset;
+    ChordIntervals = ChordPreset;
+    updateList();
   });
 }
 
@@ -59,7 +63,7 @@ function isChecked(element) {
   });
 }
 
-function RemoveChordButton() {
+function removeChordButton() {
   const button = document.getElementById("remove-btn");
   const chordItems = document.getElementsByClassName("chord-item");
   button.addEventListener("click", () => {
@@ -67,7 +71,7 @@ function RemoveChordButton() {
   });
 }
 
-function RemoveAllChordsButton() {
+function removeAllChordsButton() {
   const button = document.getElementById("remove-all-btn");
   const chordItems = document.getElementsByClassName("chord-item");
   button.addEventListener("click", () => {
@@ -78,7 +82,7 @@ function RemoveAllChordsButton() {
   });
 }
 
-function RemoveAllChords() {
+function removeAllChords() {
   const chordItems = document.getElementsByClassName("chord-item");
   [...chordItems].forEach((chordItem) => {
     chordItem.remove();
@@ -96,7 +100,7 @@ function createChord(chordName, fingerPositions) {
 }
 
 function updateList() {
-  RemoveAllChords();
+  removeAllChords();
   ChordIntervals.forEach((interval) => {
     const chordNameAndPositions = getChordNameAndPositions(interval);
     createChord(chordNameAndPositions[0], chordNameAndPositions[1]);
@@ -129,13 +133,13 @@ function changeScale() {
   });
 }
 
-function DisplayChords() {
+function displayChords() {
   intervalButtons();
   presetButtons();
   switches();
-  RemoveChordButton();
-  RemoveAllChordsButton();
+  removeChordButton();
+  removeAllChordsButton();
   changeScale();
 }
 
-DisplayChords();
+displayChords();
