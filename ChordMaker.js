@@ -109,11 +109,11 @@ function writePosition(position) {
 
 function markStringMuted(string) {
   const text = document.createElementNS(svgNS, "text");
-  const fontSize = 60;
+  const fontSize = 40;
   text.style.fontSize = fontSize;
   text.setAttribute("fill", "red");
   text.setAttribute("x", initXPos + string * stringGap - fontSize / 3);
-  text.setAttribute("y", fontSize * 1.5);
+  text.setAttribute("y", fontSize * 2);
   text.innerHTML = "X";
   return text;
 }
