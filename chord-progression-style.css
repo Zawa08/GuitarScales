@@ -67,7 +67,7 @@ button {
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
-  width: fit-content;
+  scale: 0.8;
 }
 
 .chord-presets {
@@ -221,6 +221,10 @@ input:checked + .slider:before {
   .chord-customizations {
     flex-direction: column;
   }
+
+  .chord-item {
+    scale: 0.6;
+  }
 }
 
 @media (min-width: 700px) and (max-width: 1200px) {
@@ -250,5 +254,9 @@ input:checked + .slider:before {
 
   .remove-btn {
     height: 6vh;
+  }
+
+  .chord-item {
+    scale: 0.8;
   }
 }
