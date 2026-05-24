@@ -839,8 +839,8 @@ export const ChordDiagrams = {
   },
   G: {
     major: [
-      [1, 3],
       [2, 2],
+      [1, 3],
       [6, 3],
     ],
     minor: [
