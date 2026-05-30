@@ -1,37 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GuitarScales – Learn Chords</title>
     <link rel="icon" type="image/x-icon" href="./Images/logo.svg" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbar-style.css" />
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <a href="index.html"
-          ><img class="logo-image" src="Images\logo.svg" alt="logo"
+    <div class="navbar-wrapper">
+      <nav class="navbar">
+        <a href="index.html" class="navbar__logo"
+          ><img src="images/logo.svg" alt="GuitarScales logo"
         /></a>
-      </div>
-      <nav>
-        <ul class="nav__links">
+        <button
+          class="navbar__toggle"
+          aria-expanded="false"
+          aria-controls="main-menu"
+          aria-label="Otevřít menu"
+        >
+          <span class="navbar__toggle-icon"></span>
+        </button>
+        <ul class="navbar__menu" id="main-menu">
           <li>
-            <a href="index.html">Home</a>
+            <a href="LearnChords.html" class="navbar__link" id="learn-chords"
+              >Learn chords</a
+            >
           </li>
           <li>
-            <a href="LearnScales.html">Learn scales</a>
+            <a
+              href="ChordProgression.html"
+              class="navbar__link"
+              id="chord-progression"
+              >Chord progression</a
+            >
           </li>
           <li>
-            <a href="LearnChords.html">Learn chords</a>
-          </li>
-          <li>
-            <a href="ChordProgression.html">Chord progression</a>
+            <a href="LearnScales.html" class="navbar__link" id="learn-scales"
+              >Learn scales</a
+            >
           </li>
         </ul>
       </nav>
-    </header>
+    </div>
 
     <h1>Learn chords</h1>
     <div class="diff-select">

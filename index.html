@@ -1,42 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GuitarScales</title>
-    <link rel="icon" type="image/x-icon" href="./Images/logo.svg">
-    <link rel="stylesheet" href="style.css">
-
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img class="logo-image" src="Images\logo.svg" alt="logo"></a>
-        </div>
-        <nav>
-            <ul class="nav__links">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="LearnScales.html">Learn scales</a>
-                </li>
-                <li>
-                    <a href="LearnChords.html">Learn chords</a>
-                </li>
-                <li>
-                    <a href="ChordProgression.html">Chord
-                        progression</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="./Images/logo.svg" />
+    <link rel="stylesheet" href="new-style.css" />
+  </head>
+  <body>
+    <div class="navbar-wrapper">
+      <nav class="navbar">
+        <a href="index.html" class="navbar__logo"
+          ><img src="images/logo.svg" alt="GuitarScales logo"
+        /></a>
+        <button
+          class="navbar__toggle"
+          aria-expanded="false"
+          aria-controls="main-menu"
+          aria-label="Otevřít menu"
+        >
+          <span class="navbar__toggle-icon"></span>
+        </button>
+        <ul class="navbar__menu" id="main-menu">
+          <li>
+            <a href="LearnChords.html" class="navbar__link" id="learn-chords"
+              >Learn chords</a
+            >
+          </li>
+          <li>
+            <a
+              href="ChordProgression.html"
+              class="navbar__link"
+              id="chord-progression"
+              >Chord progression</a
+            >
+          </li>
+          <li>
+            <a href="LearnScales.html" class="navbar__link" id="learn-scales"
+              >Learn scales</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
     <main>
-        <h1>Welcome to GuitarScales</h1>
-        <p>I hope you will like and find this website useful.</p>
-        <p>Warning: I am now working on improving this website, be aware that, some parts may not work.</p>
-    </main>
-    <footer>Created by Jan Zavadil</footer>
-</body>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Learn new guitar chords!</h1>
+          <p>Start your music journey right now</p>
+          <a href="LearnChords.html" class="btn">Start now</a>
+        </div>
+        <div class="hero-image">
+          <div id="svg-wrapper" class="slide-in"></div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about-text">
+          <h1>About</h1>
+          <p>
+            Learning chords is awesome. Just learn 3 chords and you can play
+            thousands of songs.
+          </p>
+        </div>
+        <div class="about-image">
+          <img
+            src="images/guitar-player.avif"
+            alt="Kytara dělá břink"
+            fetchpriority="high"
+            loading="lazy"
+          />
+        </div>
+      </section>
 
+      <section class="services">
+        <h1>Services</h1>
+        <div class="article-grid-container">
+          <article class="article-card">
+            <img
+              src="https://placehold.co/800x600/1a6b4a/white.png?text=Learn+chords"
+              alt=""
+            />
+            <div class="article-card-content">
+              <h2 class="card__title">Learn chords</h2>
+              <p>Learn some campfire must-haves</p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img
+              src="https://placehold.co/800x600/1a6b4a/white.png?text=Chord+progression"
+              alt=""
+            />
+            <div class="article-card-content">
+              <h2 class="card__title">Chord progression</h2>
+              <p>Find new chords for your song!</p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img
+              src="https://placehold.co/800x600/1a6b4a/white.png?text=Learn+scales"
+              alt=""
+            />
+            <div class="article-card-content">
+              <h2 class="card__title">Learn scales</h2>
+              <p>Improve your musical understanding.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <aside>
+      <section class="author">
+        <div class="author-text-container">
+          <h2>Something about the author</h2>
+          <p>
+            Author likes anonymity, therefore he generated a step brother to
+            pose for him.
+          </p>
+        </div>
+
+        <figure class="author-img-container">
+          <img
+            loading="lazy"
+            id="author-image"
+            src="images/profile-picture.avif"
+            alt="Jan Zavadil"
+          />
+          <figcaption>Jan Zavadil</figcaption>
+        </figure>
+      </section>
+    </aside>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__section">
+          <h1 class="footer__title">GuitarScales</h1>
+          <p class="footer__text">
+            Your guitar mastery journey starts here. Learning chords and scales
+            will feel effortless.
+          </p>
+        </div>
+
+        <div class="footer__section">
+          <h1 class="footer__title">Navigation</h1>
+          <ul class="footer__list">
+            <li>
+              <a href="#learn-chords" class="footer__link">Learn chords</a>
+            </li>
+            <li>
+              <a href="#chord-progression" class="footer__link"
+                >Chord progression</a
+              >
+            </li>
+            <li>
+              <a href="#learn-scales" class="footer__link">Learn scales</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h1 class="footer__title">Contact</h1>
+          <ul class="footer__list">
+            <li>
+              <a href="mailto:jan8zavadil@gmail.com" class="footer__link"
+                >jan8zavadil@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h1 class="footer__title">Newsletter</h1>
+          <p class="footer__text">Subscribe, to get tips on how to improve.</p>
+          <form class="footer__newsletter">
+            <input type="email" placeholder="Your e-mail" id="footer__input" />
+            <button type="submit" class="btn btn--small">OK</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          © 2026 Jan Zavadil. All rights reserved.
+        </div>
+        <div class="footer__legal">
+          <a href="#" class="footer__link">Service policy</a>
+        </div>
+      </div>
+    </footer>
+    <script src="landing-page.js"></script>
+  </body>
 </html>
