@@ -41,60 +41,6 @@ h1 {
   color: var(--accent);
 }
 
-/* --- NAVBAR (Původní zachován a mírně uhlazen) --- */
-.navbar-wrapper {
-  border-bottom: 0.3rem solid var(--primary);
-  background-color: transparent;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.navbar__logo {
-  text-decoration: none;
-}
-
-.navbar__logo img {
-  height: 60px; /* Opravena velikost loga pro lepší zarovnání */
-  width: auto;
-}
-
-.navbar__menu {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
-
-.navbar__link {
-  display: block;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-  background-color: var(--primary);
-  border-radius: var(--radius-sm);
-  transition:
-    background 0.2s ease,
-    transform 0.1s ease;
-}
-
-.navbar__link:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-}
-
-.navbar__toggle {
-  display: none; /* Skryto pro desktop */
-}
-
 /* --- HLAVNÍ OBSAH (Chord Progression) --- */
 
 /* Prvky pro nastavení akordů (Tlačítka a Přepínač) */
