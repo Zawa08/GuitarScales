@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Sjednocená barevná paleta */
+  --bg-color: #fff9ef;
+  --text-color: #332f2b;
+  --primary: #d36404;
+  --primary-hover: #b85503;
+  --secondary: #e6cfa8;
+  --secondary-hover: #d8b884;
+  --accent: #5c3c1e;
+  --danger: #d94a4a;
+  --danger-hover: #b83d3d;
+
+  --font-serif: "Merriweather", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+  --radius-pill: 50px;
+}
+
+/* --- ZÁKLADNÍ RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--accent);
+}
+
+/* --- NAVBAR (Původní zachován a mírně uhlazen) --- */
+.navbar-wrapper {
+  border-bottom: 0.3rem solid var(--primary);
+  background-color: transparent;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar__logo {
+  text-decoration: none;
+}
+
+.navbar__logo img {
+  height: 60px; /* Opravena velikost loga pro lepší zarovnání */
+  width: auto;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navbar__link {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: var(--radius-sm);
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.navbar__link:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.navbar__toggle {
+  display: none; /* Skryto pro desktop */
+}
+
+/* --- HLAVNÍ OBSAH (Chord Progression) --- */
+
+/* Prvky pro nastavení akordů (Tlačítka a Přepínač) */
+.chord-customizations {
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.chord-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.chord-presets button {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: var(--secondary);
+  color: var(--accent);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chord-presets button:hover {
+  background-color: var(--secondary-hover);
+  border-color: var(--accent);
+}
+
+/* Přepínač (Toggle Switch) - Kompletně přepsáno pro robustnost */
+.chord-alters {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.switch input {
+  display: none; /* Skryjeme původní checkbox */
+}
+
+.slider {
+  position: relative;
+  width: 3.5rem;
+  height: 1.8rem;
+  background-color: #ccc;
+  border-radius: var(--radius-pill);
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 50%;
+  left: 0.2rem;
+  bottom: 0.2rem;
+  background-color: white;
+  transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider::before {
+  transform: translateX(1.7rem);
+}
+
+/* Výběr tóniny a intervalů */
+.select-container {
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 1rem;
+}
+
+.key-select {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.interval {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+  background-color: var(--secondary);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  width: 4.5rem;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interval:hover {
+  background-color: var(--secondary-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Kontejner se zobrazenými akordy */
+.chords-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#chord-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Nový styling pro jednotlivý akord (zrušeno zrádné scale: 0.8) */
+.chord-item {
+  background-color: #fff;
+  border: 2px solid var(--secondary);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.chord-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.remove-btn {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: var(--danger-hover);
+}
+
+/* --- RESPONZIVITA (Media Queries) --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar__menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .chord-customizations {
+    flex-direction: column;
+  }
+
+  .key-select {
+    width: 100%;
+    text-align: center;
+  }
+
+  .interval {
+    width: calc(33.333% - 0.6rem); /* 3 tlačítka na řádek na mobilu */
+  }
+
+  .chord-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .remove-btn {
+    width: 100%;
+  }
+}
