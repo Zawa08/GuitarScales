@@ -1,5 +1,5 @@
 import { Keys, ChordDiagrams, Preset } from "./Scales.js";
-import { createDiagram } from "./ChordMaker.js";
+import { createDiagram } from "./NewChordMaker.js";
 
 const KeySelect = document.getElementById("key-select");
 

@@ -255,7 +255,6 @@ input:checked + .slider::before {
   gap: 1.5rem;
 }
 
-/* Nový styling pro jednotlivý akord (zrušeno zrádné scale: 0.8) */
 .chord-item {
   background-color: #fff;
   border: 2px solid var(--secondary);
@@ -268,6 +267,10 @@ input:checked + .slider::before {
   font-family: var(--font-sans);
   font-size: 1.2rem;
   font-weight: 600;
+  width: 100%;
+  max-width: 250px; /* Tohle omezí maximální velikost na desktopu */
+  height: auto;
+  display: block;
 }
 
 .chord-buttons {
