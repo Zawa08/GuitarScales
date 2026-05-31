@@ -47,23 +47,31 @@ body {
   position: relative;
 }
 
-/* Tlačítko pro návrat zpět - decentní vzhled, žádný křiklavý blok */
+/* Tlačítko pro návrat zpět - nyní zvětšené a vycentrované */
 .changediff-btn {
-  align-self: flex-start;
+  align-self: center; /* Zajišťuje perfektní vycentrování ve flexboxu */
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700; /* Ztučněno, aby text lépe seděl k větším rozměrům */
+  font-size: 1.1rem; /* Zvětšeno z původních 0.9rem */
   text-decoration: none;
   color: var(--accent);
   background-color: var(--secondary);
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 2rem; /* Výrazně zvětšený klikatelný prostor */
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Větší mezera mezi tlačítkem a nadpisem sady */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Jemný stín pro lepší vizuální plasticitu */
 }
 
 .changediff-btn:hover {
   background-color: var(--secondary-hover);
+  transform: translateY(-2px); /* Decentní nadzvednutí při najetí */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.changediff-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Dynamický nadpis sady akordů */
