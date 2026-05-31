@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Sjednocená barevná paleta */
+  --bg-color: #fff9ef;
+  --text-color: #332f2b;
+  --primary: #d36404;
+  --secondary: #e6cfa8;
+  --accent: #5c3c1e;
+
+  /* Barvy specifické pro obtížnosti */
+  --diff-easy: #5ea14b;
+  --diff-medium: #d36404;
+  --diff-hard: #c93e3e;
+
+  --font-serif: "Merriweather", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --radius-md: 0.5rem;
+}
+
+/* --- ZÁKLADNÍ RESET A TYPOGRAFIE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--accent);
+}
+
+/* --- VÝBĚR OBTÍŽNOSTI --- */
+.diff-select {
+  max-width: 600px; /* Užší kontejner pro vertikální menu */
+  margin: 0 auto 4rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.diff-select h2 {
+  font-family: var(--font-serif);
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Odkaz stylovaný jako mohutné tlačítko */
+.diff-btn {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent);
+  background-color: var(--secondary);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- HOVER EFEKTY (Barevné rozlišení) --- */
+#Easy.diff-btn:hover {
+  background-color: var(--diff-easy);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(94, 161, 75, 0.2);
+}
+
+#Medium.diff-btn:hover {
+  background-color: var(--diff-medium);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(211, 100, 4, 0.2);
+}
+
+#Hard.diff-btn:hover {
+  background-color: var(--diff-hard);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(201, 62, 62, 0.2);
+}
+
+/* --- RESPONZIVITA --- */
+@media (max-width: 768px) {
+  .diff-select {
+    gap: 1.2rem;
+  }
+
+  .diff-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+  }
+}

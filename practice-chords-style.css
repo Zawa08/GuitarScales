@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Sjednocená firemní paleta */
+  --bg-color: #fff9ef;
+  --text-color: #332f2b;
+  --primary: #d36404;
+  --primary-hover: #b85503;
+  --secondary: #e6cfa8;
+  --secondary-hover: #d8b884;
+  --accent: #5c3c1e;
+
+  /* Specifické barvy pro indikaci obtížnosti navrchu */
+  --color-easy: #5ea14b;
+  --color-medium: #d36404;
+  --color-hard: #c93e3e;
+
+  --font-serif: "Merriweather", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+}
+
+/* --- ZÁKLADNÍ RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+}
+
+/* --- HLAVIČKA OBTÍŽNOSTI & NADPIS --- */
+#difficulty {
+  max-width: 800px;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Tlačítko pro návrat zpět - decentní vzhled, žádný křiklavý blok */
+.changediff-btn {
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--accent);
+  background-color: var(--secondary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.changediff-btn:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Dynamický nadpis sady akordů */
+#current-set {
+  font-size: 2.2rem;
+  text-align: center;
+  color: var(--accent);
+  margin-top: 0.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Podtržítko nadpisu indikující barvou obtížnost podle třídy na rodiči */
+#difficulty.Easy #current-set::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-easy);
+  margin: 0.5rem auto 0;
+  border-radius: var(--radius-sm);
+}
+
+#difficulty.Medium #current-set::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-medium);
+  margin: 0.5rem auto 0;
+  border-radius: var(--radius-sm);
+}
+
+#difficulty.Hard #current-set::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-hard);
+  margin: 0.5rem auto 0;
+  border-radius: var(--radius-sm);
+}
+
+/* --- KONTEJNER PRO CVIČENÍ --- */
+.practice-chords-container {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Místo, kam JS vkládá akordy */
+#chords {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Stylování SVG diagramu uvnitř kontejneru */
+#chords svg {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(92, 60, 30, 0.1);
+  width: 100%;
+  max-width: 280px; /* Perfektní velikost pro čitelnost na desktopu */
+  height: auto;
+}
+
+/* --- OVLÁDACÍ TLAČÍTKA (Předchozí / Další) --- */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.button-container button {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Rozlišení primárního akčního tlačítka (Next) a sekundárního (Previous) */
+#previous {
+  background-color: var(--accent);
+}
+
+#previous:hover {
+  background-color: #422b15;
+}
+
+#next {
+  background-color: var(--primary);
+}
+
+#next:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Aktivní stisk tlačítek pro lepší haptickou odezvu */
+.button-container button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- RESPONZIVITA --- */
+@media (max-width: 480px) {
+  #current-set {
+    font-size: 1.8rem;
+  }
+
+  .button-container {
+    flex-direction: column; /* Na mobilu pod sebou pro pohodlné ovládání palcem */
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .button-container button {
+    width: 100%;
+    padding: 1.2rem; /* Větší plocha pro stisk na dotykovém displeji */
+  }
+
+  #chords svg {
+    max-width: 100%; /* Plná šířka displeje mobilu s ohledem na padding */
+  }
+}
