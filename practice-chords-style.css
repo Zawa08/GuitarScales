@@ -52,7 +52,7 @@ body {
   align-self: center; /* Zajišťuje perfektní vycentrování ve flexboxu */
   font-family: var(--font-sans);
   font-weight: 700; /* Ztučněno, aby text lépe seděl k větším rozměrům */
-  font-size: 1.1rem; /* Zvětšeno z původních 0.9rem */
+  font-size: 2rem;
   text-decoration: none;
   color: var(--accent);
   background-color: var(--secondary);
