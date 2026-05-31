@@ -1152,20 +1152,20 @@ export const Preset = {
 
 export const ChordSet = {
   Easy: {
-    chords1: ["DMajor", "AMajor"],
-    chords2: ["DMajor", "EMajor"],
-    chords3: ["DMajor", "GMajor"],
+    chords1: ["Dmajor", "Amajor"],
+    chords2: ["Dmajor", "Emajor"],
+    chords3: ["Dmajor", "Gmajor"],
   },
 
   Medium: {
-    chords1: ["AMinor", "EMajor"],
-    chords2: ["GMajor", "EMinor"],
-    chords3: ["CMajor", "AMinor"],
+    chords1: ["Aminor", "Emajor"],
+    chords2: ["Gmajor", "Eminor"],
+    chords3: ["Cmajor", "Aminor"],
   },
 
   Hard: {
-    chords1: ["FMajor", "DMajor"],
-    chords2: ["GMajor", "DMinor"],
-    chords3: ["BDim", "FMajor"],
+    chords1: ["Fmajor", "Dmajor"],
+    chords2: ["Gmajor", "Dminor"],
+    chords3: ["Bdiminished", "Fmajor"],
   },
 };

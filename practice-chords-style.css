@@ -109,7 +109,7 @@ body {
 
 /* --- KONTEJNER PRO CVIČENÍ --- */
 .practice-chords-container {
-  max-width: 800px;
+  max-width: 900px; /* Trochu jsme to rozšířili, ať mají akordy místo na jednom řádku */
   margin: 0 auto 4rem;
   padding: 0 1rem;
   display: flex;
@@ -118,25 +118,37 @@ body {
   gap: 2.5rem;
 }
 
-/* Místo, kam JS vkládá akordy */
+/* Místo, kam JS vkládá akordy (nyní optimalizováno pro <ol> a <li>) */
 #chords {
   width: 100%;
+  list-style: none; /* Odstraní výchozí číslování seznamu */
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  align-items: stretch; /* Zarovná výšku, pokud by byly diagramy různě velké */
+  flex-wrap: wrap; /* Pokud bude obrazovka malá, zalamují se pod sebe */
+  gap: 1.5rem;
 }
 
-/* Stylování SVG diagramu uvnitř kontejneru */
-#chords svg {
+/* Obal každého akordu (vygenerované <li>) */
+#chords li {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 150px; /* Flex parametr: umožní zmenšování i zvětšování s ohledem na prostor */
+  max-width: 220px; /* Zabrání gigantickým rozměrům, pokud jsou v sadě např. jen 2 akordy */
+}
+
+/* Samotný SVG diagram uvnitř list itemu */
+#chords li svg {
+  width: 100%;
+  height: auto;
   background: white;
   padding: 1.5rem;
   border-radius: var(--radius-md);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(92, 60, 30, 0.1);
-  width: 100%;
-  max-width: 280px; /* Perfektní velikost pro čitelnost na desktopu */
-  height: auto;
+  display: block;
 }
 
 /* --- OVLÁDACÍ TLAČÍTKA (Předchozí / Další) --- */

@@ -1,7 +1,7 @@
-import { ChordSet } from "./Scales.js";
+import { ChordDiagrams, ChordSet } from "./Scales.js";
+import { createDiagram } from "./ChordMaker.js";
 
 let Difficulty = document.getElementById("difficulty").className;
-let ChordImage = "Images/Chords/CMajor.svg";
 let currentSet = 1;
 
 let Chords = ChordSet[Difficulty]["chords" + currentSet];
@@ -14,17 +14,35 @@ function updateCounter() {
   ChordSetCounter.innerHTML = "Current set: Chords " + currentSet;
 }
 
+function getChordAttributes(chord) {
+  let chordName = "";
+  const chordKey = chord.slice(0, 1);
+
+  if (chord.includes("major")) {
+    chordName = chordKey;
+  } else if (chord.includes("minor")) {
+    chordName = chord.slice(0, 2);
+  } else {
+    chordName = chord.slice(0, 4);
+  }
+
+  const chordType = chord.slice(1);
+  const fingerPositions = ChordDiagrams[chordKey][chordType];
+  return [chordName, fingerPositions];
+}
+
 function createList() {
   updateCounter();
-  let chordList = "<ol class='chord-list'>";
+  const chordList = document.getElementById("chords");
+  chordList.innerHTML = "";
   Chords.forEach((chord) => {
-    ChordImage = "Images/Chords/" + chord + ".svg";
-    const img =
-      "<img class='chord-image' src=" + ChordImage + " alt=" + chord + ">";
-    chordList += "<li>" + img + "</li>";
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const li = document.createElement("li");
+    const chordAttributes = getChordAttributes(chord);
+    createDiagram(svg, chordAttributes[0], chordAttributes[1]);
+    li.appendChild(svg);
+    chordList.appendChild(li);
   });
-  chordList += "</ol>";
-  document.getElementById("chords").innerHTML = chordList;
 }
 
 function getCurrentSet() {
