@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
 
 :root {
+  /* Barvy specifické pro obtížnosti */
+  --diff-easy: #5ea14b;
+  --diff-medium: #d36404;
+  --diff-hard: #c93e3e;
   --radius-md: 0.5rem;
 }
 
