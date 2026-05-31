@@ -1,185 +1,221 @@
 const svgNS = "http://www.w3.org/2000/svg";
 
-const initXPos = 50;
-const initYPos = 100;
+// --- KONSTANTY A NASTAVENÍ PLÁTNA ---
+const VIEW_WIDTH = 400;
+const VIEW_HEIGHT = 650; // Mírně zvětšeno pro lepší prostor na text akordu
 
-const stringGap = 60;
-const fretGap = 150;
+const GRID_INIT_X = 50;
+const GRID_INIT_Y = 130; // Posunuto níže kvůli názvu akordu
+const STRING_GAP = 60;
+const FRET_GAP = 120;
+const STROKE_WIDTH = 2;
 
-const fingerRadius = 25;
+const FINGER_RADIUS = 22;
+const FINGER_COLORS = ["#a81b1b", "#3e8f36", "#203776", "#df9d2c", "#642a94"];
 
-const strokeWidth = 1;
+// --- POMOCNÉ FUNKCE PRO VYKRESLOVÁNÍ ---
 
-const endXPos = initXPos + 5 * stringGap;
-
-function createCircle(x, y, color) {
+function createCircle(x, y, colorIndex) {
   const circle = document.createElementNS(svgNS, "circle");
-  const colors = ["#a81b1b", "#3e8f36", "#203776", "#df9d2c", "#642a94"];
   circle.setAttribute("cx", x);
   circle.setAttribute("cy", y);
-  circle.setAttribute("r", fingerRadius);
-  circle.setAttribute("stroke", "black");
-  circle.setAttribute("stroke-width", 1);
-  circle.setAttribute("fill", colors[color]);
-
+  circle.setAttribute("r", FINGER_RADIUS);
+  circle.setAttribute("stroke", "#111");
+  circle.setAttribute("stroke-width", STROKE_WIDTH);
+  circle.setAttribute("fill", FINGER_COLORS[colorIndex % FINGER_COLORS.length]);
   return circle;
 }
 
-function createLine(x1, y1, x2, y2, strokeWidth) {
+function createLine(x1, y1, x2, y2, width = STROKE_WIDTH) {
   const line = document.createElementNS(svgNS, "line");
   line.setAttribute("x1", x1);
   line.setAttribute("y1", y1);
   line.setAttribute("x2", x2);
   line.setAttribute("y2", y2);
-  line.setAttribute("stroke", "black");
-  line.setAttribute("stroke-width", strokeWidth);
-
+  line.setAttribute("stroke", "#333");
+  line.setAttribute("stroke-width", width);
+  line.setAttribute("stroke-linecap", "round");
   return line;
 }
 
-function writeNumber(x, y, number) {
+function writeText(
+  x,
+  y,
+  textContent,
+  fontSize,
+  color,
+  anchor = "middle",
+  fontWeight = "normal",
+) {
   const text = document.createElementNS(svgNS, "text");
-  const fontSize = 30;
-  text.style.fontSize = fontSize;
-  text.setAttribute("fill", "white");
-  text.setAttribute("x", x - fontSize / 4);
-  text.setAttribute("y", y + fontSize / 3);
-  text.innerHTML = number;
-
+  text.setAttribute("x", x);
+  text.setAttribute("y", y);
+  text.setAttribute("fill", color);
+  text.setAttribute("text-anchor", anchor); // Zásadní pro snadné centrování textu
+  text.setAttribute("font-family", "Montserrat, sans-serif");
+  text.setAttribute("font-weight", fontWeight);
+  text.style.fontSize = `${fontSize}px`;
+  text.textContent = textContent;
   return text;
 }
 
-function createFinger(parentObject, x, y, number, color) {
-  parentObject.appendChild(createCircle(x, y, color));
-  parentObject.appendChild(writeNumber(x, y, number));
+function createFinger(parentObject, x, y, number, colorIndex) {
+  parentObject.appendChild(createCircle(x, y, colorIndex));
+  // Posun Y o čtvrtinu velikosti fontu pro vertikální centrování textu v kruhu
+  parentObject.appendChild(
+    writeText(x, y + 8, number, 24, "white", "middle", "bold"),
+  );
 }
 
-function createBarre(barreStart, height) {
+function createBarre(barreStartString) {
   const barre = document.createElementNS(svgNS, "rect");
-  barre.setAttribute("fill", "#a81b1b");
-  barre.setAttribute("x", initXPos + stringGap * barreStart);
-  barre.setAttribute("y", initYPos + height / 8 - fingerRadius);
-  barre.setAttribute("rx", 10);
-  barre.setAttribute("ry", 10);
-  barre.setAttribute("width", stringGap * (5 - barreStart));
-  barre.setAttribute("height", fingerRadius * 2);
-
+  barre.setAttribute(
+    "x",
+    GRID_INIT_X + STRING_GAP * barreStartString - FINGER_RADIUS,
+  );
+  barre.setAttribute("y", GRID_INIT_Y + FRET_GAP / 2 - FINGER_RADIUS);
+  barre.setAttribute(
+    "width",
+    STRING_GAP * (5 - barreStartString) + FINGER_RADIUS * 2,
+  );
+  barre.setAttribute("height", FINGER_RADIUS * 2);
+  barre.setAttribute("rx", FINGER_RADIUS);
+  barre.setAttribute("ry", FINGER_RADIUS);
+  barre.setAttribute("fill", FINGER_COLORS[0]);
   return barre;
 }
 
-function createBackground(width, height) {
+// --- HLAVNÍ EXPORTOVANÁ FUNKCE ---
+
+export function createDiagram(svgElement, chordName, fingerPositions) {
+  // 1. Očištění předchozího obsahu a nastavení responzivity
+  svgElement.innerHTML = "";
+
+  // Tohle je to kouzlo, které chybělo. Umožní to SVG reagovat na CSS šířku rodiče.
+  svgElement.setAttribute("viewBox", `0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`);
+  svgElement.setAttribute("width", "100%");
+  svgElement.setAttribute("height", "100%");
+
+  // 2. Pozadí
   const background = document.createElementNS(svgNS, "rect");
+  background.setAttribute("width", VIEW_WIDTH);
+  background.setAttribute("height", VIEW_HEIGHT);
   background.setAttribute("fill", "white");
-  background.setAttribute("x", 0);
-  background.setAttribute("y", 0);
-  background.setAttribute("width", width);
-  background.setAttribute("height", height);
-  return background;
-}
+  background.setAttribute("rx", "10"); // Zaoblené rohy celého diagramu
+  svgElement.appendChild(background);
 
-function writeChordName(x, name) {
-  const text = document.createElementNS(svgNS, "text");
-  const fontSize = 80;
-  const nameLength = name.length > 4 ? name.length - 4 : name.length;
-  let chordName = name;
-  text.style.fontSize = fontSize;
-  text.setAttribute("fill", "black");
-  text.setAttribute("x", x - (fontSize / 2.8) * nameLength);
-  text.setAttribute("y", fontSize);
-  if (name.includes("Sharp")) {
-    chordName = chordName[0] + "#" + chordName.slice(6);
-  }
-  text.innerHTML = chordName;
-  return text;
-}
+  // 3. Název akordu (vycentrováno pomocí text-anchor="middle")
+  let displayChordName = chordName.replace("Sharp", "#").replace("Flat", "♭");
+  svgElement.appendChild(
+    writeText(
+      VIEW_WIDTH / 2,
+      70,
+      displayChordName,
+      60,
+      "#332f2b",
+      "middle",
+      "bold",
+    ),
+  );
 
-function writePosition(position) {
-  const text = document.createElementNS(svgNS, "text");
-  const fontSize = 60;
-  text.style.fontSize = fontSize;
-  text.setAttribute("fill", "black");
-  text.setAttribute("x", 35 - (fontSize / 2) * position.length);
-  text.setAttribute("y", 130 + fontSize);
-  text.innerHTML = position;
-  return text;
-}
-
-function markStringMuted(string) {
-  const text = document.createElementNS(svgNS, "text");
-  const fontSize = 40;
-  text.style.fontSize = fontSize;
-  text.setAttribute("fill", "red");
-  text.setAttribute("x", initXPos + string * stringGap - fontSize / 3);
-  text.setAttribute("y", fontSize * 2);
-  text.innerHTML = "X";
-  return text;
-}
-
-export function createDiagram(parentObject, chordName, fingerPositions) {
-  const width = 400;
-  const height = 600;
-
-  const initFingerYPos = initYPos + height / 8;
-
-  parentObject.appendChild(createBackground(width, height));
-  parentObject.appendChild(writeChordName(width / 2, chordName));
-  for (let i = 0; i < 4; i++) {
-    let fretYPos = initYPos + i * (height / 4);
-    parentObject.appendChild(
+  // 4. Vykreslení hmatníku (mřížky)
+  // Pražce (horizontální linie)
+  for (let i = 0; i <= 4; i++) {
+    const fretY = GRID_INIT_Y + i * FRET_GAP;
+    const isNut = i === 0; // Nultý pražec by měl být tlustší
+    svgElement.appendChild(
       createLine(
-        initXPos - strokeWidth / 2,
-        fretYPos,
-        width - 50 + strokeWidth / 2,
-        fretYPos,
-        strokeWidth,
+        GRID_INIT_X,
+        fretY,
+        GRID_INIT_X + 5 * STRING_GAP,
+        fretY,
+        isNut ? 6 : STROKE_WIDTH,
       ),
     );
   }
 
+  // Struny (vertikální linie)
   for (let i = 0; i < 6; i++) {
-    let stringXPos = initXPos + i * stringGap;
-    parentObject.appendChild(
+    const stringX = GRID_INIT_X + i * STRING_GAP;
+    svgElement.appendChild(
       createLine(
-        stringXPos,
-        initYPos,
-        stringXPos,
-        height + initYPos - height / 4,
-        strokeWidth,
+        stringX,
+        GRID_INIT_Y,
+        stringX,
+        GRID_INIT_Y + 4 * FRET_GAP,
+        STROKE_WIDTH,
       ),
     );
   }
 
-  let fingerColor = 0;
+  // 5. Zpracování prstokladu
+  let fingerColorIndex = 0;
+
   fingerPositions.forEach((position) => {
-    if (position[0] == "barre") {
+    const type = position[0];
+
+    if (type === "barre") {
       const barreStart = position[1] - 1;
-      parentObject.appendChild(createBarre(barreStart, height));
-      parentObject.appendChild(
-        writeNumber(
-          endXPos - (stringGap * (5 - barreStart)) / 2,
-          initFingerYPos,
-          1,
+      svgElement.appendChild(createBarre(barreStart));
+      // Číslo prstu pro barré (uprostřed barré)
+      const barreCenter =
+        GRID_INIT_X +
+        STRING_GAP * barreStart +
+        (STRING_GAP * (5 - barreStart)) / 2;
+      svgElement.appendChild(
+        writeText(
+          barreCenter,
+          GRID_INIT_Y + FRET_GAP / 2 + 8,
+          "1",
+          24,
+          "white",
+          "middle",
+          "bold",
         ),
       );
-      fingerColor++;
-    } else if (position[0] == "muted") {
+      fingerColorIndex++;
+    } else if (type === "muted") {
       const mutedString = position[1] - 1;
-      parentObject.appendChild(markStringMuted(mutedString));
-    } else if (position[0] == "position") {
-      parentObject.appendChild(writePosition(position[1].toString()));
-    } else if (position[0] == "empty") {
-      fingerColor++;
-    } else {
-      let string = position[0] - 1;
-      let fret = position[1] - 1;
-      createFinger(
-        parentObject,
-        initXPos + stringGap * string,
-        initFingerYPos + fretGap * fret,
-        fingerColor + 1,
-        fingerColor,
+      svgElement.appendChild(
+        writeText(
+          GRID_INIT_X + mutedString * STRING_GAP,
+          GRID_INIT_Y - 20,
+          "X",
+          35,
+          "#d94a4a",
+          "middle",
+          "bold",
+        ),
       );
-      fingerColor++;
+    } else if (type === "position") {
+      const fretPosition = position[1].toString();
+      // Pozice pražce vlevo od hmatníku
+      svgElement.appendChild(
+        writeText(
+          GRID_INIT_X - 25,
+          GRID_INIT_Y + FRET_GAP / 2 + 10,
+          fretPosition,
+          35,
+          "#5c3c1e",
+          "end",
+          "bold",
+        ),
+      );
+    } else if (type === "empty") {
+      // Skok v barvách pro prázdnou strunu, aby logicky sedělo číslování prstů
+      fingerColorIndex++;
+    } else {
+      // Běžný hmat (struna, pražec)
+      const string = position[0] - 1;
+      const fret = position[1] - 1;
+      createFinger(
+        svgElement,
+        GRID_INIT_X + STRING_GAP * string,
+        GRID_INIT_Y + FRET_GAP / 2 + FRET_GAP * fret, // Umístění do poloviny pražce
+        fingerColorIndex + 1,
+        fingerColorIndex,
+      );
+      fingerColorIndex++;
     }
   });
 }
