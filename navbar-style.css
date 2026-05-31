@@ -34,56 +34,109 @@ body {
   line-height: 1.6;
 }
 
+/* --- ZÁKLADNÍ NAVBAR (Desktop) --- */
 .navbar-wrapper {
-  border-bottom: 0.3rem solid var(--primary);
-  background-color: transparent;
+  border-bottom: 0.3rem solid var(--primary); /* Ujisti se, že máš definovanou proměnnou */
+  background-color: var(--bg-color, #fff9ef);
+  position: relative; /* Kriticky důležité pro absolutní pozicování menu pod ním */
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.navbar__logo {
-  text-decoration: none;
-}
-
-.navbar__logo img {
-  padding: 10px 0;
-  height: 8rem; /* Opravena velikost loga pro lepší zarovnání */
-  width: auto;
-}
-
-.navbar__menu {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
-
-.navbar__link {
-  display: block;
-  padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-  background-color: var(--primary);
-  border-radius: var(--radius-sm);
-  transition:
-    background 0.2s ease,
-    transform 0.1s ease;
-}
-
-.navbar__link:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-}
-
+/* --- HAMBURGER TLAČÍTKO --- */
 .navbar__toggle {
-  display: none; /* Skryto pro desktop */
+  display: none; /* Na desktopu schovat */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Tři čárky hamburgeru */
+.navbar__toggle-icon,
+.navbar__toggle-icon::before,
+.navbar__toggle-icon::after {
+  display: block;
+  position: absolute;
+  background-color: var(--primary);
+  height: 4px;
+  width: 30px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar__toggle-icon {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar__toggle-icon::before {
+  content: "";
+  top: -10px;
+  left: 0;
+}
+
+.navbar__toggle-icon::after {
+  content: "";
+  top: 10px;
+  left: 0;
+}
+
+/* --- RESPONZIVITA (Mobilní zobrazení) --- */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: block; /* Ukážeme hamburger */
+  }
+
+  /* Původní horizontální menu rozbijeme do vertikálního sloupce */
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color, #fff9ef);
+    padding: 1.5rem 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    z-index: 999;
+
+    /* V základu je menu schované */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: all 0.3s ease;
+  }
+
+  /* Aktivní stav po kliknutí (přepíná JS) */
+  .navbar__menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar__link {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* --- ANIMACE HAMBURGERU NA KŘÍŽEK --- */
+  .navbar__toggle.is-active .navbar__toggle-icon {
+    background: transparent; /* Prostřední čárka zmizí */
+  }
+
+  .navbar__toggle.is-active .navbar__toggle-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .navbar__toggle.is-active .navbar__toggle-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
 }
