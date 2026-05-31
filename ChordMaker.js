@@ -1,116 +1,102 @@
 const svgNS = "http://www.w3.org/2000/svg";
 
-// --- KONSTANTY A NASTAVENÍ PLÁTNA ---
-const VIEW_WIDTH = 400;
-const VIEW_HEIGHT = 650; // Mírně zvětšeno pro lepší prostor na text akordu
-
-const GRID_INIT_X = 50;
-const GRID_INIT_Y = 130; // Posunuto níže kvůli názvu akordu
-const STRING_GAP = 60;
-const FRET_GAP = 120;
-const STROKE_WIDTH = 2;
-
-const FINGER_RADIUS = 22;
-const FINGER_COLORS = ["#a81b1b", "#3e8f36", "#203776", "#df9d2c", "#642a94"];
+// --- KONFIGURACE ---
+const CONFIG = {
+  width: 400,
+  height: 650,
+  gridX: 50,
+  gridY: 130,
+  stringGap: 60,
+  fretGap: 120,
+  strokeWidth: 2,
+  fingerRadius: 22,
+  colors: ["#a81b1b", "#3e8f36", "#203776", "#df9d2c", "#642a94"],
+};
 
 // --- POMOCNÉ FUNKCE PRO VYKRESLOVÁNÍ ---
 
-function createCircle(x, y, colorIndex) {
-  const circle = document.createElementNS(svgNS, "circle");
-  circle.setAttribute("cx", x);
-  circle.setAttribute("cy", y);
-  circle.setAttribute("r", FINGER_RADIUS);
-  circle.setAttribute("stroke", "#111");
-  circle.setAttribute("stroke-width", STROKE_WIDTH);
-  circle.setAttribute("fill", FINGER_COLORS[colorIndex % FINGER_COLORS.length]);
-  return circle;
-}
+// Zásadní zjednodušení: univerzální tvůrce elementů
+const createEl = (tag, attributes = {}, text = "") => {
+  const el = document.createElementNS(svgNS, tag);
+  Object.entries(attributes).forEach(([key, val]) => el.setAttribute(key, val));
+  if (text) el.textContent = text;
+  return el;
+};
 
-function createLine(x1, y1, x2, y2, width = STROKE_WIDTH) {
-  const line = document.createElementNS(svgNS, "line");
-  line.setAttribute("x1", x1);
-  line.setAttribute("y1", y1);
-  line.setAttribute("x2", x2);
-  line.setAttribute("y2", y2);
-  line.setAttribute("stroke", "#333");
-  line.setAttribute("stroke-width", width);
-  line.setAttribute("stroke-linecap", "round");
-  return line;
-}
+const drawLine = (x1, y1, x2, y2, width = CONFIG.strokeWidth) =>
+  createEl("line", {
+    x1,
+    y1,
+    x2,
+    y2,
+    stroke: "#333",
+    "stroke-width": width,
+    "stroke-linecap": "round",
+  });
 
-function writeText(
+const drawText = (
   x,
   y,
-  textContent,
-  fontSize,
+  text,
+  size,
   color,
   anchor = "middle",
-  fontWeight = "normal",
-) {
-  const text = document.createElementNS(svgNS, "text");
-  text.setAttribute("x", x);
-  text.setAttribute("y", y);
-  text.setAttribute("fill", color);
-  text.setAttribute("text-anchor", anchor); // Zásadní pro snadné centrování textu
-  text.setAttribute("font-family", "Montserrat, sans-serif");
-  text.setAttribute("font-weight", fontWeight);
-  text.style.fontSize = `${fontSize}px`;
-  text.textContent = textContent;
-  return text;
-}
-
-function createFinger(parentObject, x, y, number, colorIndex) {
-  parentObject.appendChild(createCircle(x, y, colorIndex));
-  // Posun Y o čtvrtinu velikosti fontu pro vertikální centrování textu v kruhu
-  parentObject.appendChild(
-    writeText(x, y + 8, number, 24, "white", "middle", "bold"),
+  weight = "normal",
+) =>
+  createEl(
+    "text",
+    {
+      x,
+      y,
+      fill: color,
+      "text-anchor": anchor,
+      "font-family": "Montserrat, sans-serif",
+      "font-weight": weight,
+      "font-size": `${size}px`,
+    },
+    text,
   );
-}
-
-function createBarre(barreStartString) {
-  const barre = document.createElementNS(svgNS, "rect");
-  barre.setAttribute(
-    "x",
-    GRID_INIT_X + STRING_GAP * barreStartString - FINGER_RADIUS,
-  );
-  barre.setAttribute("y", GRID_INIT_Y + FRET_GAP / 2 - FINGER_RADIUS);
-  barre.setAttribute(
-    "width",
-    STRING_GAP * (5 - barreStartString) + FINGER_RADIUS * 2,
-  );
-  barre.setAttribute("height", FINGER_RADIUS * 2);
-  barre.setAttribute("rx", FINGER_RADIUS);
-  barre.setAttribute("ry", FINGER_RADIUS);
-  barre.setAttribute("fill", FINGER_COLORS[0]);
-  return barre;
-}
 
 // --- HLAVNÍ EXPORTOVANÁ FUNKCE ---
 
-export function createDiagram(svgElement, chordName, fingerPositions) {
-  // 1. Očištění předchozího obsahu a nastavení responzivity
+export function createDiagram(
+  svgElement,
+  chordName,
+  fingerPositions,
+  scale = 1.0,
+) {
+  if (!svgElement) return; // Ochrana proti chybějícímu kontejneru
+
   svgElement.innerHTML = "";
 
-  // Tohle je to kouzlo, které chybělo. Umožní to SVG reagovat na CSS šířku rodiče.
-  svgElement.setAttribute("viewBox", `0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`);
-  svgElement.setAttribute("width", "100%");
-  svgElement.setAttribute("height", "100%");
+  // 1. Nastavení plátna a škálování
+  const scaledWidth = CONFIG.width * scale;
+  const scaledHeight = CONFIG.height * scale;
+
+  Object.entries({
+    viewBox: `0 0 ${CONFIG.width} ${CONFIG.height}`,
+    width: `${scaledWidth}px`,
+    height: `${scaledHeight}px`,
+    style: "max-width: 100%; height: auto;", // Zajištění responzivity i při velkém scale
+  }).forEach(([k, v]) => svgElement.setAttribute(k, v));
 
   // 2. Pozadí
-  const background = document.createElementNS(svgNS, "rect");
-  background.setAttribute("width", VIEW_WIDTH);
-  background.setAttribute("height", VIEW_HEIGHT);
-  background.setAttribute("fill", "white");
-  background.setAttribute("rx", "10"); // Zaoblené rohy celého diagramu
-  svgElement.appendChild(background);
-
-  // 3. Název akordu (vycentrováno pomocí text-anchor="middle")
-  let displayChordName = chordName.replace("Sharp", "#").replace("Flat", "♭");
   svgElement.appendChild(
-    writeText(
-      VIEW_WIDTH / 2,
+    createEl("rect", {
+      width: CONFIG.width,
+      height: CONFIG.height,
+      fill: "white",
+      rx: 10,
+    }),
+  );
+
+  // 3. Název akordu
+  const displayName = chordName.replace(/Sharp/g, "#").replace(/Flat/g, "♭");
+  svgElement.appendChild(
+    drawText(
+      CONFIG.width / 2,
       70,
-      displayChordName,
+      displayName,
       60,
       "#332f2b",
       "middle",
@@ -118,32 +104,27 @@ export function createDiagram(svgElement, chordName, fingerPositions) {
     ),
   );
 
-  // 4. Vykreslení hmatníku (mřížky)
-  // Pražce (horizontální linie)
+  // 4. Vykreslení hmatníku
   for (let i = 0; i <= 4; i++) {
-    const fretY = GRID_INIT_Y + i * FRET_GAP;
-    const isNut = i === 0; // Nultý pražec by měl být tlustší
+    const fretY = CONFIG.gridY + i * CONFIG.fretGap;
     svgElement.appendChild(
-      createLine(
-        GRID_INIT_X,
+      drawLine(
+        CONFIG.gridX,
         fretY,
-        GRID_INIT_X + 5 * STRING_GAP,
+        CONFIG.gridX + 5 * CONFIG.stringGap,
         fretY,
-        isNut ? 6 : STROKE_WIDTH,
+        i === 0 ? 6 : CONFIG.strokeWidth,
       ),
     );
   }
-
-  // Struny (vertikální linie)
   for (let i = 0; i < 6; i++) {
-    const stringX = GRID_INIT_X + i * STRING_GAP;
+    const stringX = CONFIG.gridX + i * CONFIG.stringGap;
     svgElement.appendChild(
-      createLine(
+      drawLine(
         stringX,
-        GRID_INIT_Y,
+        CONFIG.gridY,
         stringX,
-        GRID_INIT_Y + 4 * FRET_GAP,
-        STROKE_WIDTH,
+        CONFIG.gridY + 4 * CONFIG.fretGap,
       ),
     );
   }
@@ -151,21 +132,35 @@ export function createDiagram(svgElement, chordName, fingerPositions) {
   // 5. Zpracování prstokladu
   let fingerColorIndex = 0;
 
-  fingerPositions.forEach((position) => {
-    const type = position[0];
+  fingerPositions.forEach(([type, val]) => {
+    const color = CONFIG.colors[fingerColorIndex % CONFIG.colors.length];
 
     if (type === "barre") {
-      const barreStart = position[1] - 1;
-      svgElement.appendChild(createBarre(barreStart));
-      // Číslo prstu pro barré (uprostřed barré)
-      const barreCenter =
-        GRID_INIT_X +
-        STRING_GAP * barreStart +
-        (STRING_GAP * (5 - barreStart)) / 2;
+      const start = val - 1;
+      const width = CONFIG.stringGap * (5 - start) + CONFIG.fingerRadius * 2;
+      const x = CONFIG.gridX + CONFIG.stringGap * start - CONFIG.fingerRadius;
+      const y = CONFIG.gridY + CONFIG.fretGap / 2 - CONFIG.fingerRadius;
+
       svgElement.appendChild(
-        writeText(
-          barreCenter,
-          GRID_INIT_Y + FRET_GAP / 2 + 8,
+        createEl("rect", {
+          x,
+          y,
+          width,
+          height: CONFIG.fingerRadius * 2,
+          rx: CONFIG.fingerRadius,
+          ry: CONFIG.fingerRadius,
+          fill: CONFIG.colors[0],
+        }),
+      );
+
+      const centerX =
+        CONFIG.gridX +
+        CONFIG.stringGap * start +
+        (CONFIG.stringGap * (5 - start)) / 2;
+      svgElement.appendChild(
+        drawText(
+          centerX,
+          y + CONFIG.fingerRadius + 8,
           "1",
           24,
           "white",
@@ -175,11 +170,10 @@ export function createDiagram(svgElement, chordName, fingerPositions) {
       );
       fingerColorIndex++;
     } else if (type === "muted") {
-      const mutedString = position[1] - 1;
       svgElement.appendChild(
-        writeText(
-          GRID_INIT_X + mutedString * STRING_GAP,
-          GRID_INIT_Y - 20,
+        drawText(
+          CONFIG.gridX + (val - 1) * CONFIG.stringGap,
+          CONFIG.gridY - 20,
           "X",
           35,
           "#d94a4a",
@@ -188,13 +182,11 @@ export function createDiagram(svgElement, chordName, fingerPositions) {
         ),
       );
     } else if (type === "position") {
-      const fretPosition = position[1].toString();
-      // Pozice pražce vlevo od hmatníku
       svgElement.appendChild(
-        writeText(
-          GRID_INIT_X - 25,
-          GRID_INIT_Y + FRET_GAP / 2 + 10,
-          fretPosition,
+        drawText(
+          CONFIG.gridX - 25,
+          CONFIG.gridY + CONFIG.fretGap / 2 + 10,
+          val.toString(),
           35,
           "#5c3c1e",
           "end",
@@ -202,18 +194,25 @@ export function createDiagram(svgElement, chordName, fingerPositions) {
         ),
       );
     } else if (type === "empty") {
-      // Skok v barvách pro prázdnou strunu, aby logicky sedělo číslování prstů
       fingerColorIndex++;
     } else {
-      // Běžný hmat (struna, pražec)
-      const string = position[0] - 1;
-      const fret = position[1] - 1;
-      createFinger(
-        svgElement,
-        GRID_INIT_X + STRING_GAP * string,
-        GRID_INIT_Y + FRET_GAP / 2 + FRET_GAP * fret, // Umístění do poloviny pražce
-        fingerColorIndex + 1,
-        fingerColorIndex,
+      // Běžný hmat: 'type' je v tomto kontextu struna, 'val' je pražec
+      const cx = CONFIG.gridX + CONFIG.stringGap * (type - 1);
+      const cy = CONFIG.gridY + CONFIG.fretGap / 2 + CONFIG.fretGap * (val - 1);
+      const fingerNum = (fingerColorIndex + 1).toString();
+
+      svgElement.appendChild(
+        createEl("circle", {
+          cx,
+          cy,
+          r: CONFIG.fingerRadius,
+          stroke: "#111",
+          "stroke-width": CONFIG.strokeWidth,
+          fill: color,
+        }),
+      );
+      svgElement.appendChild(
+        drawText(cx, cy + 8, fingerNum, 24, "white", "middle", "bold"),
       );
       fingerColorIndex++;
     }
