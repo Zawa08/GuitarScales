@@ -143,8 +143,8 @@ body {
 #chords li {
   display: flex;
   justify-content: center;
-  flex: 1 1 150px; /* Flex parametr: umožní zmenšování i zvětšování s ohledem na prostor */
-  max-width: 220px; /* Zabrání gigantickým rozměrům, pokud jsou v sadě např. jen 2 akordy */
+  flex: 1 1 200px; /* Flex parametr: umožní zmenšování i zvětšování s ohledem na prostor */
+  max-width: 300px; /* Zabrání gigantickým rozměrům, pokud jsou v sadě např. jen 2 akordy */
 }
 
 /* Samotný SVG diagram uvnitř list itemu */
