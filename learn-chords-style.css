@@ -1,21 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
 
 :root {
-  /* Sjednocená barevná paleta */
-  --bg-color: #fff9ef;
-  --text-color: #332f2b;
-  --primary: #d36404;
-  --secondary: #e6cfa8;
-  --accent: #5c3c1e;
-
-  /* Barvy specifické pro obtížnosti */
-  --diff-easy: #5ea14b;
-  --diff-medium: #d36404;
-  --diff-hard: #c93e3e;
-
-  --font-serif: "Merriweather", serif;
-  --font-sans: "Montserrat", sans-serif;
-
   --radius-md: 0.5rem;
 }
 
