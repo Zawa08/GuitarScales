@@ -61,6 +61,7 @@ h1 {
 }
 
 .navbar__logo img {
+  padding: 10px 0;
   height: 8rem; /* Opravena velikost loga pro lepší zarovnání */
   width: auto;
 }
