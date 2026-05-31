@@ -184,7 +184,7 @@ input:checked + .slider::before {
 
 /* Kontejner se zobrazenými akordy */
 .chords-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
   display: flex;
@@ -214,7 +214,7 @@ input:checked + .slider::before {
   font-size: 1.2rem;
   font-weight: 600;
   width: 100%;
-  max-width: 300px; /* Tohle omezí maximální velikost na desktopu */
+  max-width: 260px; /* Tohle omezí maximální velikost na desktopu */
   height: auto;
   display: block;
 }
