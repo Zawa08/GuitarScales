@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Sjednocená firemní paleta */
+  --bg-color: #fff9ef;
+  --text-color: #332f2b;
+  --primary: #d36404;
+  --primary-hover: #b85503;
+  --secondary: #e6cfa8;
+  --secondary-hover: #d8b884;
+  --accent: #5c3c1e;
+
+  --font-serif: "Merriweather", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+}
+
+/* --- ZÁKLADNÍ RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+}
+
+h1.LearnScales {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: var(--accent);
+}
+
+/* --- VÝBĚR STUPNICE (Select) --- */
+.scale-select {
+  display: block;
+  margin: 0 auto 3rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--accent);
+  background-color: white;
+  border: 2px solid var(--secondary);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  appearance: none; /* Odstraní výchozí ošklivou šipku v některých prohlížečích */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%235c3c1e%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 0.8rem auto;
+}
+
+.scale-select:focus,
+.scale-select:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(211, 100, 4, 0.15);
+}
+
+/* --- KONTEJNER PRO VÝPIS NOT --- */
+#scales {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+/* --- VIZUALIZACE STUPNICE --- */
+.scale-list {
+  list-style: none; /* Skryje výchozí číslování */
+  counter-reset: scale-degree; /* Inicializace vlastního počítadla */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.scale-list li {
+  counter-increment: scale-degree; /* Zvyšuje počítadlo s každou notou */
+  position: relative;
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: var(--secondary);
+  color: var(--accent);
+  border-radius: 50%; /* Vytvoří kruh (jako značky na hmatníku) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  border: 3px solid transparent;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.scale-list li:hover {
+  background-color: var(--secondary-hover);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/* Odznáček s číslem stupně (využívá CSS counters) */
+.scale-list li::before {
+  content: counter(scale-degree); /* Vloží aktuální číslo stupně */
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* --- HIGHLIGHT ZÁKLADNÍHO TÓNU (Root Note) --- */
+/* První prvek (a osmý, pokud bys přidával oktávu) je Root. Musí vyčnívat. */
+.scale-list li:first-child {
+  background-color: var(--accent);
+  color: white;
+  transform: scale(1.1); /* Mírně větší než ostatní */
+  box-shadow: 0 6px 12px rgba(92, 60, 30, 0.3);
+}
+
+.scale-list li:first-child:hover {
+  transform: scale(1.1) translateY(-4px);
+  background-color: #422b15;
+}
+
+.scale-list li:first-child::before {
+  background-color: white;
+  color: var(--accent);
+}
+
+/* --- RESPONZIVITA --- */
+@media (max-width: 600px) {
+  .scale-list {
+    gap: 1rem;
+  }
+
+  .scale-list li {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.4rem;
+  }
+
+  .scale-list li::before {
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 0.8rem;
+    top: -5px;
+    right: -5px;
+  }
+
+  .scale-select {
+    width: calc(100% - 2rem);
+  }
+}
