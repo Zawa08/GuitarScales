@@ -214,7 +214,7 @@ input:checked + .slider::before {
   font-size: 1.2rem;
   font-weight: 600;
   width: 100%;
-  max-width: 250px; /* Tohle omezí maximální velikost na desktopu */
+  max-width: 300px; /* Tohle omezí maximální velikost na desktopu */
   height: auto;
   display: block;
 }
