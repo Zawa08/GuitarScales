@@ -110,7 +110,7 @@ input:checked + .slider::before {
 
 .key-select {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #fff;
   background-color: var(--accent);
   border: none;
@@ -127,8 +127,8 @@ input:checked + .slider::before {
   background-color: var(--secondary);
   border: 2px solid transparent;
   border-radius: var(--radius-sm);
-  width: 6rem;
-  height: 6rem;
+  width: 5.5rem;
+  height: 5.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
