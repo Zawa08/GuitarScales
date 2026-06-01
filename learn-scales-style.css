@@ -37,7 +37,7 @@ h1.LearnScales {
 
 /* --- KONTEJNER PRO VÝPIS NOT --- */
 #scales {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto 4rem;
   padding: 0 1rem;
 }
@@ -57,8 +57,8 @@ h1.LearnScales {
 .scale-list li {
   counter-increment: scale-degree; /* Zvyšuje počítadlo s každou notou */
   position: relative;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 8rem;
+  height: 8rem;
   background-color: var(--secondary);
   color: var(--accent);
   border-radius: 50%; /* Vytvoří kruh (jako značky na hmatníku) */
@@ -85,12 +85,12 @@ h1.LearnScales {
   position: absolute;
   top: -8px;
   right: -8px;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: var(--primary);
   color: white;
   border-radius: 50%;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
