@@ -106,14 +106,11 @@ function updateList() {
     createChord(chordNameAndPositions[0], chordNameAndPositions[1]);
   });
 }
+
 function intervalButtons() {
-  getChord(0);
-  getChord(1);
-  getChord(2);
-  getChord(3);
-  getChord(4);
-  getChord(5);
-  getChord(6);
+  for (let i = 0; i <= 6; i++) {
+    getChord(i);
+  }
 }
 
 function presetButtons() {

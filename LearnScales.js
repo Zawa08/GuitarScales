@@ -1,20 +1,16 @@
 import { Scales } from "./Scales.js";
 
-const ScaleSelect = document.getElementById("scale-select");
+const scaleSelect = document.getElementById("scale-select");
+const scalesContainer = document.getElementById("scales");
 
-function DisplayScale() {
-  ScaleSelect.addEventListener("change", () => {
-    const Scale = Scales["Major"][ScaleSelect.value]["notes"];
+if (scaleSelect && scalesContainer) {
+  scaleSelect.addEventListener("change", (e) => {
+    // Použití volitelného řetězení (?.) pro bezpečný přístup
+    const selectedScale = Scales.Major[e.target.value]?.notes || [];
 
-    function createNoteList() {
-      let noteList = "<ol class='scale-list'>";
-      Scale.forEach((note) => {
-        noteList += "<li>" + note + "</li>";
-      });
-      noteList += "</ol>";
-      return noteList;
-    }
-    document.getElementById("scales").innerHTML = createNoteList();
+    scalesContainer.innerHTML = `<ol class='scale-list'>
+      ${selectedScale.map((note) => `<li>${note}</li>`).join("")}
+    </ol>`;
   });
 }
 

@@ -1,7 +1,7 @@
 import { createDiagram } from "./ChordMaker.js";
 import { ChordDiagrams } from "./Scales.js";
 
-const chords = [
+const CHORDS = [
   ["F", "major"],
   ["G", "major"],
   ["D", "major"],
@@ -12,39 +12,33 @@ const chords = [
   ["B", "minor"],
 ];
 
-const folderPath = "images/";
 const wrapper = document.getElementById("svg-wrapper");
 let lastIndex = -1;
 
-function showRandomChord() {
-  wrapper.innerHTML = "";
-  let randomIndex;
+export function showRandomChord() {
+  if (!wrapper) return;
 
-  // Zajistíme, aby se nevybral stejný akord dvakrát po sobě
+  let randomIndex;
   do {
-    randomIndex = Math.floor(Math.random() * chords.length);
-  } while (randomIndex === lastIndex && chords.length > 1);
+    randomIndex = Math.floor(Math.random() * CHORDS.length);
+  } while (randomIndex === lastIndex && CHORDS.length > 1);
 
   lastIndex = randomIndex;
-  const chordKey = chords[randomIndex][0];
-  const chordType = chords[randomIndex][1];
-  let chordName = chordKey;
-  if (chordType === "minor") {
-    chordName += "m";
-  }
+  const [chordKey, chordType] = CHORDS[randomIndex];
+  const chordName = chordType === "minor" ? `${chordKey}m` : chordKey;
 
-  // Reset animace
   wrapper.classList.remove("slide-in");
   void wrapper.offsetWidth;
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   createDiagram(svg, chordName, ChordDiagrams[chordKey][chordType]);
-  wrapper.appendChild(svg);
+
+  wrapper.replaceChildren(svg);
   wrapper.classList.add("slide-in");
 }
 
-// Spustit hned po načtení
+// Spustí se hned po načtení
 showRandomChord();
 
-// Automaticky se mění každé 4 sekundy
+// Automaticky se mění každých 5 sekund
 setInterval(showRandomChord, 5000);
