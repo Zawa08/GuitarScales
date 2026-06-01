@@ -80,9 +80,9 @@ p {
 }
 
 .navbar__logo img {
-  height: 60px;
+  height: 5rem;
   width: auto;
-  margin: 10px 0;
+  padding: 0.5rem;
 }
 
 .navbar__menu {
