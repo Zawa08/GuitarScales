@@ -295,4 +295,11 @@ section {
   .article-card {
     scale: 0.8;
   }
+  .about-text{
+    margin: 0 1rem;
+  }
+  .about-image img {
+    width: 30rem;
+    padding: 1rem;
+  }
 }
