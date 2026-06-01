@@ -279,6 +279,11 @@ section {
   .hero-image {
     flex: none;
   }
+
+  .footer__container {
+    width: 100%;
+    scale: 0.9;
+  }
 }
 
 @media (max-width: 800px) {
