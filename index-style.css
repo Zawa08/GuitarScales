@@ -34,14 +34,11 @@ section {
   flex: 1;
   display: flex;
   flex-direction: column-reverse;
-  min-width: 300px;
+  max-width: 1000px;
 }
 
-.hero-image img {
-  width: 20rem;
-  height: auto;
-  display: block;
-  object-fit: cover;
+.hero-image svg {
+  width: 25rem;
   border: var(--button-color) 3px solid;
 }
 
@@ -267,6 +264,8 @@ section {
   .hero {
     flex-direction: column-reverse; /* Na mobilu dáme text pod obrázek (nebo 'column' pro text nahoře) */
     text-align: center;
+    align-items: center;
+    justify-content: start;
   }
 
   .hero-content {
@@ -277,8 +276,9 @@ section {
   .hero-content h1 {
     font-size: 2rem;
   }
-  .hero-image img {
-    width: 90%;
+
+  .hero-image {
+    flex: none;
   }
 }
 
@@ -291,5 +291,8 @@ section {
   }
   .about-image img {
     width: 35rem;
+  }
+  .article-card {
+    scale: 0.8;
   }
 }
