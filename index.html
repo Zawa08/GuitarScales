@@ -74,7 +74,12 @@
         <div class="about-image">
           <img
             src="images/guitar-player.avif"
-            alt="Kytara dělá břink"
+            srcset="
+              images/guitar-player-full-HD.avif 1920w,
+              images/guitar-player-HD.avif      1024w,
+              images/guitar-player-small.avif    800w
+            "
+            alt="Learning guitar is a journey."
             fetchpriority="high"
             loading="lazy"
           />
@@ -92,7 +97,7 @@
               />
               <div class="article-card-content">
                 <h2 class="card__title">Learn chords</h2>
-                <p>Learn some campfire must-haves</p>
+                <p>Learn some campfire must-haves.</p>
               </div>
             </a>
           </article>
