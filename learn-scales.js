@@ -1,4 +1,4 @@
-import { Scales } from "./Scales.js";
+import { Scales } from "./scales.js";
 
 const scaleSelect = document.getElementById("scale-select");
 const scalesContainer = document.getElementById("scales");
@@ -13,5 +13,3 @@ if (scaleSelect && scalesContainer) {
     </ol>`;
   });
 }
-
-DisplayScale();

@@ -1,5 +1,5 @@
-import { createDiagram } from "./ChordMaker.js";
-import { ChordDiagrams } from "./Scales.js";
+import { createDiagram } from "./chord-maker.js";
+import { ChordDiagrams } from "./scales.js";
 
 const CHORDS = [
   ["F", "major"],

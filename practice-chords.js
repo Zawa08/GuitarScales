@@ -1,5 +1,5 @@
-import { ChordDiagrams, ChordSet } from "./Scales.js";
-import { createDiagram } from "./ChordMaker.js";
+import { ChordDiagrams, ChordSet } from "./scales.js";
+import { createDiagram } from "./chord-maker.js";
 
 let Difficulty = document.getElementById("difficulty").className;
 let currentSet = 1;

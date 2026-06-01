@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GuitarScales – Practice Chords – Advanced</title>
+    <title>GuitarScales – Learn Chords</title>
+    <link rel="icon" type="image/x-icon" href="./images/site-logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="./Images/site-logo.svg" />
     <link rel="stylesheet" href="navbar-style.css" />
-    <link rel="stylesheet" href="practice-chords-style.css" />
+    <link rel="stylesheet" href="learn-chords-style.css" />
   </head>
 
   <body>
@@ -31,38 +31,40 @@
         </button>
         <ul class="navbar__menu" id="main-menu">
           <li>
-            <a href="LearnChords.html" class="navbar__link" id="learn-chords"
+            <a href="learn-chords.html" class="navbar__link" id="learn-chords"
               >Learn chords</a
             >
           </li>
           <li>
             <a
-              href="ChordProgression.html"
+              href="chord-progression.html"
               class="navbar__link"
               id="chord-progression"
               >Chord progression</a
             >
           </li>
           <li>
-            <a href="LearnScales.html" class="navbar__link" id="learn-scales"
+            <a href="learn-scales.html" class="navbar__link" id="learn-scales"
               >Learn scales</a
             >
           </li>
         </ul>
       </nav>
     </header>
-    <div id="difficulty" class="Hard">
-      <a class="changediff-btn" href="LearnChords.html">Change difficulty</a>
-      <h1 id="current-set">Chords 0</h1>
-    </div>
-    <div class="practice-chords-container">
-      <ol id="chords"></ol>
-      <div class="button-container">
-        <button id="previous" class="practice-btn">Previous</button>
-        <button id="next" class="practice-btn">Next</button>
-      </div>
+
+    <h1 class="main__header">Learn chords</h1>
+    <div class="diff-select">
+      <h2>Select a difficulty:</h2>
+      <a id="Easy" href="practice-chords-easy.html" class="diff-btn"
+        >Beginner</a
+      >
+      <a id="Medium" href="practice-chords-medium.html" class="diff-btn"
+        >Intermediate</a
+      >
+      <a id="Hard" href="practice-chords-hard.html" class="diff-btn"
+        >Advanced</a
+      >
     </div>
     <script src="navbar.js"></script>
-    <script type="module" src="PracticeChords.js"></script>
   </body>
 </html>

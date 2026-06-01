@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GuitarScales – Practice Chords – Intermediate</title>
+    <title>GuitarScales – Learn Scales</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/x-icon" href="./Images/site-logo.svg" />
+    <link rel="icon" type="image/x-icon" href="./images/site-logo.svg" />
     <link rel="stylesheet" href="navbar-style.css" />
-    <link rel="stylesheet" href="practice-chords-style.css" />
+    <link rel="stylesheet" href="learn-scales-style.css" />
   </head>
 
   <body>
@@ -31,20 +31,20 @@
         </button>
         <ul class="navbar__menu" id="main-menu">
           <li>
-            <a href="LearnChords.html" class="navbar__link" id="learn-chords"
+            <a href="learn-chords.html" class="navbar__link" id="learn-chords"
               >Learn chords</a
             >
           </li>
           <li>
             <a
-              href="ChordProgression.html"
+              href="chord-progression.html"
               class="navbar__link"
               id="chord-progression"
               >Chord progression</a
             >
           </li>
           <li>
-            <a href="LearnScales.html" class="navbar__link" id="learn-scales"
+            <a href="learn-scales.html" class="navbar__link" id="learn-scales"
               >Learn scales</a
             >
           </li>
@@ -52,18 +52,30 @@
       </nav>
     </header>
 
-    <div id="difficulty" class="Medium">
-      <a class="changediff-btn" href="LearnChords.html">Change difficulty</a>
-      <h1 id="current-set">Chords 0</h1>
-    </div>
-    <div class="practice-chords-container">
-      <ol id="chords"></ol>
-      <div class="button-container">
-        <button id="previous" class="practice-btn">Previous</button>
-        <button id="next" class="practice-btn">Next</button>
-      </div>
-    </div>
+    <h1 class="LearnScales">Learn scales</h1>
+    <select name="scale-select" class="scale-select" id="scale-select">
+      <option value="None">--Please select a scale--</option>
+      <option value="C">C major</option>
+      <option value="CSharp">C# major</option>
+      <option value="DFlat">D♭ major</option>
+      <option value="D">D major</option>
+      <option value="DSharp">D# major</option>
+      <option value="EFlat">E♭ major</option>
+      <option value="E">E major</option>
+      <option value="F">F major</option>
+      <option value="FSharp">F# major</option>
+      <option value="GFlat">G♭ major</option>
+      <option value="G">G major</option>
+      <option value="GSharp">G# major</option>
+      <option value="AFlat">A♭ major</option>
+      <option value="A">A major</option>
+      <option value="ASharp">A# major</option>
+      <option value="BFlat">B♭ major</option>
+      <option value="B">B major</option>
+    </select>
+    <div id="scales"></div>
+
     <script src="navbar.js"></script>
-    <script type="module" src="PracticeChords.js"></script>
+    <script type="module" src="learn-scales.js"></script>
   </body>
 </html>
