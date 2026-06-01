@@ -16,6 +16,9 @@
   --paragraph-color: #443f3a;
 
   --font-sans: "Montserrat", sans-serif;
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+  --radius-pill: 50px;
 }
 
 /* --- ZÁKLADNÍ RESET PRO CELÝ WEB --- */
