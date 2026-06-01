@@ -198,19 +198,18 @@ section {
 .footer {
   background-color: #1a1a1a; /* Tmavé pozadí pro kontrast */
   color: var(--background-color);
-  padding: 60px 40px 40px;
 }
 
 .footer__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1300px;
+  margin: 1rem auto;
 }
 
 .footer__title {
-  margin-bottom: 15px;
+  margin: 30px 0;
   font-size: 2rem;
 }
 
