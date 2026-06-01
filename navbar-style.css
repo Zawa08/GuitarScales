@@ -80,8 +80,8 @@ p {
 }
 
 .navbar__logo img {
-  height: 5rem;
-  width: auto;
+  width: 12rem;
+  height: auto;
   padding: 0.5rem;
 }
 
@@ -95,7 +95,7 @@ p {
 .navbar__link {
   display: block;
   padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   text-decoration: none;
   color: #fff;
@@ -154,7 +154,7 @@ p {
 }
 
 /* --- RESPONZIVITA (Mobilní zobrazení) --- */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .navbar__toggle {
     display: block;
   }
