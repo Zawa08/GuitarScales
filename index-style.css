@@ -283,8 +283,12 @@ section {
 }
 
 @media (max-width: 800px) {
+  aside {
+    margin: 0.5rem 1rem;
+  }
   section {
     max-width: 500px;
+    margin: 0.5rem 1rem;
   }
   .author-text-container {
     max-width: 300px;
@@ -295,7 +299,7 @@ section {
   .article-card {
     scale: 0.8;
   }
-  .about-text{
+  .about-text {
     margin: 0 1rem;
   }
   .about-image img {
