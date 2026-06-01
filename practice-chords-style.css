@@ -5,23 +5,6 @@
   --color-easy: #5ea14b;
   --color-medium: #d36404;
   --color-hard: #c93e3e;
-
-  --radius-sm: 0.3rem;
-  --radius-md: 0.5rem;
-}
-
-/* --- ZÁKLADNÍ RESET --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-serif);
-  line-height: 1.6;
 }
 
 /* --- HLAVIČKA OBTÍŽNOSTI & NADPIS --- */

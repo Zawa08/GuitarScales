@@ -9,16 +9,58 @@
   --accent: #5c3c1e;
   --danger: #d94a4a;
   --danger-hover: #b83d3d;
-  
+
+  --background-color: #fff9ef;
+  --button-color: #d36404;
+  --button-hover-color: #d34204;
+  --paragraph-color: #443f3a;
+
   --font-serif: "Merriweather", serif;
   --font-sans: "Montserrat", sans-serif;
+}
+
+/* Základní reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--paragraph-color);
 }
 
 /* --- ZÁKLADNÍ NAVBAR (Desktop) --- */
 .navbar-wrapper {
   border-bottom: 0.3rem solid var(--primary);
   background-color: var(--bg-color);
-  position: relative; 
+  position: relative;
 }
 
 .navbar {
@@ -37,6 +79,7 @@
 .navbar__logo img {
   height: 60px;
   width: auto;
+  margin: 10px 0;
 }
 
 .navbar__menu {
@@ -56,7 +99,9 @@
   color: #fff;
   background-color: var(--primary);
   border-radius: 0.3rem;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
 }
 
 .navbar__link:hover {
@@ -81,7 +126,7 @@
 .navbar__toggle-icon::after {
   display: block;
   position: absolute;
-  background-color: var(--primary); 
+  background-color: var(--primary);
   height: 4px;
   width: 30px;
   border-radius: 2px;
@@ -125,7 +170,7 @@
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     z-index: 999;
-    
+
     opacity: 0;
     visibility: hidden;
     transform: translateY(-15px);

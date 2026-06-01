@@ -1,26 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
 
-:root {
-  --radius-sm: 0.3rem;
-  --radius-md: 0.5rem;
-  --radius-pill: 50px;
-}
-
-/* --- ZÁKLADNÍ RESET --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-serif);
-  line-height: 1.6;
-}
-
-h1 {
+.main__header {
   font-size: 2.5rem;
   text-align: center;
   margin: 2rem 0;
