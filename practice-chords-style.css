@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700&display=swap");
-
 :root {
   /* Specifické barvy pro indikaci obtížnosti navrchu */
   --color-easy: #5ea14b;
@@ -21,7 +19,6 @@
 /* Tlačítko pro návrat zpět - nyní zvětšené a vycentrované */
 .changediff-btn {
   align-self: center; /* Zajišťuje perfektní vycentrování ve flexboxu */
-  font-family: var(--font-sans);
   font-weight: 700; /* Ztučněno, aby text lépe seděl k větším rozměrům */
   font-size: 2rem;
   text-decoration: none;
@@ -141,7 +138,6 @@
 
 .button-container button {
   flex: 1;
-  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
