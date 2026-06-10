@@ -65,22 +65,55 @@ section {
 
 /* ABOUT */
 .about {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: start;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem;
 }
 
-.about-text,
+.about-text {
+  padding-right: 1rem;
+}
+
+.about-text h1::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 4px;
+  background: var(--button-color);
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+/* Pravá strana - obrázek s plovoucím akordovým diagramem */
 .about-image {
-  flex-basis: 300px;
-  flex-grow: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .about-image img {
-  width: 50rem;
-  padding: 1rem;
+  width: 100%;
+  max-width: 400px;
+  height: 520px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 14px;
+  border: 3px solid var(--button-color);
+  display: block;
+}
+
+/* Chord diagram jako plovoucí „reference karta" přes foto */
+.about-image svg {
+  position: absolute;
+  bottom: 28px;
+  left: -10px;
+  width: 200px;
+  height: auto;
+  background: white;
+  border: 3px solid var(--button-color);
+  border-radius: 10px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
 }
 
 /* Kontejner pro karty */
@@ -157,9 +190,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background-color: #1a6b4a; /* Zelená z tvých placeholderů */
   margin-top: 8px;
-  transition: width 0.3s ease;
 }
 
 .article-card:hover h3::after {
@@ -189,8 +220,6 @@ section {
   aspect-ratio: 1/1;
   border-radius: 50%;
   object-fit: cover;
-  /* MAGIE: Posuneme "kameru" ořezu nahoru (na 20% osy Y),
-       abychom postavě na portrétu neuřízli hlavu! */
   object-position: center 20%;
 }
 
@@ -256,8 +285,12 @@ section {
 
 /* RESPONZIVITA - Mobilní zařízení */
 @media (max-width: 1400px) {
+  section h1 {
+    text-align: center;
+  }
   section {
-    max-width: 800px;
+    max-width: 900px;
+    margin: 20rem auto;
   }
 
   .hero {
@@ -280,34 +313,71 @@ section {
     flex: none;
   }
 
+  .about {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-text h1::after {
+    margin: 12px auto 0;
+  }
+
+  .about-image {
+    justify-content: center;
+  }
+
+  .about-image img {
+    max-width: 380px;
+    height: 460px;
+  }
+
+  .about-image svg {
+    left: 10px;
+    bottom: 14px;
+    width: 200px;
+  }
+
+  .author-text-container h1 {
+    text-align: center;
+  }
+
   .footer__container {
     width: 100%;
     scale: 0.9;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   aside {
     margin: 0.5rem 1rem;
   }
+
   section {
     max-width: 500px;
-    margin: 0.5rem 1rem;
+    margin: 5rem auto;
   }
+
   .author-text-container {
     max-width: 300px;
   }
-  .about-image img {
-    width: 35rem;
-  }
+
   .article-card {
     scale: 0.8;
   }
+
   .about-text {
     margin: 0 1rem;
+    padding-right: 0;
   }
+
   .about-image img {
-    width: 30rem;
-    padding: 1rem;
+    max-width: 320px;
+    height: 380px;
+  }
+
+  .about-image svg {
+    left: 6px;
+    bottom: 10px;
+    width: 130px;
   }
 }

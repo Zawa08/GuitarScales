@@ -37,8 +37,16 @@ export function showRandomChord() {
   wrapper.classList.add("slide-in");
 }
 
+const aboutWrapper = document.getElementById("about-image");
+function createAboutImageChord() {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  createDiagram(svg, "D", ChordDiagrams["D"]["major"]);
+  aboutWrapper.appendChild(svg);
+}
+
 // Spustí se hned po načtení
 showRandomChord();
+createAboutImageChord();
 
 // Automaticky se mění každých 5 sekund
 setInterval(showRandomChord, 5000);
