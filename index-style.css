@@ -75,16 +75,6 @@ section {
   padding-right: 1rem;
 }
 
-.about-text h1::after {
-  content: "";
-  display: block;
-  width: 55px;
-  height: 4px;
-  background: var(--button-color);
-  border-radius: 2px;
-  margin-top: 12px;
-}
-
 /* Pravá strana - obrázek s plovoucím akordovým diagramem */
 .about-image {
   position: relative;
@@ -138,6 +128,7 @@ section {
   display: flex;
   flex-direction: column;
   border: 1px solid #f0f0f0;
+  border: 3px solid var(--button-color);
 }
 
 /* Efekt při najetí myší */
@@ -157,10 +148,7 @@ section {
   height: 200px;
   object-fit: cover; /* Důležité: ořízne obrázek, aby nedeformoval kartu */
   transition: transform 0.5s ease;
-}
-
-.article-card:hover img {
-  transform: scale(1.05); /* Jemný zoom obrázku */
+  border-bottom: 3px solid var(--button-color);
 }
 
 /* Obsah karty (texty) */
